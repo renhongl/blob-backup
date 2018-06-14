@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="应用平台这个系统，是想要做一个类似APP store这样的软件。" />
+  
+
+  
+  <meta name="keywords" content="前端,js,nodejs,electron,jquery,javascript,html5,开发者,程序猿,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,html,css,css3,用户体验" />
+  
+  
+  
+  
+  
+  
+  <title>应用平台桌面版 | 柚子</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="应用平台这个系统，是想要做一个类似APP store这样的软件。">
+<meta name="keywords" content="分享">
+<meta property="og:type" content="article">
+<meta property="og:title" content="应用平台桌面版">
+<meta property="og:url" content="https://github.com/renhongl/2016/11/15/应用平台桌面版/index.html">
+<meta property="og:site_name" content="柚子">
+<meta property="og:description" content="应用平台这个系统，是想要做一个类似APP store这样的软件。">
+<meta property="og:image" content="https://github.com/images/applicationPlatform.png">
+<meta property="og:image" content="https://github.com/images/musicPlayer2.png">
+<meta property="og:image" content="https://github.com/images/chatRoom2.png">
+<meta property="og:image" content="https://github.com/images/loveFish.png">
+<meta property="og:updated_time" content="2017-03-15T15:10:07.879Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="应用平台桌面版">
+<meta name="twitter:description" content="应用平台这个系统，是想要做一个类似APP store这样的软件。">
+<meta name="twitter:image" content="https://github.com/images/applicationPlatform.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  
+  <!-- baidu webmaster push -->
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="柚子" rel="home">柚子</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">如果你今天对自己满意，明天就会被淘汰。</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/mr/">Mushroom UI</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://github.com/renhongl">Github</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://codepen.io/renhongl">Codepen</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        <div id="primary" class="site-content"><div id="content" role="main"><article id="post-应用平台桌面版" class="post-应用平台桌面版 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title article-title">
+      应用平台桌面版
+    </h1>
+  
+
+        
+       
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <p>应用平台这个系统，是想要做一个类似APP store这样的软件。<br><a id="more"></a><br>可以将所有应用装在一起，只需要登录一次，就能用所有的应用。效果图如下：</p>
+<p><img src="/images/applicationPlatform.png" alt="ap"></p>
+<p>目前做了三个应用，音乐播放器，多人聊天室，爱心鱼游戏。下面将<br>会详细介绍它们。</p>
+<p>因为我写了一小部分后台，所以运行前需要启动服务器。在下载完<br>源码后，打开一个cmd窗口，进入根目录，运行代码：<br><code>node server.js</code><br>将服务器跑起来。然后再打开一个cmd窗口，运行代码：<br><code>npm start</code>，<br>应用就打开了。</p>
+<h3 id="音乐播放器"><a href="#音乐播放器" class="headerlink" title="音乐播放器"></a>音乐播放器</h3><p>它只包含基本的功能：导入本地歌曲列表；切换一个主题；控制正在播放的歌曲。<br>效果图如下：</p>
+<p><img src="/images/musicPlayer2.png" alt="ap"></p>
+<p>UX方面做得不是很好，以后会更加注重这一块。</p>
+<h3 id="聊天室"><a href="#聊天室" class="headerlink" title="聊天室"></a>聊天室</h3><p>聊天室是我觉得做得比较好的一个，因为它包含了很多功能。<br>除了最基本的聊天外，还支持发一些表情，还可以设置字体，背景，以及主题。<br>里面还集成了一个地图，如果是用电脑浏览器打开的，将会在地图上显示自己的<br>位置。效果图如下：</p>
+<p><img src="/images/chatRoom2.png" alt="ap"></p>
+<h3 id="爱心鱼"><a href="#爱心鱼" class="headerlink" title="爱心鱼"></a>爱心鱼</h3><p>最后一个是个用js写的游戏，但这并不是原创，只是用来熟悉canvas的api。<br>效果图如下：</p>
+<p><img src="/images/loveFish.png" alt="ap"></p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>这些是我刚学Javascript不久做的东西，所以有很多地方不够完善。但是它们让我看到了Javascript强大的一面。</p>
+
+      
+    </div><!-- .entry-content -->
+
+    
+      <section id="comments">
+        <div id="disqus_thread"></div>
+          <script type="text/javascript">
+          /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+          var disqus_shortname = 'renhongl'; // required: replace example with your forum shortname
+      
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      </section>
+      
+
+    <footer class="entry-meta">
+    <a href="/2016/11/15/应用平台桌面版/">
+    <time datetime="2016-11-15T14:16:38.000Z" class="entry-date">
+        2016-11-15
+    </time>
+</a>
+    
+    
+  <span class="article-delim">&#8226;</span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/分享/">分享</a></li></ul>
+
+    </footer>
+</article>
+
+
+    
+<nav class="nav-single">
+    <h3 class="assistive-text">文章导航</h3>
+    
+        <span class="nav-previous"><a href="/2016/11/24/应用平台WEB/" rel="prev"><span class="meta-nav">←</span> 应用平台WEB</a></span>
+    
+    
+</nav><!-- .nav-single -->
+
+
+
+
+
+
+
+
+</div></div>
+        <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="搜索" />
+    </div>
+</form></aside>
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Music</h3>
+    <div class="widget-content">
+      <!-- <audio src="http://fs.w.kugou.com/201803101207/b50ec12cc6131dc87332a15874414f6a/G013/M08/05/13/TQ0DAFT_mpeAQV8NACfaclFXVmI677.mp3" controls="controls"
+             style="width:100%" autoplay loop>
+        您的浏览器不支持 audio 标签。
+      </audio> -->
+
+      <object type="application/x-shockwave-flash" id="ximalaya_player" data="https://www.ximalaya.com/swf/sound/purple.swf?id=28469273&auto=true" width="206" height="36"></object>
+    </div>
+  </aside>
+
+  
+    <aside class="widget">
+    <h3 class="widget-title">关于我</h3>
+    <div class="widget-content">
+      <p>邮箱：1075220132@qq.com</p>
+      <p>QQ：1075220132</p>
+      <!-- <iframe width="100%" height="110" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=0&fansRow=1&ptype=1&speed=0&skin=1&isTitle=0&noborder=0&isWeibo=0&isFans=1&uid=2216356441&verifier=2e06a95d&dpc=1"></iframe>
+      
+      <iframe width="100%" height="320" frameborder="0" scrolling="no" src="https://cdn.jsdelivr.net/github-cards/1.0.2/cards/medium.html?user=wizardforcel&identity=ghcard-wizardforcel-1"></iframe> -->
+    </div>
+</aside>
+  
+    <aside class="widget">
+    <h3 class="widget-title">赞助我</h3>
+    <div class="widget-content">
+      <img src='/css/images/qr_alipay.png' style='width:100%;' />
+    </div>
+</aside>
+  
+    
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget-content">
+      <ul>
+        
+          <li>
+            <a href="/2017/06/22/对象的扩展/">对象的扩展</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/20/Promise/">Promise</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/18/let和const/">let和const</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/16/Iterator和for...of/">Iterator和for...of</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/14/Class/">Class</a>
+          </li>
+        
+      </ul>
+    </div>
+  </aside>
+
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget-content">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/">ES6</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mongo/">Mongo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Webpack/">Webpack</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/分享/">分享</a><span class="tag-list-count">6</span></li></ul>
+    </div>
+  </aside>
+
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget-content tagcloud">
+      <a href="/tags/ES6/" style="font-size: 20px;">ES6</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Javascript/" style="font-size: 15px;">Javascript</a> <a href="/tags/Mongo/" style="font-size: 10px;">Mongo</a> <a href="/tags/Webpack/" style="font-size: 10px;">Webpack</a> <a href="/tags/分享/" style="font-size: 20px;">分享</a>
+    </div>
+  </aside>
+
+  
+    <aside class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <div class="widget-content">
+<ul id='link-list'>
+<!-- link begin -->
+<li><a href="https://littlesistermogu.github.io/">蘑菇</a></li>
+
+<!-- link end -->
+</ul>
+    </div>
+</aside>
+  
+</div>
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2018 柚子
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
+</footer>
+    <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+</body>
+</html>
