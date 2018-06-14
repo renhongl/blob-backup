@@ -89,7 +89,7 @@ exclude_generator:
 #  branch: master
 deploy:
   type: git
-  repo: https://github.com/renhongl/renhongl.github.io.git
+  repo: git@github.com:renhongl/renhongl.github.io.git
   branch: master
 
 sitemap:
