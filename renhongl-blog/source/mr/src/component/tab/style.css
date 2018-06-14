@@ -21,7 +21,7 @@
 	display: inline;
 	text-align: center;
 	cursor: pointer;
-	background: #fff;
+	/* background: #fff; */
 	color: #fff;
 	display: flex;
 	align-items: center;
@@ -29,7 +29,7 @@
 	color: grey;
 	box-sizing: border-box;
     margin-left: 20px;
-    border-bottom: 3px solid #fff;
+    /* border-bottom: 3px solid #fff; */
 	font-size: 13px;
 	position: relative;
 	/* overflow: hidden; */

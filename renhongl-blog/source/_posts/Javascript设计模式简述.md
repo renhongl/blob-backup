@@ -16,7 +16,162 @@ tags:
 
 ### 多态
 
-多态最根本的作用就是通过把过程化的条件分支语句转化为对象的多态性，从而消除这些条件分支语句。
+* 多态的思想是把“做什么”和“谁去做”分离开来。
+
+* 多态最根本的作用就是通过把过程化的条件分支语句转化为对象的多态性，从而消除这些条件分支语句。
+
+* 多态的最根本好处在于，你不必再像的对象询问“你是什么类型”而后根据得到的答案调用对象的某个行为，
+你只管调用该行为就是了，其他的一切多态机制都会为你安排妥当。
+
+### 封装
+* 封装的目的是将信息影藏。
+* 一般而言，封装是指封装数据和封装实现。
+* 更广义的封装，还包括封装类型和封装变化。
+
+#### this
+* 作为对象的方法调用。
+        
+        let obj = {
+            a: 1,
+            getA: function() {
+                console.log(this === obj);//true
+                console.log(this.a);//1
+            }
+        };
+        obj.getA();
+
+* 作为普通函数调用。
+
+        window.name = 'global';
+        let getName = function() {
+            return this.name;
+        }
+        console.log(getName());//global
+
+        //or
+
+        window.name = 'global';
+        let myObj = {
+            name: 'renhong',
+            getName: function() {
+                return this.name;
+            }
+        }
+        var getName = myObj.getName;//普通函数调用
+        console.log(getName());//global
+
+        console.log(myObj.getName());//renhong, 对象的方法调用
+
+* 构造器调用。当用new运算符调用函数时，该函数总会返回一个对象，构造器里的this就指向这个对象。
+
+        let MyClass = function() {
+            this.name = 'renhong';
+        }
+        let obj = new MyClass();
+        console.log(obj.name);//renhong
+
+        //如果构造器显示返回一个对象，那么new之后返回的是这个对象，而不是this。
+
+        let MyClass = function() {
+            this.name = 'renhong',
+            return {
+                name: 'mogu'
+            }
+        }
+        let obj = new MyClass();
+        console.log(obj.name);//mogu
+
+* call和apply调用。用于动态的改变传入函数的this。
+
+        let obj1 = {
+            name: 'renhong',
+            getName: function() {
+                return this.name;
+            }
+        }
+
+        let obj2 = {
+            name: 'mogu'
+        }
+
+        console.log(obj1.getName());//renhong
+        console.log(obj1.getName.call(obj2));//mogu
+
+#### call和apply
+* 作用一模一样，区别只在于传入参数的形式不同。
+* apply接受两个参数，第一个参数指定函数体内部的this指向。第二个参数是一个数组或者类数组，这些元素全部作为参数传递给被调用的函数。
+
+        let func = function(a, b, c) {
+            console.log([a, b, c]);//[1, 2, 3]
+        }
+        func.apply(null, [1, 2, 3]);
+
+* call 传入的参数是不固定的，第一个参数同样是代表函数体内的this指向，从第二个参数开始，每个参数一次被当做被调用的函数的参数传入。
+
+        let func = function(a, b, c) {
+            console.log([a, b, c]);//[1, 2, 3]
+        }
+        func.call(null, 1, 2, 3);
+
+* 为什么要使用call和apply？
+
+        //改变this指向
+        //---------例子1
+        let obj1 = {
+            name: 'renhong'
+        }
+        let obj2 = {
+            name: 'mogu'
+        }
+        window.name = 'window';
+        let getName = function() {
+            this.name;
+        }
+        getName();//window
+        getName.call(obj1);//renhong
+        getName.call(obj2);//mogu
+
+        //---------例子2
+        let func = function() {
+            console.log(this.id);
+        }
+        document.getElementById('div1').onclick = function() {
+            console.log(this.id);//div1
+            func();//undefined，指向window
+            func.call(this);//div1，指向这个this
+        }
+
+        //---------例子3
+        class Controller{
+            constructor() {
+                let type = 'dialog';
+                this.name = 'controller';
+                renderControl();
+                handleEvents.call(this);
+                renderDialog.call(this, type);
+            }
+        }
+         
+        function renderControl() {
+            console.log(this.name);//undefined，this指向window
+        }
+
+        function handleEvents() {
+            console.log(this.name);//controller
+        }
+
+        function renderDialog(type) {
+            console.log(type);//dialog
+        }
+
+        //借用其他对象的方法
+        //类数组对象arguments，没有push的方法，不能将元素push进去。我们首先调用数组的push方法，再手动将push方法内部的this指向改为arguments，就帮助arguments实现了push功能。
+        (function() {
+            Array.prototype.push.call(arguments, 3);
+            console.log(arguments);//[1, 2, 3]
+        })(1, 2);
+
+
 
 ### 闭包
 
@@ -40,7 +195,7 @@ currying又称部分求值。一个currying的函数首先会接受一些参数�
 同理，一个对象也未必只有使用它自身的方法。通过call和apply方法可以让对象去借用一个原本不属于它的方法。
 
 
-### 函数节流
+### 降频
 
 在一些情况下，函数的触发不是由用户直接控制的，在这些情景下，函数可能被非常频繁的调用，而造成大的性能问题。
 
@@ -76,9 +231,7 @@ currying又称部分求值。一个currying的函数首先会接受一些参数�
     }, 1000);
 
 
-### 分时函数
 
-比如在加载QQ列表时，需要增加成百上千个DOM节点作为好友，在短时间内添加大量DOM也会让浏览器卡顿，我们可以使用分批进行的方法，比如一秒创建1000个节点，改为每隔200毫秒创建10个节点。
 
 
 ### 原型模式
@@ -101,6 +254,53 @@ ECMAScript5提供了Object.create方法，可以用来克隆对象。
 
 推荐使用惰性单例的方式创建，即在需要时才创建单例对象。并且需要把不变的部分隔离出来，把管理单例的逻辑和创建对象的逻辑分开，这两个方法可以独立变化而不互相影响。当它们连接在一起时，就完成了创建唯一实例对象的功能。
 
+        
+
+    //以下是基本实现方法，但是并没有实现：
+    //"并且需要把不变的部分隔离出来，把管理单例的逻辑和创建对象的逻辑分开，
+    //这两个方法可以独立变化而不互相影响。当它们连接在一起时，就完成了创建唯一实例对象的功能。"
+    //的功能。因为再加一个单例元素时，需要修改管理单利的类。SingletonDOM只是为CreateDOM而生的管理类。
+
+    export class SingletonDOM{
+        constructor() {
+            this.createDOM = new CreateDOM;
+        }
+
+        create() {
+            if (!this.instance) {
+                return this.instance = this.createDOM.create();
+            }
+            return this.instance;
+        }
+    }
+
+    export class CreateDOM{
+        create(type) {
+            return document.createElement(type || 'div');
+        }
+    }
+
+    export class CreateButton{
+        create() {
+            return document.createElement('button');
+        }
+    }
+
+    //通用管理单例的类。
+
+    export class GetSingleton{
+        constructor(ClassName) {
+            this.obj = new ClassName();
+        }
+
+        create() {
+            if (!this.instance) {
+                return this.instance = this.obj.create();
+            }
+            return this.instance;
+        }
+    }
+
 ### 策略模式
 
 定义一系列的算法，把它们一个个封装起来，并且使它们可以互相替换。
@@ -108,6 +308,40 @@ ECMAScript5提供了Object.create方法，可以用来克隆对象。
 一个基于策略模式的程序至少由两部分组成。第一个部分是一组策略类，策略类封装了具体的算法，并负责具体的计算过程。第二个部分是环境类context，context接受客户的请求，随后把请求委托给某一个策略类。
 
 策略模式可以消除程序中大片的条件分支语句。
+
+        
+
+    class LevelA{
+        calculate(salary) {
+            return salary * 2;
+        }
+    }
+
+    class LevelB{
+        calculate(salary) {
+            return salary * 3;
+        }
+    }
+
+    class LevelC{
+        calculate(salary) {
+            return salary * 4;
+        }
+    }
+
+    export class GetBonus{
+        constructor() {
+            this.calculateMapping = {
+                A: new LevelA(),
+                B: new LevelB(),
+                C: new LevelC()
+            }
+        }
+
+        calculate(type, salary) {
+            return this.calculateMapping[type].calculate(salary);
+        }
+    }
 
 ### 代理模式
 
@@ -118,6 +352,90 @@ ECMAScript5提供了Object.create方法，可以用来克隆对象。
 虚拟代理：例如实现图片预加载、合并http请求。
 
 缓存代理：例如缓存ajax异步请求的数据，下次再打开同一页的时候，便可以直接使用之前的数据。
+
+        
+
+
+
+
+    export class LoadImage{
+        setUrl(url, target) {
+            target.src = url;
+        }
+    }
+
+    export class LoadImageProxy{
+        constructor() {
+            this.loadImage = new LoadImage();
+        }
+
+        setUrl(url, target) {
+            this.loadImage.setUrl('./image/p2.gif', target);
+            let img = new Image();
+            img.onload = () => {
+                setTimeout(() => {
+                    this.loadImage.setUrl(url, target);
+                }, 2000);
+            }
+            img.src = url;
+        }
+    }
+
+    export class LoadData{
+        constructor() {
+            this.data = {
+                renhong: {
+                    name: 'renhongl',
+                    age: 18
+                },
+                mogu: {
+                    name: 'mogu',
+                    age: 19
+                }
+            };
+        }
+
+        load(name, callback) {
+            setTimeout(() => {
+                callback(this.data[name]);
+            }, 2000);
+        }
+    }
+
+    export class LoadDataProxy{
+        constructor() {
+            this.loadData = new LoadData();
+            this.cache = {};
+        }
+
+        load(name, callback) {
+            if (!this.cache[name]) {
+                this.loadData.load(name, (data) => {
+                    this.cache[name] = data;
+                    callback(data);
+                });
+            } else {
+                callback(this.cache[name]);
+            }
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ### 迭代器模式
@@ -135,6 +453,63 @@ ECMAScript5提供了Object.create方法，可以用来克隆对象。
 又叫观察者模式，它定义对象间的一种一对多的依赖关系，当一个对象的状态发生改变时，所有依赖于它的对象都将得到通知。
 
 推荐使用全局的发布-订阅对象，并且增加可以先发布再订阅的方法，以及实现命名空间的功能。
+
+* 具体写法：使用Map将话题和要执行的回调方法一一对应的存下来，即订阅。在发布这个话题时，使用发布的参数，执行这个话题的回调方法。
+* 订阅前发布：在发布某个话题时，如果这个话题尚未被订阅，那么将这个话题存储起来，等订阅之后，立即发布。那么，在写代码时，就不会发生发布在订阅之前，导致功能不能被触发的问题。
+* 命名空间：如果整个项目都使用了此模式，很容易在没有命名空间的情况下混淆话题。
+* 基本写法：
+
+        class Observer{
+            constructor() {
+                this.topicMapping = {};
+                this.publishStore = {};
+            }
+
+            subscribe(...args) {
+                let topic = args.shift();
+                let callback = args.shift();
+                if (!this.topicMapping[topic]) {
+                    this.topicMapping[topic] = [];
+                }
+                this.topicMapping[topic].push(callback);
+                console.log(`subscribed topic ${topic}`);
+                //check if had subscribed
+                if (this.publishStore[topic]) {
+                    console.log(`trigger topic ${topic} immediately`);
+                    this.publish(topic, this.publishStore[topic]);
+                    delete this.publishStore[topic];
+                }
+            }
+
+            publish(...args) {
+                let topic = args.shift();
+                if (this.topicMapping[topic]) {
+                    this.topicMapping[topic].forEach((v, k) => {
+                        v.apply(null, args);
+                    });
+                } else {
+                    console.log(`no topic: ${topic} has been subscribed, this publish will store here, after subscribe, will trigger`);
+                    this.publishStore[topic] = args;
+                }
+            }
+
+            unsubscribe(...args) {
+                let topic = args.shift();
+                let callback = args.shift();
+                if (this.topicMapping[topic]) {
+                    delete this.topicMapping[topic];
+                    if (callback instanceof Function) {
+                        callback(args);
+                    }
+                } else {
+                    console.log(`no topic ${topic} has been subscribe, so no need unsubscribe.`);
+                }
+            }
+        }
+
+        export default Observer;
+
+
 
 ### 命令模式
 
