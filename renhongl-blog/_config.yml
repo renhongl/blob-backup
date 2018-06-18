@@ -79,7 +79,7 @@ disqus_shortname: renhongl
 #  - hexo-generator-feed
 #  - hexo-generator-baidu-sitemap
 #  - hexo-generator-sitemap
-theme: cyanstyle
+theme: cyanstyle2
 exclude_generator:
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
