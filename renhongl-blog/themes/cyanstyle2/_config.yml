@@ -1,0 +1,39 @@
+# Header
+menu:
+  Home: /
+  Archives: /archives
+  Mushroom UI: /mr/
+  Github: https://github.com/renhongl
+  Codepen: https://codepen.io/renhongl
+
+# Content
+excerpt_link: More
+prev: Pre
+next: Next
+# reply: Comment
+# share: Share
+fancybox: true
+
+# Sidebar
+widgets:
+- search
+- music
+- about
+- support
+- category
+- recent_posts
+- tag
+- tagcloud
+- link
+# - gate
+# - account
+
+# Miscellaneous
+google_analytics:
+# duoshuo_shortname: 
+disqus_shortname: renhongl
+rss: 
+google_site_verification: 
+baidu_site_verification: 
+favicon: 
+music: http://fs.w.kugou.com/201803101207/b50ec12cc6131dc87332a15874414f6a/G013/M08/05/13/TQ0DAFT_mpeAQV8NACfaclFXVmI677.mp3
