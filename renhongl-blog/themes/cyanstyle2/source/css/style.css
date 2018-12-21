@@ -223,7 +223,7 @@ img {
 	line-height: 2.181818182;
 	font-weight: bold;
 	text-transform: uppercase;
-	color: rgb(81, 165, 168); /* Widget Title */
+	color: rgb(37, 239, 245); /* Widget Title */
 }
 
 /* Shared Post Format styling */
@@ -469,7 +469,7 @@ img.wp-smiley,
   height: 2ex;
 }
 #pagination a {
-  color: #999;
+  color: rgb(37, 239, 245);
   text-decoration: none;
 }
 #pagination a:hover {
@@ -578,7 +578,7 @@ body.custom-font-enabled {
 }
 a {
 	outline: none;
-	color: rgb(81, 165, 168); /*Article Title Normal*/
+	color: rgb(37, 239, 245); /*Article Title Normal*/
     text-decoration: none;
 }
 a:hover {
@@ -603,11 +603,12 @@ a:hover {
   top: 0;
   width: 100%;
   z-index: -1;
+  opacity: 0.7;
 }
 
 /* Achive */
 .archive-year-wrap {
-    color: rgb(81, 165, 168);
+    color: rgb(37, 239, 245);
     font-weight: normal;
     margin-bottom: 30px;
     text-shadow: 0 0 1px #fff;
@@ -664,13 +665,13 @@ a:hover {
 
 .site-header h1 a,
 .site-header h2 a {
-	color: #515151;
+	color: #000;
 	display: inline-block;
 	text-decoration: none;
 }
 .site-header h1 a:hover,
 .site-header h2 a:hover {
-	color: rgb(81, 156, 158); /* Main Title Hover */
+	color: rgb(37, 239, 245); /* Main Title Hover */
 }
 .site-header h1 {
 	font-size: 24px;
@@ -762,7 +763,7 @@ section[role="banner"] {
 	color: rgb(0, 0, 0); /* Widget Link Normal*/
 }
 .widget-area .widget a:hover {
-	color: rgb(81, 165, 168); /* Widget Link Hover*/
+	color: rgb(37, 239, 245); /* Widget Link Hover*/
 }
 
 }
@@ -854,11 +855,11 @@ footer[role="contentinfo"] a:hover {
 }
 .comments-link a,
 .entry-meta a {
-	color: rgb(88, 88, 88); /*Article Meta Link Normal*/
+	color: rgb(0, 0, 0); /*Article Meta Link Normal*/
 }
 .comments-link a:hover,
 .entry-meta a:hover {
-	color: rgb(81, 165, 168); /*Article Meta Link Hover*/
+	color: rgb(37, 239, 245); /*Article Meta Link Hover*/
 }
 
 article.sticky .featured-post {
@@ -942,7 +943,7 @@ article.sticky .featured-post {
 
 .entry-content a,
 .comment-content a {
-	color: rgb(81, 165, 168); /* Link in Article Content Normal */
+	color: rgb(37, 239, 245); /* Link in Article Content Normal */
 }
 
 .entry-content a:Hover,
@@ -1720,7 +1721,7 @@ img#wpstats {
 	}
 	.main-navigation li a {
 		border-bottom: 0;
-		color: #6a6a6a;
+		color: rgb(37, 239, 245);
 		line-height: 3.692307692;
 		text-transform: uppercase;
 		white-space: nowrap;

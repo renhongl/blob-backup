@@ -1,10 +1,12 @@
 # Header
 menu:
   Home: /
-  Archives: /archives
-  Mushroom UI: /mr/
+  Mr UI: /mr/
+  Game: /game/
   Github: https://github.com/renhongl
   Codepen: https://codepen.io/renhongl
+  Archives: /archives
+  
 
 # Content
 excerpt_link: More
