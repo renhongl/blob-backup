@@ -1,22 +1,13 @@
 # Header
 menu:
   Home: /
-<<<<<<< HEAD
-  Home2: http://www.tumogu.cn
-  AiLiao: http://www.tumogu.cn:3000
-  Mushroom UI: /mr
-=======
   Mr UI: /mr/
   Game: /game/
->>>>>>> 8c7761b88a6e04e5741e37ef835ad0dac47f6a9d
   Github: https://github.com/renhongl
   Codepen: https://codepen.io/renhongl
   Archives: /archives
   
-<<<<<<< HEAD
-  
-=======
->>>>>>> 8c7761b88a6e04e5741e37ef835ad0dac47f6a9d
+
 
 # Content
 excerpt_link: More
