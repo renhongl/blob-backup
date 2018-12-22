@@ -122,6 +122,6 @@ jsonContent:
 
 skip_render: 
     - demo/**
-    - project/**
+    - game/**
     - mr/**
     - thebest/**
