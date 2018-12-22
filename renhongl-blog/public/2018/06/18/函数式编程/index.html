@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="定义" />
+  
+
+  
+  <meta name="keywords" content="前端,js,nodejs,electron,jquery,javascript,html5,开发者,程序猿,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,html,css,css3,用户体验" />
+  
+  
+  
+  
+  
+  
+  <title>函数式编程 | 柚子</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="定义">
+<meta name="keywords" content="Javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="函数式编程">
+<meta property="og:url" content="https://github.com/renhongl/2018/06/18/函数式编程/index.html">
+<meta property="og:site_name" content="柚子">
+<meta property="og:description" content="定义">
+<meta property="og:updated_time" content="2018-06-18T13:58:33.193Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="函数式编程">
+<meta name="twitter:description" content="定义">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  
+  <!-- baidu webmaster push -->
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="柚子" rel="home">柚子</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">如果你今天对自己满意，明天就会被淘汰。</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://www.tumogu.cn">Home2</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://www.tumogu.cn:3000">AiLiao</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/mr">Mushroom UI</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://github.com/renhongl">Github</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://codepen.io/renhongl">Codepen</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        <div id="primary" class="site-content"><div id="content" role="main"><article id="post-函数式编程" class="post-函数式编程 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title article-title">
+      函数式编程
+    </h1>
+  
+
+        
+       
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><a id="more"></a>
+<ul>
+<li><p>简单说，”函数式编程”是一种”编程范式”（programming paradigm），也就是如何编写程序的方法论。<br>它属于”结构化编程”的一种，主要思想是把运算过程尽量写成一系列嵌套的函数调用。</p>
+</li>
+<li><p>与面向对象编程（Object-oriented programming）和过程式编程（Procedural programming）并列的编程范式。<br>最主要的特征是，函数是第一等公民。<br>强调将计算过程分解成可复用的函数，典型例子就是map方法和reduce方法组合而成 MapReduce 算法。<br>只有纯的、没有副作用的函数，才是合格的函数。</p>
+</li>
+</ul>
+<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ol>
+<li><p>函数是”第一等公民”<br>指的是函数与其他数据类型一样，处于平等地位，可以赋值给其他变量，也可以作为参数，传入另一个函数，或者作为别的函数的返回值。</p>
+</li>
+<li><p>只用”表达式”，不用”语句”<br>“表达式”（expression）是一个单纯的运算过程，总是有返回值；”语句”（statement）是执行某种操作，没有返回值。<br>函数式编程要求，只使用表达式，不使用语句。也就是说，每一步都是单纯的运算，而且都有返回值。</p>
+</li>
+<li><p>没有”副作用”<br>指的是函数内部与外部互动（最典型的情况，就是修改全局变量的值），产生运算以外的其他结果。<br>函数式编程强调没有”副作用”，意味着函数要保持独立，所有功能就是返回一个新的值，没有其他行为，尤其是不得修改外部变量的值。</p>
+</li>
+<li><p>不修改状态<br>在其他类型的语言中，变量往往用来保存”状态”（state）。不修改变量，意味着状态不能保存在变量中。函数式编程使用参数保存状态，最好的例子就是递归。</p>
+</li>
+</ol>
+<ol>
+<li>引用透明<br>指的是函数的运行不依赖于外部变量或”状态”，只依赖于输入的参数，任何时候只要参数相同，引用函数所得到的返回值总是相同的。</li>
+</ol>
+<h3 id="意义"><a href="#意义" class="headerlink" title="意义"></a>意义</h3><ol>
+<li><p>代码简洁，开发快速<br>函数式编程大量使用函数，减少了代码的重复，因此程序比较短，开发速度较快。</p>
+</li>
+<li><p>接近自然语言，易于理解<br>函数式编程的自由度很高，可以写出很接近自然语言的代码。</p>
+</li>
+<li><p>更方便的代码管理<br>函数式编程不依赖、也不会改变外界的状态，只要给定输入参数，返回的结果必定相同。<br>因此，每一个函数都可以被看做独立单元，很有利于进行单元测试（unit testing）和除错（debugging），以及模块化组合。</p>
+</li>
+</ol>
+<ol>
+<li><p>易于”并发编程”<br>函数式编程不需要考虑”死锁”（deadlock），因为它不修改变量，所以根本不存在”锁”线程的问题。不必担心一个线程的数据，<br>被另一个线程修改，所以可以很放心地把工作分摊到多个线程，部署”并发编程”（concurrency）。</p>
+</li>
+<li><p>代码的热升级<br>函数式编程没有副作用，只要保证接口不变，内部实现是外部无关的。所以，可以在运行状态下直接升级代码，不需要重启，也不需要停机。</p>
+</li>
+</ol>
+
+      
+    </div><!-- .entry-content -->
+
+    
+      <section id="comments">
+        <div id="disqus_thread"></div>
+          <script type="text/javascript">
+          /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+          var disqus_shortname = 'renhongl'; // required: replace example with your forum shortname
+      
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      </section>
+      
+
+    <footer class="entry-meta">
+    <a href="/2018/06/18/函数式编程/">
+    <time datetime="2018-06-18T13:57:52.000Z" class="entry-date">
+        2018-06-18
+    </time>
+</a>
+    
+    
+  <span class="article-delim">&#8226;</span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascript/">Javascript</a></li></ul>
+
+    </footer>
+</article>
+
+
+    
+<nav class="nav-single">
+    <h3 class="assistive-text">文章导航</h3>
+    
+    
+        <span class="nav-next"><a href="/2018/06/18/career-development/" rel="next">职业发展方向 <span class="meta-nav">→</span></a></span>
+    
+</nav><!-- .nav-single -->
+
+
+
+
+
+
+
+
+</div></div>
+        <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="搜索" />
+    </div>
+</form></aside>
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Music</h3>
+    <div class="widget-content">
+      <audio src="http://other.web.rc01.sycdn.kuwo.cn/resource/n3/99/21/1172239707.mp3" controls="controls"
+             style="width:100%" loop>
+        您的浏览器不支持 audio 标签。
+      </audio>
+
+      <!-- <object type="application/x-shockwave-flash" id="ximalaya_player" data="http://other.web.rc01.sycdn.kuwo.cn/resource/n3/99/21/1172239707.mp3?auto=true" width="190" height="36"></object> -->
+    </div>
+  </aside>
+
+  
+    <aside class="widget">
+    <h3 class="widget-title">关于我</h3>
+    <div class="widget-content">
+      <p>邮箱：1075220132@qq.com</p>
+      <p>QQ：1075220132</p>
+      <!-- <iframe width="100%" height="110" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=0&fansRow=1&ptype=1&speed=0&skin=1&isTitle=0&noborder=0&isWeibo=0&isFans=1&uid=2216356441&verifier=2e06a95d&dpc=1"></iframe>
+      
+      <iframe width="100%" height="320" frameborder="0" scrolling="no" src="https://cdn.jsdelivr.net/github-cards/1.0.2/cards/medium.html?user=wizardforcel&identity=ghcard-wizardforcel-1"></iframe> -->
+    </div>
+</aside>
+  
+    <aside class="widget">
+    <h3 class="widget-title">赞助我</h3>
+    <div class="widget-content">
+      <img src='/css/images/qr_alipay.png' style='width:100%;' />
+    </div>
+</aside>
+  
+    
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget-content">
+      <ul>
+        
+          <li>
+            <a href="/2018/06/18/函数式编程/">函数式编程</a>
+          </li>
+        
+          <li>
+            <a href="/2018/06/18/career-development/">职业发展方向</a>
+          </li>
+        
+          <li>
+            <a href="/2018/06/18/技术选型/">技术选型</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/10/redux/">Redux</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/10/flux/">Flux</a>
+          </li>
+        
+      </ul>
+    </div>
+  </aside>
+
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget-content">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/">ES6</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mongo/">Mongo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redux/">Redux</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Webpack/">Webpack</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/分享/">分享</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/综合技能/">综合技能</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </aside>
+
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget-content tagcloud">
+      <a href="/tags/ES6/" style="font-size: 20px;">ES6</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Javascript/" style="font-size: 15px;">Javascript</a> <a href="/tags/Mongo/" style="font-size: 10px;">Mongo</a> <a href="/tags/Redux/" style="font-size: 12.5px;">Redux</a> <a href="/tags/Webpack/" style="font-size: 10px;">Webpack</a> <a href="/tags/分享/" style="font-size: 17.5px;">分享</a> <a href="/tags/综合技能/" style="font-size: 12.5px;">综合技能</a>
+    </div>
+  </aside>
+
+  
+    <aside class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <div class="widget-content">
+<ul id='link-list'>
+<!-- link begin -->
+<li><a href="https://littlesistermogu.github.io/">蘑菇</a></li>
+
+<!-- link end -->
+</ul>
+    </div>
+</aside>
+  
+</div>
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2018 柚子
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
+</footer>
+    <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+</body>
+</html>

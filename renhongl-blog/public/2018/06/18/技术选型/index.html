@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="做技术选型时，要注意些什么？对于技术选型，有些建议供你参考。此外，还有一个实践案例供你借鉴。" />
+  
+
+  
+  <meta name="keywords" content="前端,js,nodejs,electron,jquery,javascript,html5,开发者,程序猿,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,html,css,css3,用户体验" />
+  
+  
+  
+  
+  
+  
+  <title>技术选型 | 柚子</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="做技术选型时，要注意些什么？对于技术选型，有些建议供你参考。此外，还有一个实践案例供你借鉴。">
+<meta name="keywords" content="综合技能">
+<meta property="og:type" content="article">
+<meta property="og:title" content="技术选型">
+<meta property="og:url" content="https://github.com/renhongl/2018/06/18/技术选型/index.html">
+<meta property="og:site_name" content="柚子">
+<meta property="og:description" content="做技术选型时，要注意些什么？对于技术选型，有些建议供你参考。此外，还有一个实践案例供你借鉴。">
+<meta property="og:updated_time" content="2018-06-18T13:28:44.585Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="技术选型">
+<meta name="twitter:description" content="做技术选型时，要注意些什么？对于技术选型，有些建议供你参考。此外，还有一个实践案例供你借鉴。">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  
+  <!-- baidu webmaster push -->
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="柚子" rel="home">柚子</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">如果你今天对自己满意，明天就会被淘汰。</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://www.tumogu.cn">Home2</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://www.tumogu.cn:3000">AiLiao</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/mr">Mushroom UI</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://github.com/renhongl">Github</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://codepen.io/renhongl">Codepen</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        <div id="primary" class="site-content"><div id="content" role="main"><article id="post-技术选型" class="post-技术选型 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title article-title">
+      技术选型
+    </h1>
+  
+
+        
+       
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <h3 id="做技术选型时，要注意些什么？"><a href="#做技术选型时，要注意些什么？" class="headerlink" title="做技术选型时，要注意些什么？"></a>做技术选型时，要注意些什么？</h3><p>对于技术选型，有些建议供你参考。此外，还有一个实践案例供你借鉴。</p>
+<a id="more"></a>
+<h4 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h4><p>对于一名热爱技术的工程师来说，很容易出现非常热衷于使用新技术的情况，记得有一次和一位做平台应用的同事闲聊，他问我最近在搞什么，我说在研究 Hadoop，正在用 MapReduce 处理海量图片的智能分析，他一脸羡慕：“能搞新技术，真好！”。</p>
+<p>作为一名工程师，我可以理解大家的心情，我们都是热爱尝试新技术、抛弃过时技术的人。但是首先得明确，到底技术是不是过时的，还是仅仅是你认为它过时了。这篇文章我想谈谈我对技术选型的理解。</p>
+<p>这篇文章不仅仅是写给工程师，更多是写给技术团队负责人（大多数也是从工程师升职上去的，起初思维和工程师差距不大），因为你们具体负责技术选型的方向、方法、过程、结论明确。</p>
+<h4 id="技术选型的注意事项"><a href="#技术选型的注意事项" class="headerlink" title="技术选型的注意事项"></a>技术选型的注意事项</h4><p>先来看看软件开发领域的变化，变化实在是太快了。在 JavaScript 里，几乎每天都有新框架诞生。Node.js(关键词：事件编程），React 编程，Meteor.js（关键词：共享状态），前端 MVC，React.js…… 你可以随便举例。软件工程领域里新概念也层出不穷：领域驱动开发，六边形架构理论，DCI 架构（数据 - 场景 - 交互）。</p>
+<p>洛克希德•马丁公司的著名飞机设计师凯利•约翰逊所提出的 KISS 原则，指出架构设计能简单绝不复杂，坚决砍掉任何华而不实的设计，不要因为 3 年后可能怎样甚至是一些现实中根本无法出现的场景，加入到当下的架构设计中，导致系统无比复杂。有时候看似引入的是一个很简单很容易解决的问题，可能在具体的执行过程中带来一系列不必要的麻烦。技术选型其实遇到的问题和系统架构设计类似，也容易出现人为因素导致的偏差，进而出现和系统架构过度设计类似的麻烦。</p>
+<p>对于技术选型，有以下几个建议：</p>
+<h4 id="选择你最熟悉的技术"><a href="#选择你最熟悉的技术" class="headerlink" title="选择你最熟悉的技术"></a>选择你最熟悉的技术</h4><p>记得看过一篇文章，里面提到一个新项目最好不要使用超过 30% 的新技术，我觉得这有一定道理，因为对于你完全不知道的技术，你不可能控制使用过程中出现的风险。我在技术管理中的向下管理里提起过，任何一位技术 Leader，如果你不能得到下属的技术尊重，你必将受到惩罚。</p>
+<p>也不能说完全不能使用新技术，前几天和朋友聊天，他提到了另外一位总监下属有几个人转岗了，都是技术牛人，最主要的原因是这位总监坚决排斥新技术，坚持自己熟悉 的十年前的框架和编写代码规范。他对于一个新技术的天然不信任，在技术接受程度还不够高，并且认为公司内没有人能吃透这个技术的情况下，不愿意让自己的业务做第一个吃螃蟹的人，这种做法不能说完全错误，至少对于他自己来说很稳健，但是却压制了一些有追求人的内心。</p>
+<p>谨慎是个美德，不过如果在一个非常追求速度的业务里，这可能也意味着过于保守，会延误时机。</p>
+<p>那我们应该怎样做到选择技术呢？我认为，在选择技术时有两个大原则。第一，要取其长避其短；第二，要关注技术的发展前景。每种技术都是有它特定的适用场景，开发者经常犯的错误就是盲目追新，当一个新语言、框架、工具出现后，特别是开发者自己学会了这种新技术后，就会有种“拿着锤子找钉子”的感觉，将新技术滥用于各种项目。</p>
+<p>记住，技术选型是稳定压倒一切。</p>
+<h4 id="选择拥有强大社区支撑的开源技术"><a href="#选择拥有强大社区支撑的开源技术" class="headerlink" title="选择拥有强大社区支撑的开源技术"></a>选择拥有强大社区支撑的开源技术</h4><p>没有人喜欢“alone in the dark”的感觉，同样，也很少有工程师喜欢孤独地面对代码缺陷。我们之所以喜欢在 Apache 上挑选合适的新框架尝试使用，是因为 Apache 始终保持运作着强大的社区，每天都有很多新建的框架，也设计了一整套生命周期管理标准，让一个项目能够从孵化项目逐渐一步步地走向顶级项目。除了像 Apache 这样的社区，我们也可以评估是否存在一些商业公司提供针对该技术或者框架的有偿支撑，一般来说，有公司愿意围绕该技术布局，也能说明确实存在使用空间。例如 Apache Cassandra，目前就有 Datastax 和 LastPickle 两家公司对它提供技术指导和有偿辅助软件支撑。</p>
+<p>其实看一项技术活不活跃，只要去 StackOverflow 这样的网站看看提问的人多不多就知道了。</p>
+<h4 id="确保技术前进步伐"><a href="#确保技术前进步伐" class="headerlink" title="确保技术前进步伐"></a>确保技术前进步伐</h4><p>选择一个技术的最低标准是，技术的生命周期必须显著长于项目的生命周期。</p>
+<p>为什么需要确保所选择的技术不断前进？因为这个世界是发展的，科技发展更是非常得快速，你可以看看，所有的成功的科技公司都是因为跑在了别人前面，而不是慢悠悠的工作态度，这就是科技界的残酷，也正是为什么 FaceBook 办公室里贴着：“要么做到最好，要么死亡”。</p>
+<p>技术的前进不仅仅取决于它本身，而是和大环境发展、上下游用户也密切相关。比如 AI，60 年代其实就已经提出了相应概念，为什么直到今年才进入发展元年？因为芯片的计算效率、数据样本规模没有达到要求。而 Functional Language 为什么这么多年一直默默无闻，而从前几年开始逐渐盛行？因为机器学习来了，AI 来了，它们有了用武之地。</p>
+<p>总的来说，你需要使用你所选择的软件技术，快速地实现应用程序的构建。记住一句话：好的技术栈永远跑在用户需求前面。</p>
+<h4 id="学会从业务端开始思考"><a href="#学会从业务端开始思考" class="headerlink" title="学会从业务端开始思考"></a>学会从业务端开始思考</h4><p>技术选型必须贴着业务来选择，不同业务阶段会有不同的选型方式。处于初创期的业务，选型的基准是灵活。只要一个技术够用并且开发效率足够高，那么就可以选择它。初创的业务往往带有风险性和不确定性，朝令夕改、反复试错是常态，技术必须适应业务的节奏，然后才是其他方面。等业务进入稳定期，选型的基准是可靠。技术始终是业务的基石，当业务稳定了技术不稳，那就会成为业务的一块短板，就必须要修正。当业务进入维护期，选型的基准是妥协。代码永远有变乱的趋势，一般经过一两年就有必要对代码来一次大一点的重构。在这种时候，必须得正视各种遗留代码的迁移成本，如果改变技术选型会带来遗留代码重写，这背后带来的代价业务无法承受，那么我们就不得不考虑在现有技术选型之上做一些小修小补或者螺旋式上升的重构。</p>
+<p>正因为技术选型和业务相关，我们能够观察到一些很明显的现象：新技术往往被早期创业团队或大公司的新兴业务使用；中大型公司的核心业务则更倾向于用一些稳定了几年的技术；一个公司如果长期使用一种技术，就会倾向于一直使用下去，甚至连版本都不更新的使用下去。这现象背后都是有道理的。</p>
+<p>回到我们的主题，学会从业务端思考。首先我们需要充分地理解业务，理解用户需求，理解当下需要解决的首要问题，以及可能的风险有哪些，再将目标进行分解，进行具体的技术选型、模型设计、架构设计。</p>
+<p>举个例子。假设我们需要解决的核心问题是并发，则可以通过各种缓存手段（本地缓存、分布式缓存），来提高查询的吞吐，这样虽然会一定程度上需要在数据一致性上做出牺牲，由强一致性变为最终一致性。</p>
+<p>但是，如果数据一致性不是核心需要解决的问题，那么，此问题的优先级则可以先放一放，反过来如果核心问题变为数据的一致性，如交易系统，那么再怎么强调数据的一致性都不为过，由于分布式环境下为了应对高并发的写入以及海量数据的存储，通常需要对关系型数据库进行分库分表扩展，这也给数据一致性带来了很大的挑战，原本的单库事务的强一致性保障，在这个时候升级为跨库的分布式事务，而通过二阶段或者三阶段提交所保障的分布式事务，由于分布式事务管理器与资源管理器之间的多次网络通信成本，吞吐及效率上很难满足高并发场景下的要求，而这实际上对于交易系统来说，又是一个很难回避的问题。</p>
+<p>因此，大家又想出很多的招来解决这个问题，通过可靠消息系统来保障不失为一种方式，变同步为异步，但是，又引入新的问题，消息系统为保证不丢消息，则很难保证消息的顺序性以及是否重复投递，这样作为消息的接收方，则需要保障消息处理的幂等性，以及对消息去重。</p>
+<h4 id="先验证，后使用"><a href="#先验证，后使用" class="headerlink" title="先验证，后使用"></a>先验证，后使用</h4><p>对于未经验证的新技术、新理念的引入一定要慎重，一定要在全方位的验证过后，再大规模的使用。新技术、新理念的出现，自然有它的诱惑，慎重并不代表保守，技术总是在不断前进，拥抱变化本身没有问题，但是引入不成熟的技术看似能带来短期的收益，但是它的风险或者是后期的成本可能远远大于收益。</p>
+<h4 id="重视经验"><a href="#重视经验" class="headerlink" title="重视经验"></a>重视经验</h4><p>技术选型是个很需要经验的活，得有大量的信息积累和输入，再根据具体现实情况输出一个结果。我们在选型的时候最忌讳的是临时抱佛脚、用网上收集一些碎片知识来决策，这是非常危险的，我们得确保自己所有思考都是基于以前的事实，还要弄清楚这些事实背后的假设，这都需要让知识内化形成经验。</p>
+<p>经验的本质是什么，有什么方法能够确定自己的经验增长了，而不是不断在重复一些很熟悉的东西。我现在的结论是，经验等于知识索引的完备程度。</p>
+<p>我们一生中会积累很多的知识，如果把我们的大脑比作数据库的话，那我们一定有一部分脑存储贡献给了内容的索引，它能帮助我们将关联知识更快的取出来，并且辅助决策。经验增长等同于我们知识索引的增长，意味着我们能轻易的调动更多的关联知识来做更全面的决策。</p>
+<p>要想建立好这个知识索引，我们得保持技术敏感性和广度，也就是要做到持续的信息输入、内化，并发现信息之间的关联性，建立索引，记下来。说起来容易，做起来还是挺有难度的。</p>
+<p>首先难在信息输入量大，忘记了怎么办。我们的大脑不是磁盘，不常用的知识就会忘记，忘记了就跟没看过是一回事。我的经验是一定要对知识进行压缩，记住的是最关键的细节，并且反复的去回味这个细节。</p>
+<h4 id="我的实际案例"><a href="#我的实际案例" class="headerlink" title="我的实际案例"></a>我的实际案例</h4><p>去年我做了一次对于分布式数据库的选型工作。我们为什么要做这次选型？因为存在明确的需求，我们需要解决大规模高并发数据存储，单次数据不大，但是存储频率、读取频率都很高，并且要确保不丢失数据，这样的需求对于关系型数据库来说，出现了性能瓶颈。</p>
+<p>我对于技术选型有自己的一套方法论，我知道，我不可能什么技术都懂，所以我会按照自己的这套方法论来具体执行，避免出现选型误差。我的步骤是：“列出需求”-“细分需求”-“明确搜索方向”-“网络搜索”-“明确评判标准”-“分头执行”-“汇总材料”-“初步选择”-“进一步调研”-“会议评审”-“做出决定”。这些步骤太多，需求我已经介绍了，这里具体再讲讲我这一次是如何进入下一步选型的，也就是“初步选择”-“进一步调研”之间的过程。</p>
+<p>我通过网络搜索（进入 Google，搜索 Distributed Database、NoSQL Database 等关键词），我找到了如下这些国内外专家推荐的分布式数据库，他们的基本描述如下所示：</p>
+<p>HyperTable： 一个开源、高性能、可伸缩的数据库，它采用与 Google 的 BigTable 相似的模型。该数据库数据按主键在物理上排序，适用于数据分析领域，采用 C++ 编写，可以运行在 HDFS 上面。该数据库受到 GPLV3 协议约束，考虑到它和 HBase 从系统架构上来说很相似，但是协议约束较多，所以放弃调研，转而调研 HBase。</p>
+<p>HBase： 即 Hadoop Database，是一个高可靠性、高性能、面向列、可伸缩的分布式存储系统，采用主 / 从架构设计，利用 HBase 技术可在廉价 PC Server 上搭建起大规模结构化存储集群。它是 Google BigTable 的开源实现。</p>
+<p>VoltDB： 一个内存数据库，提供了 NoSQL 数据库的可伸缩性和传统关系型数据库系统的 ACID 一致性，支持单节点 53000TPS/s。该数据库受到 GPLV3 协议约束。VoltDB 有两个版本，一个开源社区版本和一个付费企业版本。付费企业版本除包含了所有开源社区版的功能，还有些其他特点，诸如计算机集群管理控制台、系统性能仪表盘、数据库宕机恢复、在线数据库 Schema 修改、在线数据库节点重新加入、JDBC 和 OLAP 导出支持、命令日志。</p>
+<p>由于该框架开源社区不活跃，主导者更加希望使用付费版本，所以决定放弃它，转而调研类似的 Redis。</p>
+<p>CloudData： 一个结构化数据库，没有中文资料，从系统架构、功能上分析，类似于 MongoDB。</p>
+<p>Gridool： 一种基于 MapReduce 原理设计的网格计算引擎，不支持数据存储，所以放弃。</p>
+<p>Ddb-query-optimizer： 找不到资料，放弃。</p>
+<p>Cages： 基于 ZooKeeper 实现数据协调 / 同步，不仅能性数据分布式存储，放弃。</p>
+<p>Redis： 一个开源的基于键值对和存储系统，具备高性能特征。支持主从复制（master-slave replication），并且具有非常快速的非阻塞首先同步（non-blockingfirst synchronization）、网络断开自动重连等功能。同时 Redis 还具有其他一些特征，其中包括简单的 check-and-set 机制、pub/sub 和配置设置等，以便使得 Redis 能够表现得更像缓存（Cace）。绝大部分主流编程语言都有官方推荐的客户端。</p>
+<p>MongoDB： 一个开源的 C++ 编写的面向集合且模式自由的文档性数据库，是 NoSQL 中功能最丰富、最像关系型数据库的产品。</p>
+<p>核心优势：灵活文档模型 + 高可用复制集 + 可扩展分片集群；</p>
+<p>功能特点：二级索引、地理位置索引、aggregate、map-reduce、OridFS 支持文件存储。</p>
+<p>不足之处：不支持事务，仅支持简单 left join。</p>
+<p>Spanner：Google 的可扩展的、多版本的、全球分布式的同步复制方式数据库。Spanner 是第一个支持全球规模的分布式数据、外部一致性分布式事务的分布式数据库。它是一个在遍布全球范围的数据中心内部通过多套 Paxos 状态机器共享数据的数据库。复制被用于全局可用性和地理位置；客户在副本之间自动切换。当数据量或者服务器数量发生变化时，Spanner 在机器之间自动共享数据，并且 Spanner 在机器之间自动迁移数据（甚至在数据中心之间），用以负载均衡和响应失败。Spanner 被设计为在几百万台机器之上横向扩展，这些扩展穿过了数百个数据中心和万亿行数据。功能很强大，可惜没有开源。</p>
+<p>ElasticSearch： 一个基于 Lucene 的搜索服务器。它提供了一个分布式多用户能力的全文搜索引擎，基于 Restful Web 接口。ElasticSearch 是用 Java 开发的，并作为 Apache 许可条款下的开放源码发布，是当前流行的企业级搜索引擎。</p>
+<p>最终通过这些技术之间的互相相似度对比，并且我们设定了一些规则，例如开源协议的约束，这一点其实逐渐开始真正起到约束了，看看 FaceBook 针对 Reactor 的专利约束给大家造成的麻烦，你就懂了。最终，我选择了 Cassandra、MongoDB、Reddis、MySQL、HBase 等几款进入下一步深入调研。</p>
+<h4 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h4><p>我们进行技术选型，有的团队会根据社交媒体上的讨论来决定选择哪种架构，有的团队会跟风走，哪个热门就选哪个，这些都不是正确的方式，我们应该按照方法论执行。此外，我们作为团队管理者，一边要督促自己不断学习新技术，自己能够上手使用，也要结合实际团队情况，规划新技术的预研、落地步骤，让团队成员既能享受到稳定技术的红利，也能不断地尝试新事物，让大家能够看到未来，不担心自己逐渐落后于行业的发展，更能提升对于公司的归属感。做到这些，真不容易，加油，诸位。</p>
+
+      
+    </div><!-- .entry-content -->
+
+    
+      <section id="comments">
+        <div id="disqus_thread"></div>
+          <script type="text/javascript">
+          /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+          var disqus_shortname = 'renhongl'; // required: replace example with your forum shortname
+      
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      </section>
+      
+
+    <footer class="entry-meta">
+    <a href="/2018/06/18/技术选型/">
+    <time datetime="2018-06-18T12:16:52.000Z" class="entry-date">
+        2018-06-18
+    </time>
+</a>
+    
+    
+  <span class="article-delim">&#8226;</span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/综合技能/">综合技能</a></li></ul>
+
+    </footer>
+</article>
+
+
+    
+<nav class="nav-single">
+    <h3 class="assistive-text">文章导航</h3>
+    
+        <span class="nav-previous"><a href="/2018/06/18/career-development/" rel="prev"><span class="meta-nav">←</span> 职业发展方向</a></span>
+    
+    
+        <span class="nav-next"><a href="/2018/05/10/redux/" rel="next">Redux <span class="meta-nav">→</span></a></span>
+    
+</nav><!-- .nav-single -->
+
+
+
+
+
+
+
+
+</div></div>
+        <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="搜索" />
+    </div>
+</form></aside>
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Music</h3>
+    <div class="widget-content">
+      <audio src="http://other.web.rc01.sycdn.kuwo.cn/resource/n3/99/21/1172239707.mp3" controls="controls"
+             style="width:100%" loop>
+        您的浏览器不支持 audio 标签。
+      </audio>
+
+      <!-- <object type="application/x-shockwave-flash" id="ximalaya_player" data="http://other.web.rc01.sycdn.kuwo.cn/resource/n3/99/21/1172239707.mp3?auto=true" width="190" height="36"></object> -->
+    </div>
+  </aside>
+
+  
+    <aside class="widget">
+    <h3 class="widget-title">关于我</h3>
+    <div class="widget-content">
+      <p>邮箱：1075220132@qq.com</p>
+      <p>QQ：1075220132</p>
+      <!-- <iframe width="100%" height="110" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=0&fansRow=1&ptype=1&speed=0&skin=1&isTitle=0&noborder=0&isWeibo=0&isFans=1&uid=2216356441&verifier=2e06a95d&dpc=1"></iframe>
+      
+      <iframe width="100%" height="320" frameborder="0" scrolling="no" src="https://cdn.jsdelivr.net/github-cards/1.0.2/cards/medium.html?user=wizardforcel&identity=ghcard-wizardforcel-1"></iframe> -->
+    </div>
+</aside>
+  
+    <aside class="widget">
+    <h3 class="widget-title">赞助我</h3>
+    <div class="widget-content">
+      <img src='/css/images/qr_alipay.png' style='width:100%;' />
+    </div>
+</aside>
+  
+    
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget-content">
+      <ul>
+        
+          <li>
+            <a href="/2018/06/18/函数式编程/">函数式编程</a>
+          </li>
+        
+          <li>
+            <a href="/2018/06/18/career-development/">职业发展方向</a>
+          </li>
+        
+          <li>
+            <a href="/2018/06/18/技术选型/">技术选型</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/10/redux/">Redux</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/10/flux/">Flux</a>
+          </li>
+        
+      </ul>
+    </div>
+  </aside>
+
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget-content">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/">ES6</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mongo/">Mongo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redux/">Redux</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Webpack/">Webpack</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/分享/">分享</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/综合技能/">综合技能</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </aside>
+
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget-content tagcloud">
+      <a href="/tags/ES6/" style="font-size: 20px;">ES6</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Javascript/" style="font-size: 15px;">Javascript</a> <a href="/tags/Mongo/" style="font-size: 10px;">Mongo</a> <a href="/tags/Redux/" style="font-size: 12.5px;">Redux</a> <a href="/tags/Webpack/" style="font-size: 10px;">Webpack</a> <a href="/tags/分享/" style="font-size: 17.5px;">分享</a> <a href="/tags/综合技能/" style="font-size: 12.5px;">综合技能</a>
+    </div>
+  </aside>
+
+  
+    <aside class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <div class="widget-content">
+<ul id='link-list'>
+<!-- link begin -->
+<li><a href="https://littlesistermogu.github.io/">蘑菇</a></li>
+
+<!-- link end -->
+</ul>
+    </div>
+</aside>
+  
+</div>
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2018 柚子
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
+</footer>
+    <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+</body>
+</html>
