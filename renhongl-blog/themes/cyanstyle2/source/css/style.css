@@ -1190,6 +1190,7 @@ figure.highlight pre {
 figure.highlight .line {
     height: 20px;
     font-family: Consolas, Monaco, Lucida Console, monospace;
+	color: rgb(37, 239, 245);
 }
 
 

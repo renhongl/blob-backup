@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.8.0">
+<head>
   <meta charset="utf-8">
   
   
   <meta name="description" content="对象的扩展属性，方法的简洁写法
-属性名为变量名，属性值为变量值。">
+属性名为变量名，属性值为变量值。" />
   
 
   
-  <meta name="keywords" content="前端,js,nodejs,electron,jquery,javascript,html5,开发者,程序猿,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,html,css,css3,用户体验">
+  <meta name="keywords" content="前端,js,nodejs,electron,jquery,javascript,html5,开发者,程序猿,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,html,css,css3,用户体验" />
   
   
   
@@ -25,8 +25,7 @@
 <meta property="og:url" content="https://github.com/renhongl/2017/06/22/对象的扩展/index.html">
 <meta property="og:site_name" content="柚子">
 <meta property="og:description" content="对象的扩展属性，方法的简洁写法 属性名为变量名，属性值为变量值。">
-<meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-12-21T04:59:19.435Z">
+<meta property="og:updated_time" content="2018-03-10T03:58:33.124Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="对象的扩展">
 <meta name="twitter:description" content="对象的扩展属性，方法的简洁写法 属性名为变量名，属性值为变量值。">
@@ -39,8 +38,8 @@
 
   
   <!-- baidu webmaster push -->
-  <script src="//push.zhanzhang.baidu.com/push.js"></script>
-</head></html>
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+</head>
 <body class="home blog custom-background custom-font-enabled single-author">
   <div id="page" class="hfeed site">
       <header id="masthead" class="site-header" role="banner">
@@ -63,17 +62,9 @@
                 
                     <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
                 
-<<<<<<< HEAD
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://www.tumogu.cn">Home2</a></li>
-                
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://www.tumogu.cn:3000">AiLiao</a></li>
-                
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/mr">Mushroom UI</a></li>
-=======
                     <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/mr/">Mr UI</a></li>
                 
                     <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/game/">Game</a></li>
->>>>>>> 8c7761b88a6e04e5741e37ef835ad0dac47f6a9d
                 
                     <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://github.com/renhongl">Github</a></li>
                 
@@ -111,7 +102,7 @@
   <figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> name = <span class="string">'lrh'</span>;</span><br><span class="line"><span class="keyword">const</span> age = <span class="number">19</span>;</span><br><span class="line"><span class="keyword">const</span> person = &#123;</span><br><span class="line">  name,</span><br><span class="line">  age,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//用于方法返回值</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getInfor</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> name = <span class="string">'lrh'</span>;</span><br><span class="line">  <span class="keyword">const</span> age = <span class="number">18</span>;</span><br><span class="line">  <span class="keyword">return</span> &#123;name, age&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
 <li><p>方法的简写</p>
-<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> age = <span class="number">18</span>;</span><br><span class="line"><span class="keyword">const</span> person = &#123;</span><br><span class="line">    name: <span class="string">'lrh'</span>,</span><br><span class="line">    age,</span><br><span class="line">    getName() &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.name</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> age = <span class="number">18</span>;</span><br><span class="line"><span class="keyword">const</span> person = &#123;</span><br><span class="line">    name: <span class="string">'lrh'</span>,</span><br><span class="line">    age,</span><br><span class="line">    getName() &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.name</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h3 id="属性名可以使用表达式"><a href="#属性名可以使用表达式" class="headerlink" title="属性名可以使用表达式"></a>属性名可以使用表达式</h3><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//ES5定义对象的属性</span></span><br><span class="line"><span class="keyword">const</span> person = &#123;&#125;;</span><br><span class="line">person.name = <span class="string">'lrh'</span>;</span><br><span class="line">person.[<span class="string">'a'</span> + <span class="string">'ge'</span>] = <span class="number">18</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//ES5使用字面量定义属性时，只有下面一种方式</span></span><br><span class="line"><span class="keyword">const</span> person = &#123;</span><br><span class="line">  name: <span class="string">'lrh'</span>,</span><br><span class="line">  age: <span class="number">18</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//ES6可以使用表达式为对象字面量定义属性</span></span><br><span class="line"><span class="keyword">const</span> person = &#123;</span><br><span class="line">  name: <span class="string">'lrh'</span>,</span><br><span class="line">  [<span class="string">'a'</span> + <span class="string">'ge'</span>]: <span class="number">18</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
@@ -141,7 +132,7 @@
 </li>
 </ul>
 <pre><code><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(name, age) &#123;</span><br><span class="line">    <span class="built_in">Object</span>.assign(<span class="keyword">this</span>, &#123;name, age&#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">    </span><br><span class="line"><span class="built_in">Object</span>.assign(Person.prototype, &#123;</span><br><span class="line">  getName() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.name;</span><br><span class="line">  &#125;,</span><br><span class="line">  getAge() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.age;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line">    </span><br><span class="line"><span class="keyword">new</span> Person(<span class="string">'lrh'</span>, <span class="number">18</span>).getName();<span class="comment">//lrh</span></span><br><span class="line">    </span><br><span class="line"><span class="comment">//等同于</span></span><br><span class="line">Person.prototype.getName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">this</span>.name;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-</code></pre><ol start="3">
+</code></pre><ol>
 <li><p>克隆对象</p>
 <figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> person = &#123;</span><br><span class="line">  name: <span class="string">'lrh'</span>,</span><br><span class="line">  age: <span class="number">18</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> p = <span class="built_in">Object</span>.assign(&#123;&#125;, person);<span class="comment">//&#123; name: 'lrh', age: 18 &#125;</span></span><br><span class="line"><span class="built_in">Object</span>.<span class="keyword">is</span>(person, p);<span class="comment">//false</span></span><br></pre></td></tr></table></figure>
 </li>
@@ -241,8 +232,8 @@
   
     <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
     <div>
-        <input type="text" value="" name="s" id="s">
-        <input type="submit" id="searchsubmit" value="搜索">
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="搜索" />
     </div>
 </form></aside>
   
@@ -274,7 +265,7 @@
     <aside class="widget">
     <h3 class="widget-title">赞助我</h3>
     <div class="widget-content">
-      <img src="/css/images/qr_alipay.png" style="width:100%;">
+      <img src='/css/images/qr_alipay.png' style='width:100%;' />
     </div>
 </aside>
   
@@ -332,7 +323,7 @@
     <aside class="widget">
     <h3 class="widget-title">友情链接</h3>
     <div class="widget-content">
-<ul id="link-list">
+<ul id='link-list'>
 <!-- link begin -->
 <li><a href="https://littlesistermogu.github.io/">蘑菇</a></li>
 
