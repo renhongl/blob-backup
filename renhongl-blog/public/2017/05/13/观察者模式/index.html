@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="观察者模式具体写法： 使用Map将话题和要执行的回调方法一一对应的存下来，即订阅。在发布这个话题时，使用发布的参数，执行这个话题的回调方法。
+订阅前发布： 在发布某个话题时，如果这个话题尚未被订阅，那么将这个话题存储起来，等订阅之后，立即发布。那么，在写代码时，就不会发生发布在订阅之前，导致功能不能被触发的问题。" />
+  
+
+  
+  <meta name="keywords" content="前端,js,nodejs,electron,jquery,javascript,html5,开发者,程序猿,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,html,css,css3,用户体验" />
+  
+  
+  
+  
+  
+  
+  <title>观察者模式 | 柚子</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="观察者模式具体写法： 使用Map将话题和要执行的回调方法一一对应的存下来，即订阅。在发布这个话题时，使用发布的参数，执行这个话题的回调方法。 订阅前发布： 在发布某个话题时，如果这个话题尚未被订阅，那么将这个话题存储起来，等订阅之后，立即发布。那么，在写代码时，就不会发生发布在订阅之前，导致功能不能被触发的问题。">
+<meta name="keywords" content="Javascript设计模式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="观察者模式">
+<meta property="og:url" content="https://github.com/renhongl/2017/05/13/观察者模式/index.html">
+<meta property="og:site_name" content="柚子">
+<meta property="og:description" content="观察者模式具体写法： 使用Map将话题和要执行的回调方法一一对应的存下来，即订阅。在发布这个话题时，使用发布的参数，执行这个话题的回调方法。 订阅前发布： 在发布某个话题时，如果这个话题尚未被订阅，那么将这个话题存储起来，等订阅之后，立即发布。那么，在写代码时，就不会发生发布在订阅之前，导致功能不能被触发的问题。">
+<meta property="og:updated_time" content="2018-12-23T13:15:30.647Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="观察者模式">
+<meta name="twitter:description" content="观察者模式具体写法： 使用Map将话题和要执行的回调方法一一对应的存下来，即订阅。在发布这个话题时，使用发布的参数，执行这个话题的回调方法。 订阅前发布： 在发布某个话题时，如果这个话题尚未被订阅，那么将这个话题存储起来，等订阅之后，立即发布。那么，在写代码时，就不会发生发布在订阅之前，导致功能不能被触发的问题。">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  
+  <!-- baidu webmaster push -->
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="柚子" rel="home">柚子</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">如果你今天对自己满意，明天就会被淘汰。</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/thebest">TheBest</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/mr/">Mr UI</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/game/">Game</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://github.com/renhongl">Github</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://codepen.io/renhongl">Codepen</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        <div id="primary" class="site-content"><div id="content" role="main"><article id="post-观察者模式" class="post-观察者模式 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title article-title">
+      观察者模式
+    </h1>
+  
+
+        
+       
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <p>观察者模式<br>具体写法： 使用Map将话题和要执行的回调方法一一对应的存下来，即订阅。在发布这个话题时，使用发布的参数，执行这个话题的回调方法。</p>
+<p>订阅前发布： 在发布某个话题时，如果这个话题尚未被订阅，那么将这个话题存储起来，等订阅之后，立即发布。那么，在写代码时，就不会发生发布在订阅之前，导致功能不能被触发的问题。</p>
+<a id="more"></a>
+<p>命名空间： 如果整个项目都使用了此模式，很容易在没有命名空间的情况下混淆话题。</p>
+<p>面向对象例子：</p>
+<pre><code>class Observer{
+    constructor() {
+        this.topicMapping = {};
+        this.publishStore = {};
+    }      
+
+    subscribe(...args) {
+        let topic = args.shift();
+        let callback = args.shift();
+        if (!this.topicMapping[topic]) {
+            this.topicMapping[topic] = [];
+        }
+        this.topicMapping[topic].push(callback);
+        console.log(`subscribed topic ${topic}`);
+        //check if had subscribed
+        if (this.publishStore[topic]) {
+            console.log(`trigger topic ${topic} immediately`);
+            this.publish(topic, this.publishStore[topic]);
+            delete this.publishStore[topic];
+        }
+    }
+
+    publish(...args) {
+        let topic = args.shift();
+        if (this.topicMapping[topic]) {
+            this.topicMapping[topic].forEach((v, k) =&gt; {
+                v.apply(null, args);
+            });
+        } else {
+            console.log(`no topic: ${topic} has been subscribed, this publish will store here, after subscribe, will trigger`);
+            this.publishStore[topic] = args;
+        }
+    }
+
+    unsubscribe(...args) {
+        let topic = args.shift();
+        let callback = args.shift();
+        if (this.topicMapping[topic]) {
+            delete this.topicMapping[topic];
+            if (callback instanceof Function) {
+                callback(args);
+            }
+        } else {
+        console.log(`no topic ${topic} has been subscribe, so no need unsubscribe.`);
+        }
+    }
+}
+export default Observer;
+</code></pre><p>函数式例子：</p>
+<pre><code>(function () {
+    window.Event = (function () {
+        var clientList = {},
+            offline = {},
+            listen,
+            trigger,
+            remove;
+
+        listen = function (key, fn) {
+            if (!clientList[key]) {
+                clientList[key] = [];
+            }
+            clientList[key].push(fn);
+            if (offline[key]) {
+                fn.apply(this, offline[key].shift());
+            }
+        };
+
+        trigger = function () {
+            var key = Array.prototype.shift.call(arguments),
+                fns = clientList[key];
+            if (!fns || fns.length === 0) {
+                if (!offline[key]) {
+                    offline[key] = [];
+                }
+                offline[key].push(arguments);
+                return false;
+            }
+            for (var i = 0, len = fns.length; i &lt; len; i++) {
+                fns[i].apply(this, arguments);
+            }
+        };
+
+        remove = function (key, fn) {
+            var fns = clientList[key];
+            if (!fns) {
+                return false;
+            }
+            if (!fn) {
+                fns.length = 0;
+            } else {
+                for (var i = 0, len = fns.length; i &lt; len; i++) {
+                    var _fn = fns[i];
+                    if (_fn === fn) {
+                        fns.splice(i, 1);
+                    }
+                }
+            }
+        };
+
+        return {
+            listen: listen,
+            trigger: trigger,
+            remove: remove,
+        }
+
+    })();
+
+    var init = function () {
+        Event.trigger(&apos;loaded&apos;, {
+            name: &apos;renhongl&apos;,
+            age: 18
+        });
+
+        setTimeout(function () {
+            Event.listen(&apos;loaded&apos;, function (args) {
+                console.log(args);
+            });
+        }, 2000);
+    };
+
+    init();
+
+})();
+</code></pre>
+      
+    </div><!-- .entry-content -->
+
+    
+      <section id="comments">
+        <div id="disqus_thread"></div>
+          <script type="text/javascript">
+          /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+          var disqus_shortname = 'renhongl'; // required: replace example with your forum shortname
+      
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      </section>
+      
+
+    <footer class="entry-meta">
+    <a href="/2017/05/13/观察者模式/">
+    <time datetime="2017-05-13T13:54:32.000Z" class="entry-date">
+        2017-05-13
+    </time>
+</a>
+    
+    
+  <span class="article-delim">&#8226;</span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascript设计模式/">Javascript设计模式</a></li></ul>
+
+    </footer>
+</article>
+
+
+    
+<nav class="nav-single">
+    <h3 class="assistive-text">文章导航</h3>
+    
+        <span class="nav-previous"><a href="/2017/05/16/命令模式/" rel="prev"><span class="meta-nav">←</span> 命令模式</a></span>
+    
+    
+        <span class="nav-next"><a href="/2017/05/12/迭代器模式/" rel="next">迭代器模式 <span class="meta-nav">→</span></a></span>
+    
+</nav><!-- .nav-single -->
+
+
+
+
+
+
+
+
+</div></div>
+        <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="搜索" />
+    </div>
+</form></aside>
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Music</h3>
+    <div class="widget-content">
+      <audio src="http://other.web.rc01.sycdn.kuwo.cn/resource/n3/99/21/1172239707.mp3" controls="controls"
+             style="width:100%" loop>
+        您的浏览器不支持 audio 标签。
+      </audio>
+
+      <!-- <object type="application/x-shockwave-flash" id="ximalaya_player" data="http://other.web.rc01.sycdn.kuwo.cn/resource/n3/99/21/1172239707.mp3?auto=true" width="190" height="36"></object> -->
+    </div>
+  </aside>
+
+  
+    <aside class="widget">
+    <h3 class="widget-title">关于我</h3>
+    <div class="widget-content">
+      <p>邮箱：1075220132@qq.com</p>
+      <p>QQ：1075220132</p>
+      <!-- <iframe width="100%" height="110" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=0&fansRow=1&ptype=1&speed=0&skin=1&isTitle=0&noborder=0&isWeibo=0&isFans=1&uid=2216356441&verifier=2e06a95d&dpc=1"></iframe>
+      
+      <iframe width="100%" height="320" frameborder="0" scrolling="no" src="https://cdn.jsdelivr.net/github-cards/1.0.2/cards/medium.html?user=wizardforcel&identity=ghcard-wizardforcel-1"></iframe> -->
+    </div>
+</aside>
+  
+    <aside class="widget">
+    <h3 class="widget-title">赞助我</h3>
+    <div class="widget-content">
+      <img src='/css/images/qr_alipay.png' style='width:100%;' />
+    </div>
+</aside>
+  
+    
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget-content">
+      <ul>
+        
+          <li>
+            <a href="/2018/06/18/函数式编程/">函数式编程</a>
+          </li>
+        
+          <li>
+            <a href="/2018/06/18/career-development/">职业发展方向</a>
+          </li>
+        
+          <li>
+            <a href="/2018/06/18/技术选型/">技术选型</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/10/redux/">Redux</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/10/flux/">Flux</a>
+          </li>
+        
+      </ul>
+    </div>
+  </aside>
+
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget-content">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/">ES6</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript设计模式/">Javascript设计模式</a><span class="tag-list-count">15</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mongo/">Mongo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redux/">Redux</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Webpack/">Webpack</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/分享/">分享</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/综合技能/">综合技能</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </aside>
+
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget-content tagcloud">
+      <a href="/tags/ES6/" style="font-size: 17.5px;">ES6</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Javascript/" style="font-size: 12.5px;">Javascript</a> <a href="/tags/Javascript设计模式/" style="font-size: 20px;">Javascript设计模式</a> <a href="/tags/Mongo/" style="font-size: 10px;">Mongo</a> <a href="/tags/Redux/" style="font-size: 12.5px;">Redux</a> <a href="/tags/Webpack/" style="font-size: 10px;">Webpack</a> <a href="/tags/分享/" style="font-size: 15px;">分享</a> <a href="/tags/综合技能/" style="font-size: 12.5px;">综合技能</a>
+    </div>
+  </aside>
+
+  
+    <aside class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <div class="widget-content">
+<ul id='link-list'>
+<!-- link begin -->
+<li><a href="https://littlesistermogu.github.io/">蘑菇</a></li>
+
+<!-- link end -->
+</ul>
+    </div>
+</aside>
+  
+</div>
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2018 柚子
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
+</footer>
+    <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+</body>
+</html>
