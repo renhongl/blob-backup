@@ -133,3 +133,4 @@ skip_render:
     - game/**
     - mr/**
     - thebest/**
+    - source/**
