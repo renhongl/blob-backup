@@ -1,106 +1,157 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  
-  <meta name="description" content="全部代码：点击这里。
-设计模式的主题总是把不变的事物和变化的事物分离开来。" />
-  
-
-  
-  <meta name="keywords" content="前端,js,nodejs,electron,jquery,javascript,html5,开发者,程序猿,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,html,css,css3,用户体验" />
-  
-  
-  
-  
-  
-  
-  <title>Javascript设计模式 | 柚子</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="全部代码：点击这里。 设计模式的主题总是把不变的事物和变化的事物分离开来。">
-<meta name="keywords" content="Javascript设计模式">
+<html lang=zh>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="简介全部代码：点击这里。 设计模式的主题总是把不变的事物和变化的事物分离开来。 鸭子类型如果它走起来像鸭子，叫起来也像鸭子，那么它就是鸭子。 多态 多态的思想是把“做什么”和“谁去做”分离开来。  多态最根本的作用就是通过把过程化的条件分支语句转化为对象的多态性，从而消除这些条件分支语句。  多态的最根本好处在于，你不必再像的对象询问“你是什么类型”而后根据得到的答案调用对象的某个行为，你只管调用">
+<meta name="keywords" content="Javascript,设计模式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Javascript设计模式">
 <meta property="og:url" content="https://github.com/renhongl/2017/04/25/Javascript设计模式简述/index.html">
 <meta property="og:site_name" content="柚子">
-<meta property="og:description" content="全部代码：点击这里。 设计模式的主题总是把不变的事物和变化的事物分离开来。">
-<meta property="og:updated_time" content="2018-12-23T13:27:24.191Z">
+<meta property="og:description" content="简介全部代码：点击这里。 设计模式的主题总是把不变的事物和变化的事物分离开来。 鸭子类型如果它走起来像鸭子，叫起来也像鸭子，那么它就是鸭子。 多态 多态的思想是把“做什么”和“谁去做”分离开来。  多态最根本的作用就是通过把过程化的条件分支语句转化为对象的多态性，从而消除这些条件分支语句。  多态的最根本好处在于，你不必再像的对象询问“你是什么类型”而后根据得到的答案调用对象的某个行为，你只管调用">
+<meta property="og:locale" content="zh">
+<meta property="og:updated_time" content="2019-01-01T03:37:07.553Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Javascript设计模式">
-<meta name="twitter:description" content="全部代码：点击这里。 设计模式的主题总是把不变的事物和变化的事物分离开来。">
-  
-  
-    <link rel="icon" href="/css/images/favicon.ico">
-  
-  <link rel="stylesheet" href="/css/style.css">
-  
-
-  
-  <!-- baidu webmaster push -->
-  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+<meta name="twitter:description" content="简介全部代码：点击这里。 设计模式的主题总是把不变的事物和变化的事物分离开来。 鸭子类型如果它走起来像鸭子，叫起来也像鸭子，那么它就是鸭子。 多态 多态的思想是把“做什么”和“谁去做”分离开来。  多态最根本的作用就是通过把过程化的条件分支语句转化为对象的多态性，从而消除这些条件分支语句。  多态的最根本好处在于，你不必再像的对象询问“你是什么类型”而后根据得到的答案调用对象的某个行为，你只管调用">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>Javascript设计模式</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/css/rtl.css">
+    
+    <!-- rss -->
+    
+    
 </head>
-<body class="home blog custom-background custom-font-enabled single-author">
-  <div id="page" class="hfeed site">
-      <header id="masthead" class="site-header" role="banner">
-    <hgroup>
-      <h1 class="site-title">
-        <a href="/" title="柚子" rel="home">柚子</a>
-      </h1>
-      
-        <h2 class="site-description">
-          <a href="/" id="subtitle">如果你今天对自己满意，明天就会被淘汰。</a>
-        </h2>
-      
-    </hgroup>
 
-    <nav id="site-navigation" class="main-navigation" role="navigation">
-            <button class="menu-toggle">菜单</button>
-            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
-            <div class="menu-main-container">
-                <ul id="menu-main" class="nav-menu">
-                
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
-                
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/thebest">TheBest</a></li>
-                
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/mr/">Mr UI</a></li>
-                
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/game/">Game</a></li>
-                
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://github.com/renhongl">Github</a></li>
-                
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://codepen.io/renhongl">Codepen</a></li>
-                
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
-                
-                </ul>
-            </div>
-    </nav>
-</header>
-      <div id="main" class="wrapper">
-        <div id="primary" class="site-content"><div id="content" role="main"><article id="post-Javascript设计模式简述" class="post-Javascript设计模式简述 post type-post status-publish format-standard hentry">
-    <!---->
-
-      <header class="entry-header">
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">博客</a></li>
+         
+          <li><a href="/archives/">归档</a></li>
+         
+          <li><a href="/projects/">项目</a></li>
+         
+          <li><a href="/search/">搜索</a></li>
+         
+          <li><a href="/links/">链接</a></li>
+         
+          <li><a href="/about/">关于</a></li>
+        
+      </ul>
+    </span>
+    <br>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2017/04/27/原型模式/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
         
         
-  
-    <h1 class="entry-title article-title">
-      Javascript设计模式
+        <li><a class="icon" href="/2017/02/04/Javascript标准参考教程重点/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一页</span>
+      <span id="i-next" class="info" style="display:none;">下一页</span>
+      <span id="i-top" class="info" style="display:none;">回到顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享</span>
+    </span>
+    <br>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://github.com/renhongl/2017/04/25/Javascript设计模式简述/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://github.com/renhongl/2017/04/25/Javascript设计模式简述/&text=Javascript设计模式"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://github.com/renhongl/2017/04/25/Javascript设计模式简述/&title=Javascript设计模式"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://github.com/renhongl/2017/04/25/Javascript设计模式简述/&is_video=false&description=Javascript设计模式"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Javascript设计模式&body=Check out this article: https://github.com/renhongl/2017/04/25/Javascript设计模式简述/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://github.com/renhongl/2017/04/25/Javascript设计模式简述/&title=Javascript设计模式"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://github.com/renhongl/2017/04/25/Javascript设计模式简述/&title=Javascript设计模式"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://github.com/renhongl/2017/04/25/Javascript设计模式简述/&title=Javascript设计模式"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://github.com/renhongl/2017/04/25/Javascript设计模式简述/&title=Javascript设计模式"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://github.com/renhongl/2017/04/25/Javascript设计模式简述/&name=Javascript设计模式&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#简介"><span class="toc-number">1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#鸭子类型"><span class="toc-number">2.</span> <span class="toc-text">鸭子类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#多态"><span class="toc-number">3.</span> <span class="toc-text">多态</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#封装"><span class="toc-number">4.</span> <span class="toc-text">封装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#this"><span class="toc-number">5.</span> <span class="toc-text">this</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#call和apply"><span class="toc-number">6.</span> <span class="toc-text">call和apply</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#闭包"><span class="toc-number">7.</span> <span class="toc-text">闭包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#函数柯里化（function-currying）"><span class="toc-number">8.</span> <span class="toc-text">函数柯里化（function currying）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#uncurrying"><span class="toc-number">9.</span> <span class="toc-text">uncurrying</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#降频"><span class="toc-number">10.</span> <span class="toc-text">降频</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope="" itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Javascript设计模式
     </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+        <span itemprop="name">柚子</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2017-04-25T13:25:12.000Z" itemprop="datePublished">2017-04-25</time>
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/Javascript/">Javascript</a>, <a class="tag-link" href="/tags/设计模式/">设计模式</a>
+    </div>
+
+
+    </div>
+  </header>
   
 
-        
-       
-      </header><!-- .entry-header -->
-
-    <div class="entry-content">
-      
-        <p>全部代码：<a href="https://github.com/renhongl/front-end-demo/tree/master/demo-design-pattern">点击这里</a>。</p>
-<p>设计模式的主题总是把不变的事物和变化的事物分离开来。<br><a id="more"></a></p>
-<h3 id="鸭子类型"><a href="#鸭子类型" class="headerlink" title="鸭子类型"></a>鸭子类型</h3><p>如果它走起来像鸭子，叫起来也像鸭子，那么它就是鸭子。</p>
-<h3 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h3><ul>
+  <div class="content" itemprop="articleBody">
+    <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>全部代码：<a href="https://github.com/renhongl/front-end-demo/tree/master/demo-design-pattern">点击这里</a>。</p>
+<p>设计模式的主题总是把不变的事物和变化的事物分离开来。</p>
+<h2 id="鸭子类型"><a href="#鸭子类型" class="headerlink" title="鸭子类型"></a>鸭子类型</h2><p>如果它走起来像鸭子，叫起来也像鸭子，那么它就是鸭子。</p>
+<h2 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h2><ul>
 <li><p>多态的思想是把“做什么”和“谁去做”分离开来。</p>
 </li>
 <li><p>多态最根本的作用就是通过把过程化的条件分支语句转化为对象的多态性，从而消除这些条件分支语句。</p>
@@ -108,423 +159,170 @@
 <li><p>多态的最根本好处在于，你不必再像的对象询问“你是什么类型”而后根据得到的答案调用对象的某个行为，<br>你只管调用该行为就是了，其他的一切多态机制都会为你安排妥当。</p>
 </li>
 </ul>
-<h3 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h3><ul>
+<h2 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h2><ul>
 <li>封装的目的是将信息影藏。</li>
 <li>一般而言，封装是指封装数据和封装实现。</li>
 <li>更广义的封装，还包括封装类型和封装变化。</li>
 </ul>
-<h4 id="this"><a href="#this" class="headerlink" title="this"></a>this</h4><ul>
+<h2 id="this"><a href="#this" class="headerlink" title="this"></a>this</h2><ul>
 <li><p>作为对象的方法调用。</p>
-<pre><code>let obj = {
-    a: 1,
-    getA: function() {
-        console.log(this === obj);//true
-        console.log(this.a);//1
-    }
-};
-obj.getA();
-</code></pre></li>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">    a: <span class="number">1</span>,</span><br><span class="line">    getA: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span> === obj);<span class="comment">//true</span></span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.a);<span class="comment">//1</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">obj.getA();</span><br></pre></td></tr></table></figure>
+</li>
 <li><p>作为普通函数调用。</p>
-<pre><code>window.name = &apos;global&apos;;
-let getName = function() {
-    return this.name;
-}
-console.log(getName());//global
-
-//or
-
-window.name = &apos;global&apos;;
-let myObj = {
-    name: &apos;renhong&apos;,
-    getName: function() {
-        return this.name;
-    }
-}
-var getName = myObj.getName;//普通函数调用
-console.log(getName());//global
-
-console.log(myObj.getName());//renhong, 对象的方法调用
-</code></pre></li>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.name = <span class="string">'global'</span>;</span><br><span class="line"><span class="keyword">let</span> getName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.name;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(getName());<span class="comment">//global</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//or</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">window</span>.name = <span class="string">'global'</span>;</span><br><span class="line"><span class="keyword">let</span> myObj = &#123;</span><br><span class="line">    name: <span class="string">'renhong'</span>,</span><br><span class="line">    getName: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.name;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> getName = myObj.getName;<span class="comment">//普通函数调用</span></span><br><span class="line"><span class="built_in">console</span>.log(getName());<span class="comment">//global</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(myObj.getName());<span class="comment">//renhong, 对象的方法调用</span></span><br></pre></td></tr></table></figure>
+</li>
 <li><p>构造器调用。当用new运算符调用函数时，该函数总会返回一个对象，构造器里的this就指向这个对象。</p>
-<pre><code>let MyClass = function() {
-    this.name = &apos;renhong&apos;;
-}
-let obj = new MyClass();
-console.log(obj.name);//renhong
-
-//如果构造器显示返回一个对象，那么new之后返回的是这个对象，而不是this。
-
-let MyClass = function() {
-    this.name = &apos;renhong&apos;,
-    return {
-        name: &apos;mogu&apos;
-    }
-}
-let obj = new MyClass();
-console.log(obj.name);//mogu
-</code></pre></li>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> MyClass = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = <span class="string">'renhong'</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> obj = <span class="keyword">new</span> MyClass();</span><br><span class="line"><span class="built_in">console</span>.log(obj.name);<span class="comment">//renhong</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//如果构造器显示返回一个对象，那么new之后返回的是这个对象，而不是this。</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> MyClass = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = <span class="string">'renhong'</span>,</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        name: <span class="string">'mogu'</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> obj = <span class="keyword">new</span> MyClass();</span><br><span class="line"><span class="built_in">console</span>.log(obj.name);<span class="comment">//mogu</span></span><br></pre></td></tr></table></figure>
+</li>
 <li><p>call和apply调用。用于动态的改变传入函数的this。</p>
-<pre><code>let obj1 = {
-    name: &apos;renhong&apos;,
-    getName: function() {
-        return this.name;
-    }
-}
-
-let obj2 = {
-    name: &apos;mogu&apos;
-}
-
-console.log(obj1.getName());//renhong
-console.log(obj1.getName.call(obj2));//mogu
-</code></pre></li>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj1 = &#123;</span><br><span class="line">    name: <span class="string">'renhong'</span>,</span><br><span class="line">    getName: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.name;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> obj2 = &#123;</span><br><span class="line">    name: <span class="string">'mogu'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(obj1.getName());<span class="comment">//renhong</span></span><br><span class="line"><span class="built_in">console</span>.log(obj1.getName.call(obj2));<span class="comment">//mogu</span></span><br></pre></td></tr></table></figure>
+</li>
 </ul>
-<h4 id="call和apply"><a href="#call和apply" class="headerlink" title="call和apply"></a>call和apply</h4><ul>
+<h2 id="call和apply"><a href="#call和apply" class="headerlink" title="call和apply"></a>call和apply</h2><ul>
 <li>作用一模一样，区别只在于传入参数的形式不同。</li>
 <li><p>apply接受两个参数，第一个参数指定函数体内部的this指向。第二个参数是一个数组或者类数组，这些元素全部作为参数传递给被调用的函数。</p>
-<pre><code>let func = function(a, b, c) {
-    console.log([a, b, c]);//[1, 2, 3]
-}
-func.apply(null, [1, 2, 3]);
-</code></pre></li>
+  <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="function"><span class="keyword">func</span> = <span class="title">function</span><span class="params">(a, b, <span class="built_in">c</span>)</span></span> &#123;</span><br><span class="line">    console.log([a, b, <span class="built_in">c</span>]);<span class="comment">//[1, 2, 3]</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span>.<span class="title">apply</span><span class="params">(null, [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>])</span></span>;</span><br></pre></td></tr></table></figure>
+</li>
 <li><p>call 传入的参数是不固定的，第一个参数同样是代表函数体内的this指向，从第二个参数开始，每个参数一次被当做被调用的函数的参数传入。</p>
-<pre><code>let func = function(a, b, c) {
-    console.log([a, b, c]);//[1, 2, 3]
-}
-func.call(null, 1, 2, 3);
-</code></pre></li>
+  <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="function"><span class="keyword">func</span> = <span class="title">function</span><span class="params">(a, b, <span class="built_in">c</span>)</span></span> &#123;</span><br><span class="line">    console.log([a, b, <span class="built_in">c</span>]);<span class="comment">//[1, 2, 3]</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span>.<span class="title">call</span><span class="params">(null, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)</span></span>;</span><br></pre></td></tr></table></figure>
+</li>
 <li><p>为什么要使用call和apply？</p>
-<pre><code>//改变this指向
-//---------例子1
-let obj1 = {
-    name: &apos;renhong&apos;
-}
-let obj2 = {
-    name: &apos;mogu&apos;
-}
-window.name = &apos;window&apos;;
-let getName = function() {
-    this.name;
-}
-getName();//window
-getName.call(obj1);//renhong
-getName.call(obj2);//mogu
-
-//---------例子2
-let func = function() {
-    console.log(this.id);
-}
-document.getElementById(&apos;div1&apos;).onclick = function() {
-    console.log(this.id);//div1
-    func();//undefined，指向window
-    func.call(this);//div1，指向这个this
-}
-
-//---------例子3
-class Controller{
-    constructor() {
-        let type = &apos;dialog&apos;;
-        this.name = &apos;controller&apos;;
-        renderControl();
-        handleEvents.call(this);
-        renderDialog.call(this, type);
-    }
-}
-
-function renderControl() {
-    console.log(this.name);//undefined，this指向window
-}
-
-function handleEvents() {
-    console.log(this.name);//controller
-}
-
-function renderDialog(type) {
-    console.log(type);//dialog
-}
-
-//借用其他对象的方法
-//类数组对象arguments，没有push的方法，不能将元素push进去。我们首先调用数组的push方法，再手动将push方法内部的this指向改为arguments，就帮助arguments实现了push功能。
-(function() {
-    Array.prototype.push.call(arguments, 3);
-    console.log(arguments);//[1, 2, 3]
-})(1, 2);
-</code></pre></li>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line">  <span class="comment">//改变this指向</span></span><br><span class="line">  <span class="comment">//---------例子1</span></span><br><span class="line">  <span class="keyword">let</span> obj1 = &#123;</span><br><span class="line">      name: <span class="string">'renhong'</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">let</span> obj2 = &#123;</span><br><span class="line">      name: <span class="string">'mogu'</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">window</span>.name = <span class="string">'window'</span>;</span><br><span class="line">  <span class="keyword">let</span> getName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">this</span>.name;</span><br><span class="line">  &#125;</span><br><span class="line">  getName();<span class="comment">//window</span></span><br><span class="line">  getName.call(obj1);<span class="comment">//renhong</span></span><br><span class="line">  getName.call(obj2);<span class="comment">//mogu</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">//---------例子2</span></span><br><span class="line">  <span class="keyword">let</span> func = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="keyword">this</span>.id);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">document</span>.getElementById(<span class="string">'div1'</span>).onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="keyword">this</span>.id);<span class="comment">//div1</span></span><br><span class="line">      func();<span class="comment">//undefined，指向window</span></span><br><span class="line">      func.call(<span class="keyword">this</span>);<span class="comment">//div1，指向这个this</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//---------例子3</span></span><br><span class="line">  <span class="class"><span class="keyword">class</span> <span class="title">Controller</span></span>&#123;</span><br><span class="line">      <span class="keyword">constructor</span>() &#123;</span><br><span class="line">          <span class="keyword">let</span> type = <span class="string">'dialog'</span>;</span><br><span class="line">          <span class="keyword">this</span>.name = <span class="string">'controller'</span>;</span><br><span class="line">          renderControl();</span><br><span class="line">          handleEvents.call(<span class="keyword">this</span>);</span><br><span class="line">          renderDialog.call(<span class="keyword">this</span>, type);</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">    </span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">renderControl</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);<span class="comment">//undefined，this指向window</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">handleEvents</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);<span class="comment">//controller</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">renderDialog</span>(<span class="params">type</span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(type);<span class="comment">//dialog</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//借用其他对象的方法</span></span><br><span class="line">  <span class="comment">//类数组对象arguments，没有push的方法，不能将元素push进去。我们首先调用数组的push方法，再手动将push方法内部的this指向改为arguments，就帮助arguments实现了push功能。</span></span><br><span class="line">  (<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">Array</span>.prototype.push.call(<span class="built_in">arguments</span>, <span class="number">3</span>);</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="built_in">arguments</span>);<span class="comment">//[1, 2, 3]</span></span><br><span class="line">  &#125;)(<span class="number">1</span>, <span class="number">2</span>);</span><br><span class="line"><span class="string">`</span></span><br></pre></td></tr></table></figure>
+</li>
 </ul>
-<h3 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h3><p>闭包是一个非常强大的特性，但人们对其也有诸多误解。一种耸人听闻的说法是闭包会造成内存泄漏，所以要尽量减少闭包的使用。</p>
+<h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><p>闭包是一个非常强大的特性，但人们对其也有诸多误解。一种耸人听闻的说法是闭包会造成内存泄漏，所以要尽量减少闭包的使用。</p>
 <p>局部变量本来应该在函数退出的时候被解除饮用，但如果局部变量被封闭在闭包形成的环境中，那么这个局部变量就能一直生存下去。从这个意义上看，闭包的确会使一些数据无法被及时销毁。使用闭包的一部分原因是我们选择主动把一些变量封闭在闭包中，因为可能在以后还需要使用这些变量，把这些变量放在闭包中和放在全局作用域，对内存方面的影响是一致的。</p>
 <p>跟闭包和内存泄漏有关系的地方是，使用闭包的同时，比较容易形成循环引用，如果闭包的作用域链中保存着一些DOM节点，这时候有可能造成内存泄漏。但这并非闭包问题，也并非Javascript问题。</p>
 <p><strong>注：</strong> 当代码中需要全局变量时，可以使用闭包，将这个变量封装在一个函数中，那这个函数就封装了一个独立的功能，不再依赖外部的变量。</p>
-<h3 id="函数柯里化（function-currying）"><a href="#函数柯里化（function-currying）" class="headerlink" title="函数柯里化（function currying）"></a>函数柯里化（function currying）</h3><p>currying又称部分求值。一个currying的函数首先会接受一些参数，接受了这些参数之后，该函数并不会立即求值，而是继续返回另外一个函数，刚传入的参数在函数形成的闭包中被保存起来。待到函数真正需要求值的时候，之前传入的所有参数都会被一次性用于求值。</p>
-<h3 id="uncurrying"><a href="#uncurrying" class="headerlink" title="uncurrying"></a>uncurrying</h3><p>当我们调用对象的某个方法时，其实不用去关心该对象原本是否被设计为拥有这个方法，这是动态类型语言的特点，也是常说的鸭子类型思想。</p>
+<h2 id="函数柯里化（function-currying）"><a href="#函数柯里化（function-currying）" class="headerlink" title="函数柯里化（function currying）"></a>函数柯里化（function currying）</h2><p>currying又称部分求值。一个currying的函数首先会接受一些参数，接受了这些参数之后，该函数并不会立即求值，而是继续返回另外一个函数，刚传入的参数在函数形成的闭包中被保存起来。待到函数真正需要求值的时候，之前传入的所有参数都会被一次性用于求值。</p>
+<h2 id="uncurrying"><a href="#uncurrying" class="headerlink" title="uncurrying"></a>uncurrying</h2><p>当我们调用对象的某个方法时，其实不用去关心该对象原本是否被设计为拥有这个方法，这是动态类型语言的特点，也是常说的鸭子类型思想。</p>
 <p>同理，一个对象也未必只有使用它自身的方法。通过call和apply方法可以让对象去借用一个原本不属于它的方法。</p>
-<h3 id="降频"><a href="#降频" class="headerlink" title="降频"></a>降频</h3><p>在一些情况下，函数的触发不是由用户直接控制的，在这些情景下，函数可能被非常频繁的调用，而造成大的性能问题。</p>
+<h2 id="降频"><a href="#降频" class="headerlink" title="降频"></a>降频</h2><p>在一些情况下，函数的触发不是由用户直接控制的，在这些情景下，函数可能被非常频繁的调用，而造成大的性能问题。</p>
 <p>例如在window的resize事件中，或者在div拖动事件中，会频繁的触发这些事件，并且DOM相关的操作非常消耗性能，这时浏览器可能会出现卡顿现象。</p>
 <p>以上现象我们可以使用setTimeout来实现每隔固定时间来触发事件，如果过于频繁，将忽略那次的事件。</p>
 <p>函数式例子：</p>
-<pre><code>var resize = function(callback, interval) {
-    var timer,
-        firstTime = true;
-    return function() {
-        var args = arguments,
-            self = this;
-        if(firstTime) {
-            callback.apply(self, args);
-            return false;
-        }
-        if(timer) {
-            return false;
-        }
-        timer = setTimeout(function() {
-            clearTimeout(timer);
-            timer = null;
-            callback.apply(self, args);
-        }, interval || 500)
-    }
-};
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> resize = <span class="function"><span class="keyword">function</span>(<span class="params">callback, interval</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> timer,</span><br><span class="line">        firstTime = <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> args = <span class="built_in">arguments</span>,</span><br><span class="line">            self = <span class="keyword">this</span>;</span><br><span class="line">        <span class="keyword">if</span>(firstTime) &#123;</span><br><span class="line">            callback.apply(self, args);</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(timer) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        timer = setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            clearTimeout(timer);</span><br><span class="line">            timer = <span class="literal">null</span>;</span><br><span class="line">            callback.apply(self, args);</span><br><span class="line">        &#125;, interval || <span class="number">500</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">window</span>.onresize = resize(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'resized'</span>, <span class="built_in">Date</span>.now());</span><br><span class="line">&#125;, <span class="number">1000</span>);</span><br></pre></td></tr></table></figure>
+<p>面向对象例子：</p>
+  <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">class</span> ReduceFrequency&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * input 输入时，不要每次去检查更改，在结束输入后200毫秒去检查</span></span><br><span class="line"><span class="comment">     * 这样可以减少监听频繁执行的事件带来的卡顿</span></span><br><span class="line"><span class="comment">     * @param &#123;DOM Object&#125; target </span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    inputControl(target) &#123;</span><br><span class="line">        target.addEventListener(<span class="string">'input'</span>, <span class="function">(<span class="params">e</span>) =&gt;</span> &#123;</span><br><span class="line">            clearTimeout(<span class="keyword">this</span>.timer);</span><br><span class="line">            <span class="keyword">this</span>.timer = setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">                <span class="built_in">console</span>.log(e.target.value);</span><br><span class="line">            &#125;, <span class="number">500</span>); </span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 鼠标每次移动时，并不是每次都去打印它的位置，而是将最近这个事件存起来，使用定时器每隔500毫秒</span></span><br><span class="line"><span class="comment">     * 打印一次最新的位置。</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    mouseMoveControl() &#123;</span><br><span class="line">        <span class="keyword">this</span>.inTimer = <span class="literal">false</span>;</span><br><span class="line">        <span class="built_in">document</span>.addEventListener(<span class="string">'mousemove'</span>, <span class="function">(<span class="params">e</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">this</span>.latestE = e;</span><br><span class="line">            <span class="keyword">if</span> (!<span class="keyword">this</span>.inTimer) &#123;</span><br><span class="line">                <span class="keyword">this</span>.inTimer = <span class="literal">true</span>;</span><br><span class="line">                <span class="keyword">this</span>.timer2 = setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">                    <span class="keyword">let</span> x = <span class="keyword">this</span>.latestE.pageX;</span><br><span class="line">                    <span class="keyword">let</span> y = <span class="keyword">this</span>.latestE.pageY;</span><br><span class="line">                    <span class="built_in">console</span>.log(<span class="built_in">Date</span>.now(), x, y);</span><br><span class="line">                    <span class="keyword">this</span>.inTimer = <span class="literal">false</span>;</span><br><span class="line">                &#125;, <span class="number">500</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 一次生成1000个节点，改成每1秒生成100个节点</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    renderDomControl() &#123;</span><br><span class="line">        <span class="keyword">let</span> total = <span class="number">1000</span>;</span><br><span class="line">        render();</span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">render</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">100</span>; i++) &#123;</span><br><span class="line">                <span class="keyword">let</span> dom = <span class="built_in">document</span>.createElement(<span class="string">'span'</span>);</span><br><span class="line">                dom.innerText = total;</span><br><span class="line">                <span class="built_in">document</span>.body.appendChild(dom);</span><br><span class="line">                total -= <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(total &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">                    render();</span><br><span class="line">                &#125;, <span class="number">1000</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-window.onresize = resize(function() {
-    console.log(&apos;resized&apos;, Date.now());
-}, 1000);
-</code></pre><p>面向对象例子：</p>
-<pre><code>export default class ReduceFrequency{
-    /**
-     * input 输入时，不要每次去检查更改，在结束输入后200毫秒去检查
-     * 这样可以减少监听频繁执行的事件带来的卡顿
-     * @param {DOM Object} target 
-     */
-    inputControl(target) {
-        target.addEventListener(&apos;input&apos;, (e) =&gt; {
-            clearTimeout(this.timer);
-            this.timer = setTimeout(() =&gt; {
-                console.log(e.target.value);
-            }, 500); 
-        });
-    }
-
-    /**
-     * 鼠标每次移动时，并不是每次都去打印它的位置，而是将最近这个事件存起来，使用定时器每隔500毫秒
-     * 打印一次最新的位置。
-     */
-    mouseMoveControl() {
-        this.inTimer = false;
-        document.addEventListener(&apos;mousemove&apos;, (e) =&gt; {
-            this.latestE = e;
-            if (!this.inTimer) {
-                this.inTimer = true;
-                this.timer2 = setTimeout(() =&gt; {
-                    let x = this.latestE.pageX;
-                    let y = this.latestE.pageY;
-                    console.log(Date.now(), x, y);
-                    this.inTimer = false;
-                }, 500);
-            }
-        });
-    }
-
-    /**
-     * 一次生成1000个节点，改成每1秒生成100个节点
-     */
-    renderDomControl() {
-        let total = 1000;
-        render();
-        function render() {
-            for (let i = 0; i &lt; 100; i++) {
-                let dom = document.createElement(&apos;span&apos;);
-                dom.innerText = total;
-                document.body.appendChild(dom);
-                total -= 1;
-            }
-            if(total &gt; 0) {
-                setTimeout(() =&gt; {
-                    render();
-                }, 1000);
-            }
-        }
-    }
-}
-</code></pre>
-      
-    </div><!-- .entry-content -->
-
-    
-      <section id="comments">
-        <div id="disqus_thread"></div>
-          <script type="text/javascript">
-          /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-          var disqus_shortname = 'renhongl'; // required: replace example with your forum shortname
-      
-          /* * * DON'T EDIT BELOW THIS LINE * * */
-          (function() {
-            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-          })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-      </section>
-      
-
-    <footer class="entry-meta">
-    <a href="/2017/04/25/Javascript设计模式简述/">
-    <time datetime="2017-04-25T13:25:12.000Z" class="entry-date">
-        2017-04-25
-    </time>
-</a>
-    
-    
-  <span class="article-delim">&#8226;</span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascript设计模式/">Javascript设计模式</a></li></ul>
-
-    </footer>
+  </div>
 </article>
 
-
-    
-<nav class="nav-single">
-    <h3 class="assistive-text">文章导航</h3>
-    
-        <span class="nav-previous"><a href="/2017/04/27/原型模式/" rel="prev"><span class="meta-nav">←</span> 原型模式</a></span>
-    
-    
-        <span class="nav-next"><a href="/2017/02/04/Javascript标准参考教程重点/" rel="next">Javascript标准参考教程重点 <span class="meta-nav">→</span></a></span>
-    
-</nav><!-- .nav-single -->
-
-
-
-
-
-
-
-
-</div></div>
-        <div id="secondary" class="widget-area" role="complementary">
-  
-    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
-    <div>
-        <input type="text" value="" name="s" id="s" />
-        <input type="submit" id="searchsubmit" value="搜索" />
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+        </div>
     </div>
-</form></aside>
-  
-    
-  <aside class="widget">
-    <h3 class="widget-title">Music</h3>
-    <div class="widget-content">
-      <audio src="http://other.web.rc01.sycdn.kuwo.cn/resource/n3/99/21/1172239707.mp3" controls="controls"
-             style="width:100%" loop>
-        您的浏览器不支持 audio 标签。
-      </audio>
 
-      <!-- <object type="application/x-shockwave-flash" id="ximalaya_player" data="http://other.web.rc01.sycdn.kuwo.cn/resource/n3/99/21/1172239707.mp3?auto=true" width="190" height="36"></object> -->
-    </div>
-  </aside>
 
-  
-    <aside class="widget">
-    <h3 class="widget-title">关于我</h3>
-    <div class="widget-content">
-      <p>邮箱：1075220132@qq.com</p>
-      <p>QQ：1075220132</p>
-      <!-- <iframe width="100%" height="110" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=0&fansRow=1&ptype=1&speed=0&skin=1&isTitle=0&noborder=0&isWeibo=0&isFans=1&uid=2216356441&verifier=2e06a95d&dpc=1"></iframe>
-      
-      <iframe width="100%" height="320" frameborder="0" scrolling="no" src="https://cdn.jsdelivr.net/github-cards/1.0.2/cards/medium.html?user=wizardforcel&identity=ghcard-wizardforcel-1"></iframe> -->
-    </div>
-</aside>
-  
-    <aside class="widget">
-    <h3 class="widget-title">赞助我</h3>
-    <div class="widget-content">
-      <img src='/css/images/qr_alipay.png' style='width:100%;' />
-    </div>
-</aside>
-  
-    
-  
-    
-  <aside class="widget">
-    <h3 class="widget-title">Recents</h3>
-    <div class="widget-content">
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
       <ul>
-        
-          <li>
-            <a href="/2018/06/18/函数式编程/">函数式编程</a>
-          </li>
-        
-          <li>
-            <a href="/2018/06/18/career-development/">职业发展方向</a>
-          </li>
-        
-          <li>
-            <a href="/2018/06/18/技术选型/">技术选型</a>
-          </li>
-        
-          <li>
-            <a href="/2018/05/10/redux/">Redux</a>
-          </li>
-        
-          <li>
-            <a href="/2018/05/10/flux/">Flux</a>
-          </li>
+         
+          <li><a href="/">博客</a></li>
+         
+          <li><a href="/archives/">归档</a></li>
+         
+          <li><a href="/projects/">项目</a></li>
+         
+          <li><a href="/search/">搜索</a></li>
+         
+          <li><a href="/links/">链接</a></li>
+         
+          <li><a href="/about/">关于</a></li>
         
       </ul>
     </div>
-  </aside>
 
-  
-    
-  <aside class="widget">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget-content">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/">ES6</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript设计模式/">Javascript设计模式</a><span class="tag-list-count">15</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mongo/">Mongo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redux/">Redux</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Webpack/">Webpack</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/分享/">分享</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/综合技能/">综合技能</a><span class="tag-list-count">2</span></li></ul>
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#简介"><span class="toc-number">1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#鸭子类型"><span class="toc-number">2.</span> <span class="toc-text">鸭子类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#多态"><span class="toc-number">3.</span> <span class="toc-text">多态</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#封装"><span class="toc-number">4.</span> <span class="toc-text">封装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#this"><span class="toc-number">5.</span> <span class="toc-text">this</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#call和apply"><span class="toc-number">6.</span> <span class="toc-text">call和apply</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#闭包"><span class="toc-number">7.</span> <span class="toc-text">闭包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#函数柯里化（function-currying）"><span class="toc-number">8.</span> <span class="toc-text">函数柯里化（function currying）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#uncurrying"><span class="toc-number">9.</span> <span class="toc-text">uncurrying</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#降频"><span class="toc-number">10.</span> <span class="toc-text">降频</span></a></li></ol>
     </div>
-  </aside>
 
-  
-    
-  <aside class="widget">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget-content tagcloud">
-      <a href="/tags/ES6/" style="font-size: 17.5px;">ES6</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Javascript/" style="font-size: 12.5px;">Javascript</a> <a href="/tags/Javascript设计模式/" style="font-size: 20px;">Javascript设计模式</a> <a href="/tags/Mongo/" style="font-size: 10px;">Mongo</a> <a href="/tags/Redux/" style="font-size: 12.5px;">Redux</a> <a href="/tags/Webpack/" style="font-size: 10px;">Webpack</a> <a href="/tags/分享/" style="font-size: 15px;">分享</a> <a href="/tags/综合技能/" style="font-size: 12.5px;">综合技能</a>
-    </div>
-  </aside>
-
-  
-    <aside class="widget">
-    <h3 class="widget-title">友情链接</h3>
-    <div class="widget-content">
-<ul id='link-list'>
-<!-- link begin -->
-<li><a href="https://littlesistermogu.github.io/">蘑菇</a></li>
-
-<!-- link end -->
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://github.com/renhongl/2017/04/25/Javascript设计模式简述/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://github.com/renhongl/2017/04/25/Javascript设计模式简述/&text=Javascript设计模式"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://github.com/renhongl/2017/04/25/Javascript设计模式简述/&title=Javascript设计模式"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://github.com/renhongl/2017/04/25/Javascript设计模式简述/&is_video=false&description=Javascript设计模式"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Javascript设计模式&body=Check out this article: https://github.com/renhongl/2017/04/25/Javascript设计模式简述/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://github.com/renhongl/2017/04/25/Javascript设计模式简述/&title=Javascript设计模式"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://github.com/renhongl/2017/04/25/Javascript设计模式简述/&title=Javascript设计模式"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://github.com/renhongl/2017/04/25/Javascript设计模式简述/&title=Javascript设计模式"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://github.com/renhongl/2017/04/25/Javascript设计模式简述/&title=Javascript设计模式"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://github.com/renhongl/2017/04/25/Javascript设计模式简述/&name=Javascript设计模式&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
 </ul>
+
     </div>
-</aside>
-  
-</div>
-      </div>
-      <footer id="colophon" role="contentinfo">
-    <p>&copy; 2018 柚子
-    All rights reserved.</p>
-    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
-</footer>
-    <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
 
-<script src="/js/jquery-2.0.3.min.js"></script>
-
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/script.js"></script>
-
-<script src="/js/navigation.js"></script>
-
-<div id="bg"></div>
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> 话题</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> 回到顶部</a>
+    </div>
 
   </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2019 柚子
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">博客</a></li>
+         
+          <li><a href="/archives/">归档</a></li>
+         
+          <li><a href="/projects/">项目</a></li>
+         
+          <li><a href="/search/">搜索</a></li>
+         
+          <li><a href="/links/">链接</a></li>
+         
+          <li><a href="/about/">关于</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
 </body>
 </html>
+<!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+<!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'renhongl';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+

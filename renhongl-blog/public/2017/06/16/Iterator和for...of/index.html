@@ -1,104 +1,156 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  
-  <meta name="description" content="Iterator 和 for…of循环Iterator（遍历器）为各种不同的数据结构提供统一的访问机制。
-任何数据结构只要部署了Iterator接口，就可以完成遍历操作。
-遍历操作：依次处理该数据结构的所有成员。" />
-  
-
-  
-  <meta name="keywords" content="前端,js,nodejs,electron,jquery,javascript,html5,开发者,程序猿,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,html,css,css3,用户体验" />
-  
-  
-  
-  
-  
-  
-  <title>Iterator和for...of | 柚子</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Iterator 和 for…of循环Iterator（遍历器）为各种不同的数据结构提供统一的访问机制。 任何数据结构只要部署了Iterator接口，就可以完成遍历操作。 遍历操作：依次处理该数据结构的所有成员。">
+<html lang=zh>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="Iterator 和 for…of循环Iterator（遍历器）为各种不同的数据结构提供统一的访问机制。 任何数据结构只要部署了Iterator接口，就可以完成遍历操作。 遍历操作：依次处理该数据结构的所有成员。">
 <meta name="keywords" content="ES6">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Iterator和for...of">
 <meta property="og:url" content="https://github.com/renhongl/2017/06/16/Iterator和for...of/index.html">
 <meta property="og:site_name" content="柚子">
 <meta property="og:description" content="Iterator 和 for…of循环Iterator（遍历器）为各种不同的数据结构提供统一的访问机制。 任何数据结构只要部署了Iterator接口，就可以完成遍历操作。 遍历操作：依次处理该数据结构的所有成员。">
+<meta property="og:locale" content="zh">
 <meta property="og:updated_time" content="2018-03-10T04:00:35.303Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Iterator和for...of">
 <meta name="twitter:description" content="Iterator 和 for…of循环Iterator（遍历器）为各种不同的数据结构提供统一的访问机制。 任何数据结构只要部署了Iterator接口，就可以完成遍历操作。 遍历操作：依次处理该数据结构的所有成员。">
-  
-  
-    <link rel="icon" href="/css/images/favicon.ico">
-  
-  <link rel="stylesheet" href="/css/style.css">
-  
-
-  
-  <!-- baidu webmaster push -->
-  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>Iterator和for...of</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/css/rtl.css">
+    
+    <!-- rss -->
+    
+    
 </head>
-<body class="home blog custom-background custom-font-enabled single-author">
-  <div id="page" class="hfeed site">
-      <header id="masthead" class="site-header" role="banner">
-    <hgroup>
-      <h1 class="site-title">
-        <a href="/" title="柚子" rel="home">柚子</a>
-      </h1>
-      
-        <h2 class="site-description">
-          <a href="/" id="subtitle">如果你今天对自己满意，明天就会被淘汰。</a>
-        </h2>
-      
-    </hgroup>
 
-    <nav id="site-navigation" class="main-navigation" role="navigation">
-            <button class="menu-toggle">菜单</button>
-            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
-            <div class="menu-main-container">
-                <ul id="menu-main" class="nav-menu">
-                
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
-                
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/thebest">TheBest</a></li>
-                
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/mr/">Mr UI</a></li>
-                
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/game/">Game</a></li>
-                
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://github.com/renhongl">Github</a></li>
-                
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://codepen.io/renhongl">Codepen</a></li>
-                
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
-                
-                </ul>
-            </div>
-    </nav>
-</header>
-      <div id="main" class="wrapper">
-        <div id="primary" class="site-content"><div id="content" role="main"><article id="post-Iterator和for...of" class="post-Iterator和for...of post type-post status-publish format-standard hentry">
-    <!---->
-
-      <header class="entry-header">
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">博客</a></li>
+         
+          <li><a href="/archives/">归档</a></li>
+         
+          <li><a href="/projects/">项目</a></li>
+         
+          <li><a href="/search/">搜索</a></li>
+         
+          <li><a href="/links/">链接</a></li>
+         
+          <li><a href="/about/">关于</a></li>
+        
+      </ul>
+    </span>
+    <br>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2017/06/18/let和const/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
         
         
-  
-    <h1 class="entry-title article-title">
-      Iterator和for...of
+        <li><a class="icon" href="/2017/06/14/Class/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一页</span>
+      <span id="i-next" class="info" style="display:none;">下一页</span>
+      <span id="i-top" class="info" style="display:none;">回到顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享</span>
+    </span>
+    <br>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://github.com/renhongl/2017/06/16/Iterator和for...of/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://github.com/renhongl/2017/06/16/Iterator和for...of/&text=Iterator和for...of"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://github.com/renhongl/2017/06/16/Iterator和for...of/&title=Iterator和for...of"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://github.com/renhongl/2017/06/16/Iterator和for...of/&is_video=false&description=Iterator和for...of"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Iterator和for...of&body=Check out this article: https://github.com/renhongl/2017/06/16/Iterator和for...of/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://github.com/renhongl/2017/06/16/Iterator和for...of/&title=Iterator和for...of"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://github.com/renhongl/2017/06/16/Iterator和for...of/&title=Iterator和for...of"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://github.com/renhongl/2017/06/16/Iterator和for...of/&title=Iterator和for...of"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://github.com/renhongl/2017/06/16/Iterator和for...of/&title=Iterator和for...of"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://github.com/renhongl/2017/06/16/Iterator和for...of/&name=Iterator和for...of&description=&lt;h2 id=&#34;Iterator-和-for…of循环&#34;&gt;&lt;a href=&#34;#Iterator-和-for…of循环&#34; class=&#34;headerlink&#34; title=&#34;Iterator 和 for…of循环&#34;&gt;&lt;/a&gt;Iterator 和 for…of循环&lt;/h2&gt;&lt;h3 id=&#34;Iterator（遍历器）&#34;&gt;&lt;a href=&#34;#Iterator（遍历器）&#34; class=&#34;headerlink&#34; title=&#34;Iterator（遍历器）&#34;&gt;&lt;/a&gt;Iterator（遍历器）&lt;/h3&gt;&lt;p&gt;为各种不同的数据结构提供统一的访问机制。&lt;/p&gt;
+&lt;p&gt;任何数据结构只要部署了Iterator接口，就可以完成遍历操作。&lt;/p&gt;
+&lt;p&gt;遍历操作：依次处理该数据结构的所有成员。&lt;/p&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Iterator-和-for…of循环"><span class="toc-number">1.</span> <span class="toc-text">Iterator 和 for…of循环</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Iterator（遍历器）"><span class="toc-number">1.1.</span> <span class="toc-text">Iterator（遍历器）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#遍历过程"><span class="toc-number">1.2.</span> <span class="toc-text">遍历过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#for…of循环"><span class="toc-number">1.3.</span> <span class="toc-text">for…of循环</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#原生具备Iterator接口的数据结构"><span class="toc-number">1.4.</span> <span class="toc-text">原生具备Iterator接口的数据结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#除了for…of，其他会调用默认遍历器接口的情况"><span class="toc-number">1.5.</span> <span class="toc-text">除了for…of，其他会调用默认遍历器接口的情况</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Iterator接口最简单实现"><span class="toc-number">1.6.</span> <span class="toc-text">Iterator接口最简单实现</span></a></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope="" itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Iterator和for...of
     </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+        <span itemprop="name">柚子</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2017-06-16T12:29:38.000Z" itemprop="datePublished">2017-06-16</time>
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/ES6/">ES6</a>
+    </div>
+
+
+    </div>
+  </header>
   
 
-        
-       
-      </header><!-- .entry-header -->
-
-    <div class="entry-content">
-      
-        <h2 id="Iterator-和-for…of循环"><a href="#Iterator-和-for…of循环" class="headerlink" title="Iterator 和 for…of循环"></a>Iterator 和 for…of循环</h2><h3 id="Iterator（遍历器）"><a href="#Iterator（遍历器）" class="headerlink" title="Iterator（遍历器）"></a>Iterator（遍历器）</h3><p>为各种不同的数据结构提供统一的访问机制。</p>
+  <div class="content" itemprop="articleBody">
+    <h2 id="Iterator-和-for…of循环"><a href="#Iterator-和-for…of循环" class="headerlink" title="Iterator 和 for…of循环"></a>Iterator 和 for…of循环</h2><h3 id="Iterator（遍历器）"><a href="#Iterator（遍历器）" class="headerlink" title="Iterator（遍历器）"></a>Iterator（遍历器）</h3><p>为各种不同的数据结构提供统一的访问机制。</p>
 <p>任何数据结构只要部署了Iterator接口，就可以完成遍历操作。</p>
 <p>遍历操作：依次处理该数据结构的所有成员。</p>
 <a id="more"></a>
@@ -137,187 +189,126 @@
 </ol>
 <h3 id="Iterator接口最简单实现"><a href="#Iterator接口最简单实现" class="headerlink" title="Iterator接口最简单实现"></a>Iterator接口最简单实现</h3><p>为Symbol.iterator创建一个Generator函数。</p>
 
-      
-    </div><!-- .entry-content -->
-
-    
-      <section id="comments">
-        <div id="disqus_thread"></div>
-          <script type="text/javascript">
-          /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-          var disqus_shortname = 'renhongl'; // required: replace example with your forum shortname
-      
-          /* * * DON'T EDIT BELOW THIS LINE * * */
-          (function() {
-            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-          })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-      </section>
-      
-
-    <footer class="entry-meta">
-    <a href="/2017/06/16/Iterator和for...of/">
-    <time datetime="2017-06-16T12:29:38.000Z" class="entry-date">
-        2017-06-16
-    </time>
-</a>
-    
-    
-  <span class="article-delim">&#8226;</span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ES6/">ES6</a></li></ul>
-
-    </footer>
+  </div>
 </article>
 
-
-    
-<nav class="nav-single">
-    <h3 class="assistive-text">文章导航</h3>
-    
-        <span class="nav-previous"><a href="/2017/06/18/let和const/" rel="prev"><span class="meta-nav">←</span> let和const</a></span>
-    
-    
-        <span class="nav-next"><a href="/2017/06/14/Class/" rel="next">Class <span class="meta-nav">→</span></a></span>
-    
-</nav><!-- .nav-single -->
-
-
-
-
-
-
-
-
-</div></div>
-        <div id="secondary" class="widget-area" role="complementary">
-  
-    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
-    <div>
-        <input type="text" value="" name="s" id="s" />
-        <input type="submit" id="searchsubmit" value="搜索" />
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+        </div>
     </div>
-</form></aside>
-  
-    
-  <aside class="widget">
-    <h3 class="widget-title">Music</h3>
-    <div class="widget-content">
-      <audio src="http://other.web.rc01.sycdn.kuwo.cn/resource/n3/99/21/1172239707.mp3" controls="controls"
-             style="width:100%" loop>
-        您的浏览器不支持 audio 标签。
-      </audio>
 
-      <!-- <object type="application/x-shockwave-flash" id="ximalaya_player" data="http://other.web.rc01.sycdn.kuwo.cn/resource/n3/99/21/1172239707.mp3?auto=true" width="190" height="36"></object> -->
-    </div>
-  </aside>
 
-  
-    <aside class="widget">
-    <h3 class="widget-title">关于我</h3>
-    <div class="widget-content">
-      <p>邮箱：1075220132@qq.com</p>
-      <p>QQ：1075220132</p>
-      <!-- <iframe width="100%" height="110" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=0&fansRow=1&ptype=1&speed=0&skin=1&isTitle=0&noborder=0&isWeibo=0&isFans=1&uid=2216356441&verifier=2e06a95d&dpc=1"></iframe>
-      
-      <iframe width="100%" height="320" frameborder="0" scrolling="no" src="https://cdn.jsdelivr.net/github-cards/1.0.2/cards/medium.html?user=wizardforcel&identity=ghcard-wizardforcel-1"></iframe> -->
-    </div>
-</aside>
-  
-    <aside class="widget">
-    <h3 class="widget-title">赞助我</h3>
-    <div class="widget-content">
-      <img src='/css/images/qr_alipay.png' style='width:100%;' />
-    </div>
-</aside>
-  
-    
-  
-    
-  <aside class="widget">
-    <h3 class="widget-title">Recents</h3>
-    <div class="widget-content">
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
       <ul>
-        
-          <li>
-            <a href="/2018/06/18/函数式编程/">函数式编程</a>
-          </li>
-        
-          <li>
-            <a href="/2018/06/18/career-development/">职业发展方向</a>
-          </li>
-        
-          <li>
-            <a href="/2018/06/18/技术选型/">技术选型</a>
-          </li>
-        
-          <li>
-            <a href="/2018/05/10/redux/">Redux</a>
-          </li>
-        
-          <li>
-            <a href="/2018/05/10/flux/">Flux</a>
-          </li>
+         
+          <li><a href="/">博客</a></li>
+         
+          <li><a href="/archives/">归档</a></li>
+         
+          <li><a href="/projects/">项目</a></li>
+         
+          <li><a href="/search/">搜索</a></li>
+         
+          <li><a href="/links/">链接</a></li>
+         
+          <li><a href="/about/">关于</a></li>
         
       </ul>
     </div>
-  </aside>
 
-  
-    
-  <aside class="widget">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget-content">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/">ES6</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript设计模式/">Javascript设计模式</a><span class="tag-list-count">15</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mongo/">Mongo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redux/">Redux</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Webpack/">Webpack</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/分享/">分享</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/综合技能/">综合技能</a><span class="tag-list-count">2</span></li></ul>
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Iterator-和-for…of循环"><span class="toc-number">1.</span> <span class="toc-text">Iterator 和 for…of循环</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Iterator（遍历器）"><span class="toc-number">1.1.</span> <span class="toc-text">Iterator（遍历器）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#遍历过程"><span class="toc-number">1.2.</span> <span class="toc-text">遍历过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#for…of循环"><span class="toc-number">1.3.</span> <span class="toc-text">for…of循环</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#原生具备Iterator接口的数据结构"><span class="toc-number">1.4.</span> <span class="toc-text">原生具备Iterator接口的数据结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#除了for…of，其他会调用默认遍历器接口的情况"><span class="toc-number">1.5.</span> <span class="toc-text">除了for…of，其他会调用默认遍历器接口的情况</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Iterator接口最简单实现"><span class="toc-number">1.6.</span> <span class="toc-text">Iterator接口最简单实现</span></a></li></ol></li></ol>
     </div>
-  </aside>
 
-  
-    
-  <aside class="widget">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget-content tagcloud">
-      <a href="/tags/ES6/" style="font-size: 17.5px;">ES6</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Javascript/" style="font-size: 12.5px;">Javascript</a> <a href="/tags/Javascript设计模式/" style="font-size: 20px;">Javascript设计模式</a> <a href="/tags/Mongo/" style="font-size: 10px;">Mongo</a> <a href="/tags/Redux/" style="font-size: 12.5px;">Redux</a> <a href="/tags/Webpack/" style="font-size: 10px;">Webpack</a> <a href="/tags/分享/" style="font-size: 15px;">分享</a> <a href="/tags/综合技能/" style="font-size: 12.5px;">综合技能</a>
-    </div>
-  </aside>
-
-  
-    <aside class="widget">
-    <h3 class="widget-title">友情链接</h3>
-    <div class="widget-content">
-<ul id='link-list'>
-<!-- link begin -->
-<li><a href="https://littlesistermogu.github.io/">蘑菇</a></li>
-
-<!-- link end -->
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://github.com/renhongl/2017/06/16/Iterator和for...of/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://github.com/renhongl/2017/06/16/Iterator和for...of/&text=Iterator和for...of"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://github.com/renhongl/2017/06/16/Iterator和for...of/&title=Iterator和for...of"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://github.com/renhongl/2017/06/16/Iterator和for...of/&is_video=false&description=Iterator和for...of"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Iterator和for...of&body=Check out this article: https://github.com/renhongl/2017/06/16/Iterator和for...of/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://github.com/renhongl/2017/06/16/Iterator和for...of/&title=Iterator和for...of"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://github.com/renhongl/2017/06/16/Iterator和for...of/&title=Iterator和for...of"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://github.com/renhongl/2017/06/16/Iterator和for...of/&title=Iterator和for...of"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://github.com/renhongl/2017/06/16/Iterator和for...of/&title=Iterator和for...of"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://github.com/renhongl/2017/06/16/Iterator和for...of/&name=Iterator和for...of&description=&lt;h2 id=&#34;Iterator-和-for…of循环&#34;&gt;&lt;a href=&#34;#Iterator-和-for…of循环&#34; class=&#34;headerlink&#34; title=&#34;Iterator 和 for…of循环&#34;&gt;&lt;/a&gt;Iterator 和 for…of循环&lt;/h2&gt;&lt;h3 id=&#34;Iterator（遍历器）&#34;&gt;&lt;a href=&#34;#Iterator（遍历器）&#34; class=&#34;headerlink&#34; title=&#34;Iterator（遍历器）&#34;&gt;&lt;/a&gt;Iterator（遍历器）&lt;/h3&gt;&lt;p&gt;为各种不同的数据结构提供统一的访问机制。&lt;/p&gt;
+&lt;p&gt;任何数据结构只要部署了Iterator接口，就可以完成遍历操作。&lt;/p&gt;
+&lt;p&gt;遍历操作：依次处理该数据结构的所有成员。&lt;/p&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
 </ul>
+
     </div>
-</aside>
-  
-</div>
-      </div>
-      <footer id="colophon" role="contentinfo">
-    <p>&copy; 2018 柚子
-    All rights reserved.</p>
-    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
-</footer>
-    <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
 
-<script src="/js/jquery-2.0.3.min.js"></script>
-
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/script.js"></script>
-
-<script src="/js/navigation.js"></script>
-
-<div id="bg"></div>
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> 话题</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> 回到顶部</a>
+    </div>
 
   </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2019 柚子
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">博客</a></li>
+         
+          <li><a href="/archives/">归档</a></li>
+         
+          <li><a href="/projects/">项目</a></li>
+         
+          <li><a href="/search/">搜索</a></li>
+         
+          <li><a href="/links/">链接</a></li>
+         
+          <li><a href="/about/">关于</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
 </body>
 </html>
+<!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+<!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'renhongl';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+

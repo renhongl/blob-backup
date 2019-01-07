@@ -26,7 +26,7 @@ ES5 只有全局作用域和函数作用域，没有块级作用域，这带来�
  * 第一种场景，内层变量可能会覆盖外层变量。
  * 第二种场景，用来计数的循环变量泄露为全局变量。
 
- ## const
+ ### const
  const声明一个只读的常量。一旦声明，常量的值就不能改变。
 
  const实际上保证的，并不是变量的值不得改动，而是变量指向的那个内存地址不得改动。对于简单类型的数据（数值、字符串、布尔值），值就保存在变量指向的那个内存地址，因此等同于常量。但对于复合类型的数据（主要是对象和数组），变量指向的内存地址，保存的只是一个指针，const只能保证这个指针是固定的，至于它指向的数据结构是不是可变的，就完全不能控制了。因此，将一个对象声明为常量必须非常小心。
@@ -35,14 +35,15 @@ ES5 只有全局作用域和函数作用域，没有块级作用域，这带来�
 
  对象及其属性冻结：
 
-    var constantize = (obj) => {
-        Object.freeze(obj);
-        Object.keys(obj).forEach( (key, i) => {
-            if ( typeof obj[key] === 'object' ) {
-            constantize( obj[key] );
-            }
-        });
-    };
+
+        var constantize = (obj) => {
+            Object.freeze(obj);
+            Object.keys(obj).forEach( (key, i) => {
+                if ( typeof obj[key] === 'object' ) {
+                constantize( obj[key] );
+                }
+            });
+        };
 
 
 ## 顶层对象
@@ -50,6 +51,7 @@ ES5 只有全局作用域和函数作用域，没有块级作用域，这带来�
 1. 浏览器里面，顶层对象是window，但 Node 和 Web Worker 没有window。
 2. 浏览器和 Web Worker 里面，self也指向顶层对象，但是 Node 没有self。
 3. Node 里面，顶层对象是global，但其他环境都不支持。
+
 
         // 方法一
         (typeof window !== 'undefined'

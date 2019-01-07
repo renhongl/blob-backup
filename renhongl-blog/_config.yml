@@ -48,6 +48,9 @@ archive: 1
 category: 1
 tag: 1
 
+language: zh
+
+
 # Server
 ## Hexo uses Connect as a server
 ## You can customize the logger format as defined in
@@ -79,7 +82,7 @@ disqus_shortname: renhongl
 #  - hexo-generator-feed
 #  - hexo-generator-baidu-sitemap
 #  - hexo-generator-sitemap
-theme: cyanstyle2
+theme: cactus
 exclude_generator:
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
@@ -91,6 +94,11 @@ deploy:
   type: git
   repo: git@github.com:renhongl/renhongl.github.io.git
   branch: master
+
+search:
+  path: search.xml
+  field: post
+  content: true
 
 sitemap:
     path: sitemap.xml

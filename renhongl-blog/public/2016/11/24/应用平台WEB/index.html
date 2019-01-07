@@ -1,111 +1,165 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  
-  <meta name="description" content="项目涉及技术：RequireJS, Vue.js, NodeJS, Express, MongoDB, Bootstrap, WebSocket, JQuery, ES2015。" />
-  
-
-  
-  <meta name="keywords" content="前端,js,nodejs,electron,jquery,javascript,html5,开发者,程序猿,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,html,css,css3,用户体验" />
-  
-  
-  
-  
-  
-  
-  <title>应用平台WEB | 柚子</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="项目涉及技术：RequireJS, Vue.js, NodeJS, Express, MongoDB, Bootstrap, WebSocket, JQuery, ES2015。">
-<meta name="keywords" content="分享">
+<html lang=zh>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="简介项目涉及技术：RequireJS, Vue.js, NodeJS, Express, MongoDB, Bootstrap, WebSocket, JQuery, ES2015。 应用平台WEB版，是为了做一个网页版的APP store，也就是可以扩展出其他应用的一个平台。目前平台除了搭建了基本的结构之外，还做了一个简单的一对一聊天应用和简单的博客系统。下面将进行简单的介绍，源代码可在dem">
+<meta name="keywords" content="Javascript,分享">
 <meta property="og:type" content="article">
 <meta property="og:title" content="应用平台WEB">
 <meta property="og:url" content="https://github.com/renhongl/2016/11/24/应用平台WEB/index.html">
 <meta property="og:site_name" content="柚子">
-<meta property="og:description" content="项目涉及技术：RequireJS, Vue.js, NodeJS, Express, MongoDB, Bootstrap, WebSocket, JQuery, ES2015。">
-<meta property="og:image" content="https://github.com/images/chatHome.png">
+<meta property="og:description" content="简介项目涉及技术：RequireJS, Vue.js, NodeJS, Express, MongoDB, Bootstrap, WebSocket, JQuery, ES2015。 应用平台WEB版，是为了做一个网页版的APP store，也就是可以扩展出其他应用的一个平台。目前平台除了搭建了基本的结构之外，还做了一个简单的一对一聊天应用和简单的博客系统。下面将进行简单的介绍，源代码可在dem">
+<meta property="og:locale" content="zh">
+<meta property="og:image" content="https://github.com/images/homeAndRoom.png">
 <meta property="og:image" content="https://github.com/images/signIn.png">
 <meta property="og:image" content="https://github.com/images/signUp.png">
 <meta property="og:image" content="https://github.com/images/resetPwd.png">
 <meta property="og:image" content="https://github.com/images/chatHome.png">
 <meta property="og:image" content="https://github.com/images/homeAndRoom.png">
 <meta property="og:image" content="https://github.com/images/docs.png">
-<meta property="og:updated_time" content="2018-02-24T13:04:48.129Z">
+<meta property="og:updated_time" content="2019-01-01T03:14:00.812Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="应用平台WEB">
-<meta name="twitter:description" content="项目涉及技术：RequireJS, Vue.js, NodeJS, Express, MongoDB, Bootstrap, WebSocket, JQuery, ES2015。">
-<meta name="twitter:image" content="https://github.com/images/chatHome.png">
-  
-  
-    <link rel="icon" href="/css/images/favicon.ico">
-  
-  <link rel="stylesheet" href="/css/style.css">
-  
-
-  
-  <!-- baidu webmaster push -->
-  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+<meta name="twitter:description" content="简介项目涉及技术：RequireJS, Vue.js, NodeJS, Express, MongoDB, Bootstrap, WebSocket, JQuery, ES2015。 应用平台WEB版，是为了做一个网页版的APP store，也就是可以扩展出其他应用的一个平台。目前平台除了搭建了基本的结构之外，还做了一个简单的一对一聊天应用和简单的博客系统。下面将进行简单的介绍，源代码可在dem">
+<meta name="twitter:image" content="https://github.com/images/homeAndRoom.png">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>应用平台WEB</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/css/rtl.css">
+    
+    <!-- rss -->
+    
+    
 </head>
-<body class="home blog custom-background custom-font-enabled single-author">
-  <div id="page" class="hfeed site">
-      <header id="masthead" class="site-header" role="banner">
-    <hgroup>
-      <h1 class="site-title">
-        <a href="/" title="柚子" rel="home">柚子</a>
-      </h1>
-      
-        <h2 class="site-description">
-          <a href="/" id="subtitle">如果你今天对自己满意，明天就会被淘汰。</a>
-        </h2>
-      
-    </hgroup>
 
-    <nav id="site-navigation" class="main-navigation" role="navigation">
-            <button class="menu-toggle">菜单</button>
-            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
-            <div class="menu-main-container">
-                <ul id="menu-main" class="nav-menu">
-                
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
-                
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/thebest">TheBest</a></li>
-                
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/mr/">Mr UI</a></li>
-                
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/game/">Game</a></li>
-                
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://github.com/renhongl">Github</a></li>
-                
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://codepen.io/renhongl">Codepen</a></li>
-                
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
-                
-                </ul>
-            </div>
-    </nav>
-</header>
-      <div id="main" class="wrapper">
-        <div id="primary" class="site-content"><div id="content" role="main"><article id="post-应用平台WEB" class="post-应用平台WEB post type-post status-publish format-standard hentry">
-    <!---->
-
-      <header class="entry-header">
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">博客</a></li>
+         
+          <li><a href="/archives/">归档</a></li>
+         
+          <li><a href="/projects/">项目</a></li>
+         
+          <li><a href="/search/">搜索</a></li>
+         
+          <li><a href="/links/">链接</a></li>
+         
+          <li><a href="/about/">关于</a></li>
+        
+      </ul>
+    </span>
+    <br>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2016/12/04/电脑远程控制工具/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
         
         
-  
-    <h1 class="entry-title article-title">
-      应用平台WEB
+        <li><a class="icon" href="/2016/11/15/应用平台桌面版/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一页</span>
+      <span id="i-next" class="info" style="display:none;">下一页</span>
+      <span id="i-top" class="info" style="display:none;">回到顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享</span>
+    </span>
+    <br>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://github.com/renhongl/2016/11/24/应用平台WEB/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://github.com/renhongl/2016/11/24/应用平台WEB/&text=应用平台WEB"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://github.com/renhongl/2016/11/24/应用平台WEB/&title=应用平台WEB"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://github.com/renhongl/2016/11/24/应用平台WEB/&is_video=false&description=应用平台WEB"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=应用平台WEB&body=Check out this article: https://github.com/renhongl/2016/11/24/应用平台WEB/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://github.com/renhongl/2016/11/24/应用平台WEB/&title=应用平台WEB"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://github.com/renhongl/2016/11/24/应用平台WEB/&title=应用平台WEB"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://github.com/renhongl/2016/11/24/应用平台WEB/&title=应用平台WEB"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://github.com/renhongl/2016/11/24/应用平台WEB/&title=应用平台WEB"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://github.com/renhongl/2016/11/24/应用平台WEB/&name=应用平台WEB&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#简介"><span class="toc-number">1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#图文介绍"><span class="toc-number">2.</span> <span class="toc-text">图文介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#后端部分代码介绍"><span class="toc-number">3.</span> <span class="toc-text">后端部分代码介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Email-js"><span class="toc-number">3.1.</span> <span class="toc-text">Email.js</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Server-js"><span class="toc-number">3.2.</span> <span class="toc-text">Server.js</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#User-js"><span class="toc-number">3.3.</span> <span class="toc-text">User.js</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#前端部分代码介绍"><span class="toc-number">4.</span> <span class="toc-text">前端部分代码介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Draggable-js"><span class="toc-number">4.1.</span> <span class="toc-text">Draggable.js</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Rain-js"><span class="toc-number">4.2.</span> <span class="toc-text">Rain.js</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Message-js"><span class="toc-number">4.3.</span> <span class="toc-text">Message.js</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-number">5.</span> <span class="toc-text">总结</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope="" itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        应用平台WEB
     </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+        <span itemprop="name">柚子</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2016-11-24T11:51:29.000Z" itemprop="datePublished">2016-11-24</time>
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/Javascript/">Javascript</a>, <a class="tag-link" href="/tags/分享/">分享</a>
+    </div>
+
+
+    </div>
+  </header>
   
 
-        
-       
-      </header><!-- .entry-header -->
-
-    <div class="entry-content">
-      
-        <p><img src="/images/chatHome.png" alt="ap"><br>项目涉及技术：RequireJS, Vue.js, NodeJS, Express, MongoDB, Bootstrap, WebSocket, JQuery, ES2015。<br><a id="more"></a><br>应用平台WEB版，是为了做一个网页版的APP store，也就是可以扩展出其他应用的一个平台。目前平台除了搭建了基本的结构之外，还做了一个简单的一对一聊天应用和简单的博客系统。下面将进行简单的介绍，源代码可在demo大师上下载：（<a href="http://www.demodashi.com/demo/12539.html" target="_blank" rel="noopener">源码</a>）。也可以点击下载（<a href="/other/AP_WEB.wmv">应用说明视频</a>）介绍。</p>
-<h3 id="图文介绍"><a href="#图文介绍" class="headerlink" title="图文介绍"></a>图文介绍</h3><p><img src="/images/signIn.png" alt="ap"></p>
+  <div class="content" itemprop="articleBody">
+    <p><img src="/images/homeAndRoom.png" alt="ap"></p>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>项目涉及技术：RequireJS, Vue.js, NodeJS, Express, MongoDB, Bootstrap, WebSocket, JQuery, ES2015。</p>
+<p>应用平台WEB版，是为了做一个网页版的APP store，也就是可以扩展出其他应用的一个平台。目前平台除了搭建了基本的结构之外，还做了一个简单的一对一聊天应用和简单的博客系统。下面将进行简单的介绍，源代码可在demo大师上下载：<a href="http://www.demodashi.com/demo/12539.html" target="_blank" rel="noopener">源码</a>，<a href="https://github.com/renhongl/ailiao">github点赞</a>。</p>
+<h2 id="图文介绍"><a href="#图文介绍" class="headerlink" title="图文介绍"></a>图文介绍</h2><p><img src="/images/signIn.png" alt="ap"></p>
 <p>这是登录页面，可以使用用户名和验证了的邮箱登录。</p>
 <p><img src="/images/signUp.png" alt="ap"></p>
 <p>这是注册页面，很简单的注册一下。 </p>
@@ -117,541 +171,140 @@
 <p>图的右边就是聊天的窗口，可以同时和多个人聊天，都会列在左边，点击就能切换聊天对象。窗口可以通过关闭所有聊天对象来关闭，或者通过右上角关闭按钮关闭。消息中可以发送一些表情。可以发送抖动窗口的消息。</p>
 <p><img src="/images/docs.png" alt="ap"></p>
 <p>这个应用是聊天主页的按钮点击出来的，可以显示一些简单的文档，并且可以点击喜欢某个文档，以及添加简单的评论信息。</p>
-<h3 id="后端代码介绍"><a href="#后端代码介绍" class="headerlink" title="后端代码介绍"></a>后端代码介绍</h3><p>Email.js: 用于发送邮件。</p>
-<pre><code>&apos;use strict&apos;;
-const nodemailer = require(&apos;nodemailer&apos;);
-const Config = require(&apos;./Config&apos;);
+<h2 id="后端部分代码介绍"><a href="#后端部分代码介绍" class="headerlink" title="后端部分代码介绍"></a>后端部分代码介绍</h2><h3 id="Email-js"><a href="#Email-js" class="headerlink" title="Email.js"></a>Email.js</h3><p>用于发送邮件</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"> 'use strict'</span>;</span><br><span class="line"><span class="keyword">const</span> nodemailer = <span class="built_in">require</span>(<span class="string">'nodemailer'</span>);</span><br><span class="line"><span class="keyword">const</span> Config = <span class="built_in">require</span>(<span class="string">'./Config'</span>);</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Email</span> </span>&#123;</span><br><span class="line">	<span class="keyword">constructor</span>(to, subject, text, html) &#123;</span><br><span class="line">		<span class="keyword">this</span>.config = &#123;</span><br><span class="line">			service: <span class="string">'126'</span>,</span><br><span class="line">			auth: &#123;</span><br><span class="line">				user: Config.EMAIL_SERVER,</span><br><span class="line">				pass: Config.EMAIL_PWD            </span><br><span class="line">			&#125;</span><br><span class="line">		&#125;;</span><br><span class="line">		<span class="keyword">this</span>.mailOptions = &#123;</span><br><span class="line">			<span class="keyword">from</span>: Config.EMAIL_SERVER,</span><br><span class="line">			to: to,</span><br><span class="line">			subject: subject,</span><br><span class="line">			text: text,</span><br><span class="line">			<span class="comment">//html: html</span></span><br><span class="line">		&#125;;</span><br><span class="line">		<span class="keyword">this</span>._send();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	_send() &#123;</span><br><span class="line">		<span class="keyword">let</span> transporter = nodemailer.createTransport(<span class="keyword">this</span>.config);</span><br><span class="line">		transporter.sendMail(<span class="keyword">this</span>.mailOptions, <span class="function"><span class="keyword">function</span> (<span class="params">error, info</span>) </span>&#123;</span><br><span class="line">			<span class="keyword">if</span> (error) &#123;</span><br><span class="line">				<span class="keyword">return</span> <span class="built_in">console</span>.log(error);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="built_in">console</span>.log(<span class="string">'Message sent: '</span> + info.response);</span><br><span class="line">			transporter.close();</span><br><span class="line">		&#125;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = Email;</span><br></pre></td></tr></table></figure>
+<h3 id="Server-js"><a href="#Server-js" class="headerlink" title="Server.js"></a>Server.js</h3><p>作为服务器，并且是Websocket的父类。</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">'use strict'</span>;</span><br><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>);</span><br><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</span><br><span class="line"><span class="keyword">const</span> socket = <span class="built_in">require</span>(<span class="string">'socket.io'</span>);</span><br><span class="line"><span class="keyword">const</span> Router = <span class="built_in">require</span>(<span class="string">'./Router'</span>);</span><br><span class="line"><span class="keyword">const</span> bodyParser = <span class="built_in">require</span>(<span class="string">'body-parser'</span>);</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Server</span></span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(port)&#123;</span><br><span class="line">    <span class="keyword">this</span>.port = port;</span><br><span class="line">    <span class="keyword">this</span>.app = express();</span><br><span class="line">    <span class="keyword">this</span>.server = http.createServer(<span class="keyword">this</span>.app);</span><br><span class="line">    <span class="keyword">this</span>.io = socket.listen(<span class="keyword">this</span>.server);</span><br><span class="line">    <span class="keyword">this</span>._run();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  _run()&#123;</span><br><span class="line">    <span class="keyword">this</span>.server.listen(<span class="keyword">this</span>.port);</span><br><span class="line">    <span class="keyword">this</span>.app.use(bodyParser.json());</span><br><span class="line">    <span class="keyword">this</span>.app.use(bodyParser.urlencoded(&#123; <span class="attr">extended</span>: <span class="literal">false</span> &#125;));</span><br><span class="line">    <span class="keyword">this</span>.app.use(express.static(__dirname.replace(<span class="regexp">/server\\core/</span>, <span class="string">'app'</span>)));</span><br><span class="line">    <span class="keyword">new</span> Router(<span class="keyword">this</span>.app);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'HTTP listening: 127.0.0.1:'</span> + <span class="keyword">this</span>.port);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = Server;</span><br></pre></td></tr></table></figure>
+<h3 id="User-js"><a href="#User-js" class="headerlink" title="User.js"></a>User.js</h3><p>和用户相关的所有接口都在这里。下面是一个获取验证码的接口，在获取请求后，会随机生成五位数验证码，发送到用户的邮箱中，并且在生成验证码的同时，会调用删除验证码的方法，在一定时间内将此验证码删除，那么用户就不能再使用此验证码修改密码了。</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">_getCode()&#123;</span><br><span class="line">  <span class="keyword">this</span>.app.get(<span class="string">'/getCode'</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> email = req.query.email;</span><br><span class="line">    <span class="keyword">let</span> code = <span class="string">''</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++)&#123;</span><br><span class="line">      code += <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * <span class="number">10</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">let</span> queryData = &#123;</span><br><span class="line">      email: email</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">let</span> updateData = &#123;</span><br><span class="line">      code: code</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">let</span> callback = <span class="function">(<span class="params">db</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">let</span> collection = db.collection(<span class="keyword">this</span>.userCollection);</span><br><span class="line">      collection.updateOne(queryData, &#123;$<span class="keyword">set</span>: updateData&#125;, <span class="function">(<span class="params">err, result</span>) =&gt;</span> &#123;</span><br><span class="line">        assert.equal(<span class="literal">null</span>, err);</span><br><span class="line">        db.close();</span><br><span class="line">        <span class="keyword">if</span>(result.result.n === <span class="number">1</span>)&#123;</span><br><span class="line">          <span class="keyword">new</span> Email(email, <span class="string">'重置密码'</span>, <span class="string">'你的验证码是：'</span> + code);</span><br><span class="line">          <span class="keyword">this</span>._removeCode(email);</span><br><span class="line">          res.send(&#123;status: <span class="string">'success'</span>, text: <span class="string">'验证码已发往你的邮箱，请查收。30分钟内有效。'</span>&#125;);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">          res.send(&#123;status: <span class="string">'error'</span>, text: <span class="string">'没有此邮箱，或许你需要注册账号。'</span>&#125;);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">new</span> MongoDB(<span class="keyword">this</span>.currentDB, callback);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="前端部分代码介绍"><a href="#前端部分代码介绍" class="headerlink" title="前端部分代码介绍"></a>前端部分代码介绍</h2><p>前端模块化采用的是RequireJS，AP_WEB2.0会使用Webpack,那时候会使用ES2015的模块管理。前端的代码较多，这里主要介绍下自己写的特别的功能。QueryString.js用户获取url上的参数信息。</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">define([], <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="meta">  'use strict'</span>;</span><br><span class="line">  <span class="class"><span class="keyword">class</span> <span class="title">QueryString</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>()&#123;</span><br><span class="line">      <span class="keyword">let</span> search = <span class="built_in">window</span>.location.search.substring(<span class="number">1</span>).split(<span class="string">'&amp;'</span>);</span><br><span class="line">      <span class="keyword">let</span> tempGroup = [];</span><br><span class="line"></span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">let</span> p <span class="keyword">of</span> search) &#123;</span><br><span class="line">        tempGroup.push(p.split(<span class="string">'='</span>));</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">this</span>.params = <span class="keyword">new</span> <span class="built_in">Map</span>(tempGroup);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    getValue(name)&#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.params.get(name);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> queryString = <span class="keyword">new</span> QueryString();</span><br><span class="line">  <span class="keyword">return</span> queryString;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="Draggable-js"><a href="#Draggable-js" class="headerlink" title="Draggable.js"></a>Draggable.js</h3><p>用于添加拖动功能，在创建时，传入需要拖动的元素，这个元素就能拖动了。</p>
+  <figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line">define([], function() &#123;</span><br><span class="line">  'use strict'<span class="comment">;</span></span><br><span class="line">  class Draggable &#123;</span><br><span class="line">    constructor($container) &#123;</span><br><span class="line">      this.$container = $container<span class="comment">;</span></span><br><span class="line">      for (<span class="name">let</span> subContainer of $container.children()) &#123;</span><br><span class="line">        this._handleEvents($(<span class="name">subContainer</span>))<span class="comment">;</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    _handleEvents($subContainer) &#123;</span><br><span class="line">      $subContainer.on('mousedown', (<span class="name">e</span>) =&gt; &#123;</span><br><span class="line">        if (!$(<span class="name">e</span>.target).hasClass('button')) &#123;</span><br><span class="line">          this._handleMousedown(<span class="name">e</span>)<span class="comment">;</span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125;)<span class="comment">;</span></span><br><span class="line"></span><br><span class="line">      $(<span class="name">document</span>).on('mousemove', (<span class="name">e</span>) =&gt; &#123;</span><br><span class="line">        if (!$(<span class="name">e</span>.target).hasClass('button')) &#123;</span><br><span class="line">          this._handleMousemove(<span class="name">e</span>)<span class="comment">;</span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125;)<span class="comment">;</span></span><br><span class="line"></span><br><span class="line">      $(<span class="name">document</span>).on('mouseup', (<span class="name">e</span>) =&gt; &#123;</span><br><span class="line">        if (!$(<span class="name">e</span>.target).hasClass('button')) &#123;</span><br><span class="line">          this._handleMouseup(<span class="name">e</span>)<span class="comment">;</span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125;)<span class="comment">;</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    _handleMousedown(<span class="name">e</span>) &#123;</span><br><span class="line">      let &#123;left, top&#125; = this.$container.css(['left', 'top'])<span class="comment">;</span></span><br><span class="line">      this.offsetX = this._parseStr(<span class="name">left</span>) - e.clientX<span class="comment">;</span></span><br><span class="line">      this.offsetY = this._parseStr(<span class="name">top</span>) - e.clientY<span class="comment">;</span></span><br><span class="line">      this.mouseDown = true<span class="comment">;</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    _handleMousemove(<span class="name">e</span>) &#123;</span><br><span class="line">      $(<span class="name">e</span>.target).css('cursor', 'url(<span class="name">/images/m1</span>.cur),default !important')<span class="comment">;</span></span><br><span class="line">      if (<span class="name">this</span>.mouseDown) &#123;</span><br><span class="line">        let x = e.clientX<span class="comment">;</span></span><br><span class="line">        let y = e.clientY<span class="comment">;</span></span><br><span class="line">        let positionX = x + this.offsetX<span class="comment">;</span></span><br><span class="line">        let positionY = y + this.offsetY<span class="comment">;</span></span><br><span class="line">        this.$container.css(&#123;</span><br><span class="line">          left: positionX,</span><br><span class="line">          top: positionY,</span><br><span class="line">        &#125;)<span class="comment">;</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    _handleMouseup(<span class="name">e</span>) &#123;</span><br><span class="line">      $(<span class="name">e</span>.target).css('cursor', 'url(<span class="name">/images/m1</span>.cur),default !important')<span class="comment">;</span></span><br><span class="line">      this.mouseDown = false<span class="comment">;</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    _parseStr(<span class="name">str</span>) &#123;</span><br><span class="line">      if(<span class="name">typeof</span> str !== 'string')&#123;</span><br><span class="line">        str += ''<span class="comment">; </span></span><br><span class="line">      &#125;</span><br><span class="line">      return Number(<span class="name">str</span>.split('px')[<span class="number">0</span>])<span class="comment">;</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  return Draggable<span class="comment">;</span></span><br><span class="line">&#125;)<span class="comment">;</span></span><br></pre></td></tr></table></figure>
+<h3 id="Rain-js"><a href="#Rain-js" class="headerlink" title="Rain.js"></a>Rain.js</h3><p>用于添加鼠标点击效果，创建之后，在整个网页中，除了class中有button的元素，其他都会在点击时，出现像雨滴落在地上的效果。</p>
+  <figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></td><td class="code"><pre><span class="line">define([], function() &#123;</span><br><span class="line">  'use strict'<span class="comment">;</span></span><br><span class="line">  class Rain &#123;</span><br><span class="line">    constructor() &#123;</span><br><span class="line">      this.settings = &#123;</span><br><span class="line">        width: <span class="number">10</span>,</span><br><span class="line">        height: <span class="number">10</span>,</span><br><span class="line">        borderColor: '#c6cac9',</span><br><span class="line">        opacity: <span class="number">0.7</span>,</span><br><span class="line">        borderRadius: <span class="number">5</span>,</span><br><span class="line">        borderWidth: <span class="number">5</span>,</span><br><span class="line">        maxWidth: <span class="number">70</span>,</span><br><span class="line">        widthOffset: <span class="number">2</span>,</span><br><span class="line">        radiusOffset: <span class="number">1</span>,</span><br><span class="line">        opacityOffset: <span class="number">0.05</span>,</span><br><span class="line">        borderOffset: <span class="number">1</span>,</span><br><span class="line">        position: 'fixed',</span><br><span class="line">        zIndex: <span class="number">100</span>,</span><br><span class="line">        borderStyle: 'solid',</span><br><span class="line">        class: 'rain',</span><br><span class="line">      &#125;<span class="comment">;</span></span><br><span class="line">      this._handleEvents()<span class="comment">;</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    _handleEvents() &#123;</span><br><span class="line">      let settings = this.settings<span class="comment">;</span></span><br><span class="line">      $(<span class="name">document</span>).on('click', (<span class="name">e</span>) =&gt; &#123;</span><br><span class="line">        if($(<span class="name">e</span>.target).hasClass('button'))&#123;</span><br><span class="line">          return<span class="comment">;</span></span><br><span class="line">        &#125;</span><br><span class="line">        let $rain = $('&lt;div&gt;').attr('class', settings.class).css(&#123;</span><br><span class="line">          position: settings.position,</span><br><span class="line">          zIndex: settings.zIndex,</span><br><span class="line">          borderStyle: settings.borderStyle,</span><br><span class="line">        &#125;)<span class="comment">;</span></span><br><span class="line">        $('body').append($rain)<span class="comment">;</span></span><br><span class="line">        let x = e.clientX<span class="comment">;</span></span><br><span class="line">        let y = e.clientY<span class="comment">;</span></span><br><span class="line">        this._initRain($rain, x, y)<span class="comment">;</span></span><br><span class="line">        this._updateRain($rain, x, y)<span class="comment">;</span></span><br><span class="line">      &#125;)<span class="comment">;</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    _updateRain($rain, x, y) &#123;</span><br><span class="line">      let settings = this.settings<span class="comment">;</span></span><br><span class="line">      let rainThread = setInterval( () =&gt; &#123;</span><br><span class="line">        let &#123;width, height,top, left, opacity, borderWidth, borderRadius&#125; = $rain.css(['width', 'height','top', 'left', 'opacity', 'borderWidth', 'borderRadius'])<span class="comment">;</span></span><br><span class="line">        $rain.css(&#123;</span><br><span class="line">          width: this._parseStr(<span class="name">width</span>) + settings.widthOffset,</span><br><span class="line">          height: this._parseStr(<span class="name">height</span>) + settings.widthOffset,</span><br><span class="line">          top: y - this._parseStr(<span class="name">height</span>) / <span class="number">2</span>,</span><br><span class="line">          left: x - this._parseStr(<span class="name">width</span>) / <span class="number">2</span>,</span><br><span class="line">          opacity: this._parseStr(<span class="name">opacity</span>) - settings.opacityOffset,</span><br><span class="line">          borderWidth: this._parseStr(<span class="name">borderWidth</span>) + settings.borderOffset,</span><br><span class="line">          borderRadius: this._parseStr(<span class="name">borderRadius</span>) + settings.radiusOffset,</span><br><span class="line">        &#125;)<span class="comment">;</span></span><br><span class="line">        if (<span class="name">this</span>._parseStr(<span class="name">width</span>) &gt; settings.maxWidth) &#123;</span><br><span class="line">          clearInterval(<span class="name">rainThread</span>)<span class="comment">;</span></span><br><span class="line">          $rain.remove()<span class="comment">;</span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125;, <span class="number">10</span>)<span class="comment">;</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    _initRain($rain, x, y) &#123;</span><br><span class="line">      let settings = this.settings<span class="comment">;</span></span><br><span class="line">      $rain.css(&#123;</span><br><span class="line">        width: settings.width,</span><br><span class="line">        height: settings.height,</span><br><span class="line">        borderColor: settings.borderColor,</span><br><span class="line">        opacity: settings.opacity,</span><br><span class="line">        borderRadius: settings.borderRadius,</span><br><span class="line">        borderWidth: settings.borderWidth,</span><br><span class="line">        top: y - this._parseStr(<span class="name">settings</span>.height) / <span class="number">2</span>,</span><br><span class="line">        left: x - this._parseStr(<span class="name">settings</span>.width) / <span class="number">2</span>,</span><br><span class="line">      &#125;)<span class="comment">;</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    _parseStr(<span class="name">str</span>)&#123;</span><br><span class="line">      if(<span class="name">typeof</span> str !== 'string')&#123;</span><br><span class="line">        str += ''<span class="comment">; </span></span><br><span class="line">      &#125;</span><br><span class="line">      return Number(<span class="name">str</span>.split('px')[<span class="number">0</span>])<span class="comment">;</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  return Rain<span class="comment">;</span></span><br><span class="line">&#125;)<span class="comment">;</span></span><br></pre></td></tr></table></figure>
+<h3 id="Message-js"><a href="#Message-js" class="headerlink" title="Message.js"></a>Message.js</h3><p>最后一个要介绍的是Message.js，它是一个全局提示的工具，项目中使用它做ajax返回信息的控制，做聊天室消息预览等。当有一些信息要发送给用户时，会在浏览器的右上角出现对话框，包含信息标题，信息内容等。并且分为几种类型的提示，不同类型会有不同主题的对话框出现。由于代码太多，这里只列出了它的构造方法。</p>
+  <figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">constructor</span>(type, content) &#123;</span><br><span class="line">  <span class="keyword">this</span>.title = <span class="string">''</span>;</span><br><span class="line">  <span class="keyword">this</span>.content = content;</span><br><span class="line">  <span class="keyword">this</span>.showTime = <span class="number">5000</span>;</span><br><span class="line">  <span class="keyword">this</span>.clearTime = <span class="number">1000</span>;</span><br><span class="line">  <span class="keyword">this</span>.clearThread = <span class="literal">null</span>;</span><br><span class="line">  <span class="keyword">this</span>.timeThread = <span class="literal">null</span>;</span><br><span class="line">  <span class="keyword">this</span>.$Message = $(<span class="string">'&lt;div&gt;'</span>).css(&#123;</span><br><span class="line">    color: <span class="string">'#fff'</span>,</span><br><span class="line">    borderRadius: <span class="number">5</span>,</span><br><span class="line">    width: <span class="number">300</span>,</span><br><span class="line">    display: <span class="string">'none'</span>,</span><br><span class="line">    zIndex: <span class="number">110</span>,</span><br><span class="line">    margin: <span class="string">'2px 5px'</span>,</span><br><span class="line">    clear: <span class="string">'both'</span>,</span><br><span class="line">    float: <span class="string">'right'</span>,</span><br><span class="line">    position: <span class="string">'relative'</span>,</span><br><span class="line">    boxShadow: <span class="string">'0px 0px 10px rgba(255, 255, 255, 1)'</span>,</span><br><span class="line">    opacity: <span class="number">0.9</span>,</span><br><span class="line">  &#125;).addClass(<span class="string">'message'</span>);</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">this</span>.$icon = $(<span class="string">'&lt;i&gt;'</span>).css(&#123;</span><br><span class="line">    display: <span class="string">'inline-block'</span>,</span><br><span class="line">    float: <span class="string">'left'</span>,</span><br><span class="line">    marginLeft: <span class="number">10</span>,</span><br><span class="line">    width: <span class="number">20</span>,</span><br><span class="line">    textAlign: <span class="string">'center'</span>,</span><br><span class="line">    fontSize: <span class="string">'1.2em'</span>,</span><br><span class="line">  &#125;).addClass(<span class="string">'msgIcon'</span>).appendTo(<span class="keyword">this</span>.$Message);</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">this</span>.$title = $(<span class="string">'&lt;div&gt;'</span>).css(&#123;</span><br><span class="line">    height: <span class="string">'45%'</span>,</span><br><span class="line">    width: <span class="number">260</span>,</span><br><span class="line">    float: <span class="string">'right'</span>,</span><br><span class="line">    fontSize: <span class="string">'1.2em'</span>,</span><br><span class="line">  &#125;).addClass(<span class="string">'msgTitle'</span>).appendTo(<span class="keyword">this</span>.$Message);</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">this</span>.$time = $(<span class="string">'&lt;span&gt;'</span>).css(&#123;</span><br><span class="line">    position: <span class="string">'absolute'</span>,</span><br><span class="line">    top: <span class="number">2</span>,</span><br><span class="line">    right: <span class="number">2</span>,</span><br><span class="line">    fontSize: <span class="string">'0.7em'</span>,</span><br><span class="line">  &#125;).addClass(<span class="string">'msgTime'</span>).appendTo(<span class="keyword">this</span>.$Message);</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">this</span>.$content = $(<span class="string">'&lt;div&gt;'</span>).css(&#123;</span><br><span class="line">    float: <span class="string">'right'</span>,</span><br><span class="line">    height: <span class="string">'56%'</span>,</span><br><span class="line">    width: <span class="number">260</span>,</span><br><span class="line">    paddingBottom: <span class="number">5</span>,</span><br><span class="line">    paddingRight: <span class="number">5</span>,</span><br><span class="line">    fontSize: <span class="string">'0.8em'</span>,</span><br><span class="line">  &#125;).addClass(<span class="string">'msgContent'</span>).appendTo(<span class="keyword">this</span>.$Message);</span><br><span class="line">  </span><br><span class="line">  switch (type) &#123;</span><br><span class="line">    case <span class="string">'infor'</span>:</span><br><span class="line">      <span class="keyword">this</span>.title = <span class="string">'提示'</span>;</span><br><span class="line">      <span class="keyword">this</span>._infor();</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    case <span class="string">'success'</span>:</span><br><span class="line">      <span class="keyword">this</span>.title = <span class="string">'成功'</span>;</span><br><span class="line">      <span class="keyword">this</span>._success();</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    case <span class="string">'error'</span>:</span><br><span class="line">      <span class="keyword">this</span>.title = <span class="string">'错误'</span>;</span><br><span class="line">      <span class="keyword">this</span>._error();</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    case <span class="string">'warning'</span>:</span><br><span class="line">      <span class="keyword">this</span>.title = <span class="string">'警告'</span>;</span><br><span class="line">      <span class="keyword">this</span>._warning();</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    case <span class="string">'message'</span>:</span><br><span class="line">      <span class="keyword">this</span>._message();</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>写代码很重要，调试也很重要，好的调试方法，可以更快的发现、解决问题。正视错误，用积极的态度去处理错误，会提升自己面临问题时的处理能力。</p>
 
-class Email {
-    constructor(to, subject, text, html) {
-        this.config = {
-            service: &apos;126&apos;,
-            auth: {
-                user: Config.EMAIL_SERVER,
-                pass: Config.EMAIL_PWD            
-            }
-        };
-        this.mailOptions = {
-            from: Config.EMAIL_SERVER,
-            to: to,
-            subject: subject,
-            text: text,
-            //html: html
-        };
-        this._send();
-    }
-
-    _send() {
-        let transporter = nodemailer.createTransport(this.config);
-        transporter.sendMail(this.mailOptions, function (error, info) {
-            if (error) {
-                return console.log(error);
-            }
-            console.log(&apos;Message sent: &apos; + info.response);
-            transporter.close();
-        });
-    }
-}
-
-module.exports = Email;
-</code></pre><p>Server.js: 作为服务器，并且是Websocket的父类。</p>
-<pre><code>&apos;use strict&apos;;
-
-const express = require(&apos;express&apos;);
-const http = require(&apos;http&apos;);
-const socket = require(&apos;socket.io&apos;);
-const Router = require(&apos;./Router&apos;);
-const bodyParser = require(&apos;body-parser&apos;);
-
-class Server{
-    constructor(port){
-        this.port = port;
-        this.app = express();
-        this.server = http.createServer(this.app);
-        this.io = socket.listen(this.server);
-        this._run();
-    }
-
-    _run(){
-        this.server.listen(this.port);
-        this.app.use(bodyParser.json());
-        this.app.use(bodyParser.urlencoded({ extended: false }));
-        this.app.use(express.static(__dirname.replace(/server\\core/, &apos;app&apos;)));
-        new Router(this.app);
-        console.log(&apos;HTTP listening: 127.0.0.1:&apos; + this.port);
-    }
-}
-
-module.exports = Server;
-</code></pre><p>User.js: 和用户相关的所有接口都在这里。下面是一个获取验证码的接口，在获取请求后，会随机生成五位数验证码，发送到用户的邮箱中，并且在生成验证码的同时，会调用删除验证码的方法，在一定时间内将此验证码删除，那么用户就不能再使用此验证码修改密码了。</p>
-<pre><code>_getCode(){
-    this.app.get(&apos;/getCode&apos;, (req, res) =&gt; {
-        let email = req.query.email;
-        let code = &apos;&apos;;
-        for(let i = 0; i &lt; 5; i++){
-            code += Math.floor(Math.random() * 10);
-        }
-        let queryData = {
-            email: email
-        };
-        let updateData = {
-            code: code
-        };
-        let callback = (db) =&gt; {
-            let collection = db.collection(this.userCollection);
-            collection.updateOne(queryData, {$set: updateData}, (err, result) =&gt; {
-                assert.equal(null, err);
-                db.close();
-                if(result.result.n === 1){
-                    new Email(email, &apos;重置密码&apos;, &apos;你的验证码是：&apos; + code);
-                    this._removeCode(email);
-                    res.send({status: &apos;success&apos;, text: &apos;验证码已发往你的邮箱，请查收。30分钟内有效。&apos;});
-                }else{
-                    res.send({status: &apos;error&apos;, text: &apos;没有此邮箱，或许你需要注册账号。&apos;});
-                }
-            });
-        };
-        new MongoDB(this.currentDB, callback);
-    });
-}
-</code></pre><h3 id="前端代码介绍"><a href="#前端代码介绍" class="headerlink" title="前端代码介绍"></a>前端代码介绍</h3><p>前端模块化采用的是RequireJS，AP_WEB2.0会使用Webpack,那时候会使用ES2015的模块管理。前端的代码较多，这里主要介绍下自己写的特别的功能。QueryString.js用户获取url上的参数信息。</p>
-<pre><code>define([], function() {
-    &apos;use strict&apos;;
-    class QueryString {
-        constructor(){
-            let search = window.location.search.substring(1).split(&apos;&amp;&apos;);
-            let tempGroup = [];
-
-            for (let p of search) {
-                tempGroup.push(p.split(&apos;=&apos;));
-            }
-            this.params = new Map(tempGroup);
-        }
-
-        getValue(name){
-            return this.params.get(name);
-        }
-    }
-
-    let queryString = new QueryString();
-    return queryString;
-});
-</code></pre><p>Draggable.js用于添加拖动功能，在创建时，传入需要拖动的元素，这个元素就能拖动了。</p>
-<pre><code>define([], function() {
-    &apos;use strict&apos;;
-    class Draggable {
-        constructor($container) {
-            this.$container = $container;
-            for (let subContainer of $container.children()) {
-                this._handleEvents($(subContainer));
-            }
-        }
-
-        _handleEvents($subContainer) {
-            $subContainer.on(&apos;mousedown&apos;, (e) =&gt; {
-                if (!$(e.target).hasClass(&apos;button&apos;)) {
-                    this._handleMousedown(e);
-                }
-            });
-
-            $(document).on(&apos;mousemove&apos;, (e) =&gt; {
-                if (!$(e.target).hasClass(&apos;button&apos;)) {
-                    this._handleMousemove(e);
-                }
-            });
-
-            $(document).on(&apos;mouseup&apos;, (e) =&gt; {
-                if (!$(e.target).hasClass(&apos;button&apos;)) {
-                    this._handleMouseup(e);
-                }
-            });
-        }
-
-        _handleMousedown(e) {
-            let {left, top} = this.$container.css([&apos;left&apos;, &apos;top&apos;]);
-            this.offsetX = this._parseStr(left) - e.clientX;
-            this.offsetY = this._parseStr(top) - e.clientY;
-            this.mouseDown = true;
-        }
-
-        _handleMousemove(e) {
-            $(e.target).css(&apos;cursor&apos;, &apos;url(/images/m1.cur),default !important&apos;);
-            if (this.mouseDown) {
-                let x = e.clientX;
-                let y = e.clientY;
-                let positionX = x + this.offsetX;
-                let positionY = y + this.offsetY;
-                this.$container.css({
-                    left: positionX,
-                    top: positionY,
-                });
-            }
-        }
-
-        _handleMouseup(e) {
-            $(e.target).css(&apos;cursor&apos;, &apos;url(/images/m1.cur),default !important&apos;);
-            this.mouseDown = false;
-        }
-
-        _parseStr(str) {
-            if(typeof str !== &apos;string&apos;){
-                str += &apos;&apos;; 
-            }
-            return Number(str.split(&apos;px&apos;)[0]);
-        }
-    }
-
-    return Draggable;
-});
-</code></pre><p>Rain.js用于添加鼠标点击效果，创建之后，在整个网页中，除了class中有button的元素，其他都会在点击时，出现像雨滴落在地上的效果。</p>
-<pre><code>define([], function() {
-    &apos;use strict&apos;;
-    class Rain {
-        constructor() {
-            this.settings = {
-                width: 10,
-                height: 10,
-                borderColor: &apos;#c6cac9&apos;,
-                opacity: 0.7,
-                borderRadius: 5,
-                borderWidth: 5,
-                maxWidth: 70,
-                widthOffset: 2,
-                radiusOffset: 1,
-                opacityOffset: 0.05,
-                borderOffset: 1,
-                position: &apos;fixed&apos;,
-                zIndex: 100,
-                borderStyle: &apos;solid&apos;,
-                class: &apos;rain&apos;,
-            };
-            this._handleEvents();
-        }
-
-        _handleEvents() {
-            let settings = this.settings;
-            $(document).on(&apos;click&apos;, (e) =&gt; {
-                if($(e.target).hasClass(&apos;button&apos;)){
-                    return;
-                }
-                let $rain = $(&apos;&lt;div&gt;&apos;).attr(&apos;class&apos;, settings.class).css({
-                    position: settings.position,
-                    zIndex: settings.zIndex,
-                    borderStyle: settings.borderStyle,
-                });
-                $(&apos;body&apos;).append($rain);
-                let x = e.clientX;
-                let y = e.clientY;
-                this._initRain($rain, x, y);
-                this._updateRain($rain, x, y);
-            });
-        }
-
-        _updateRain($rain, x, y) {
-            let settings = this.settings;
-            let rainThread = setInterval( () =&gt; {
-                let {width, height,top, left, opacity, borderWidth, borderRadius} = $rain.css([&apos;width&apos;, &apos;height&apos;,&apos;top&apos;, &apos;left&apos;, &apos;opacity&apos;, &apos;borderWidth&apos;, &apos;borderRadius&apos;]);
-                $rain.css({
-                    width: this._parseStr(width) + settings.widthOffset,
-                    height: this._parseStr(height) + settings.widthOffset,
-                    top: y - this._parseStr(height) / 2,
-                    left: x - this._parseStr(width) / 2,
-                    opacity: this._parseStr(opacity) - settings.opacityOffset,
-                    borderWidth: this._parseStr(borderWidth) + settings.borderOffset,
-                    borderRadius: this._parseStr(borderRadius) + settings.radiusOffset,
-                });
-                if (this._parseStr(width) &gt; settings.maxWidth) {
-                    clearInterval(rainThread);
-                    $rain.remove();
-                }
-            }, 10);
-        }
-
-        _initRain($rain, x, y) {
-            let settings = this.settings;
-            $rain.css({
-                width: settings.width,
-                height: settings.height,
-                borderColor: settings.borderColor,
-                opacity: settings.opacity,
-                borderRadius: settings.borderRadius,
-                borderWidth: settings.borderWidth,
-                top: y - this._parseStr(settings.height) / 2,
-                left: x - this._parseStr(settings.width) / 2,
-            });
-        }
-
-        _parseStr(str){
-            if(typeof str !== &apos;string&apos;){
-                str += &apos;&apos;; 
-            }
-            return Number(str.split(&apos;px&apos;)[0]);
-        }
-
-    }
-
-    return Rain;
-});
-</code></pre><p>最后一个要介绍的是Message.js，它是一个全局提示的工具，项目中使用它做ajax返回信息的控制，做聊天室消息预览等。当有一些信息要发送给用户时，会在浏览器的右上角出现对话框，包含信息标题，信息内容等。并且分为几种类型的提示，不同类型会有不同主题的对话框出现。由于代码太多，这里只列出了它的构造方法。</p>
-<pre><code>constructor(type, content) {
-    this.title = &apos;&apos;;
-    this.content = content;
-    this.showTime = 5000;
-    this.clearTime = 1000;
-    this.clearThread = null;
-    this.timeThread = null;
-    this.$Message = $(&apos;&lt;div&gt;&apos;).css({
-        color: &apos;#fff&apos;,
-        borderRadius: 5,
-        width: 300,
-        display: &apos;none&apos;,
-        zIndex: 110,
-        margin: &apos;2px 5px&apos;,
-        clear: &apos;both&apos;,
-        float: &apos;right&apos;,
-        position: &apos;relative&apos;,
-        boxShadow: &apos;0px 0px 10px rgba(255, 255, 255, 1)&apos;,
-        opacity: 0.9,
-    }).addClass(&apos;message&apos;);
-
-    this.$icon = $(&apos;&lt;i&gt;&apos;).css({
-        display: &apos;inline-block&apos;,
-        float: &apos;left&apos;,
-        marginLeft: 10,
-        width: 20,
-        textAlign: &apos;center&apos;,
-        fontSize: &apos;1.2em&apos;,
-    }).addClass(&apos;msgIcon&apos;).appendTo(this.$Message);
-
-    this.$title = $(&apos;&lt;div&gt;&apos;).css({
-        height: &apos;45%&apos;,
-        width: 260,
-        float: &apos;right&apos;,
-        fontSize: &apos;1.2em&apos;,
-    }).addClass(&apos;msgTitle&apos;).appendTo(this.$Message);
-
-    this.$time = $(&apos;&lt;span&gt;&apos;).css({
-        position: &apos;absolute&apos;,
-        top: 2,
-        right: 2,
-        fontSize: &apos;0.7em&apos;,
-    }).addClass(&apos;msgTime&apos;).appendTo(this.$Message);
-
-    this.$content = $(&apos;&lt;div&gt;&apos;).css({
-        float: &apos;right&apos;,
-        height: &apos;56%&apos;,
-        width: 260,
-        paddingBottom: 5,
-        paddingRight: 5,
-        fontSize: &apos;0.8em&apos;,
-    }).addClass(&apos;msgContent&apos;).appendTo(this.$Message);
-
-    switch (type) {
-        case &apos;infor&apos;:
-            this.title = &apos;提示&apos;;
-            this._infor();
-            break;
-        case &apos;success&apos;:
-            this.title = &apos;成功&apos;;
-            this._success();
-            break;
-        case &apos;error&apos;:
-            this.title = &apos;错误&apos;;
-            this._error();
-            break;
-        case &apos;warning&apos;:
-            this.title = &apos;警告&apos;;
-            this._warning();
-            break;
-        case &apos;message&apos;:
-            this._message();
-            break;
-        default:
-            break;
-}
-</code></pre><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>写代码很重要，调试也很重要，好的调试方法，可以更快的发现、解决问题。正视错误，用积极的态度去处理错误，会提升自己面临问题时的处理能力。</p>
-
-      
-    </div><!-- .entry-content -->
-
-    
-      <section id="comments">
-        <div id="disqus_thread"></div>
-          <script type="text/javascript">
-          /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-          var disqus_shortname = 'renhongl'; // required: replace example with your forum shortname
-      
-          /* * * DON'T EDIT BELOW THIS LINE * * */
-          (function() {
-            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-          })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-      </section>
-      
-
-    <footer class="entry-meta">
-    <a href="/2016/11/24/应用平台WEB/">
-    <time datetime="2016-11-24T11:51:29.000Z" class="entry-date">
-        2016-11-24
-    </time>
-</a>
-    
-    
-  <span class="article-delim">&#8226;</span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/分享/">分享</a></li></ul>
-
-    </footer>
+  </div>
 </article>
 
-
-    
-<nav class="nav-single">
-    <h3 class="assistive-text">文章导航</h3>
-    
-        <span class="nav-previous"><a href="/2016/12/04/电脑远程控制工具/" rel="prev"><span class="meta-nav">←</span> 电脑远程控制工具</a></span>
-    
-    
-        <span class="nav-next"><a href="/2016/11/15/应用平台桌面版/" rel="next">应用平台桌面版 <span class="meta-nav">→</span></a></span>
-    
-</nav><!-- .nav-single -->
-
-
-
-
-
-
-
-
-</div></div>
-        <div id="secondary" class="widget-area" role="complementary">
-  
-    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
-    <div>
-        <input type="text" value="" name="s" id="s" />
-        <input type="submit" id="searchsubmit" value="搜索" />
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+        </div>
     </div>
-</form></aside>
-  
-    
-  <aside class="widget">
-    <h3 class="widget-title">Music</h3>
-    <div class="widget-content">
-      <audio src="http://other.web.rc01.sycdn.kuwo.cn/resource/n3/99/21/1172239707.mp3" controls="controls"
-             style="width:100%" loop>
-        您的浏览器不支持 audio 标签。
-      </audio>
 
-      <!-- <object type="application/x-shockwave-flash" id="ximalaya_player" data="http://other.web.rc01.sycdn.kuwo.cn/resource/n3/99/21/1172239707.mp3?auto=true" width="190" height="36"></object> -->
-    </div>
-  </aside>
 
-  
-    <aside class="widget">
-    <h3 class="widget-title">关于我</h3>
-    <div class="widget-content">
-      <p>邮箱：1075220132@qq.com</p>
-      <p>QQ：1075220132</p>
-      <!-- <iframe width="100%" height="110" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=0&fansRow=1&ptype=1&speed=0&skin=1&isTitle=0&noborder=0&isWeibo=0&isFans=1&uid=2216356441&verifier=2e06a95d&dpc=1"></iframe>
-      
-      <iframe width="100%" height="320" frameborder="0" scrolling="no" src="https://cdn.jsdelivr.net/github-cards/1.0.2/cards/medium.html?user=wizardforcel&identity=ghcard-wizardforcel-1"></iframe> -->
-    </div>
-</aside>
-  
-    <aside class="widget">
-    <h3 class="widget-title">赞助我</h3>
-    <div class="widget-content">
-      <img src='/css/images/qr_alipay.png' style='width:100%;' />
-    </div>
-</aside>
-  
-    
-  
-    
-  <aside class="widget">
-    <h3 class="widget-title">Recents</h3>
-    <div class="widget-content">
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
       <ul>
-        
-          <li>
-            <a href="/2018/06/18/函数式编程/">函数式编程</a>
-          </li>
-        
-          <li>
-            <a href="/2018/06/18/career-development/">职业发展方向</a>
-          </li>
-        
-          <li>
-            <a href="/2018/06/18/技术选型/">技术选型</a>
-          </li>
-        
-          <li>
-            <a href="/2018/05/10/redux/">Redux</a>
-          </li>
-        
-          <li>
-            <a href="/2018/05/10/flux/">Flux</a>
-          </li>
+         
+          <li><a href="/">博客</a></li>
+         
+          <li><a href="/archives/">归档</a></li>
+         
+          <li><a href="/projects/">项目</a></li>
+         
+          <li><a href="/search/">搜索</a></li>
+         
+          <li><a href="/links/">链接</a></li>
+         
+          <li><a href="/about/">关于</a></li>
         
       </ul>
     </div>
-  </aside>
 
-  
-    
-  <aside class="widget">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget-content">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/">ES6</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript设计模式/">Javascript设计模式</a><span class="tag-list-count">15</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mongo/">Mongo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redux/">Redux</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Webpack/">Webpack</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/分享/">分享</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/综合技能/">综合技能</a><span class="tag-list-count">2</span></li></ul>
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#简介"><span class="toc-number">1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#图文介绍"><span class="toc-number">2.</span> <span class="toc-text">图文介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#后端部分代码介绍"><span class="toc-number">3.</span> <span class="toc-text">后端部分代码介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Email-js"><span class="toc-number">3.1.</span> <span class="toc-text">Email.js</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Server-js"><span class="toc-number">3.2.</span> <span class="toc-text">Server.js</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#User-js"><span class="toc-number">3.3.</span> <span class="toc-text">User.js</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#前端部分代码介绍"><span class="toc-number">4.</span> <span class="toc-text">前端部分代码介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Draggable-js"><span class="toc-number">4.1.</span> <span class="toc-text">Draggable.js</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Rain-js"><span class="toc-number">4.2.</span> <span class="toc-text">Rain.js</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Message-js"><span class="toc-number">4.3.</span> <span class="toc-text">Message.js</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-number">5.</span> <span class="toc-text">总结</span></a></li></ol>
     </div>
-  </aside>
 
-  
-    
-  <aside class="widget">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget-content tagcloud">
-      <a href="/tags/ES6/" style="font-size: 17.5px;">ES6</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Javascript/" style="font-size: 12.5px;">Javascript</a> <a href="/tags/Javascript设计模式/" style="font-size: 20px;">Javascript设计模式</a> <a href="/tags/Mongo/" style="font-size: 10px;">Mongo</a> <a href="/tags/Redux/" style="font-size: 12.5px;">Redux</a> <a href="/tags/Webpack/" style="font-size: 10px;">Webpack</a> <a href="/tags/分享/" style="font-size: 15px;">分享</a> <a href="/tags/综合技能/" style="font-size: 12.5px;">综合技能</a>
-    </div>
-  </aside>
-
-  
-    <aside class="widget">
-    <h3 class="widget-title">友情链接</h3>
-    <div class="widget-content">
-<ul id='link-list'>
-<!-- link begin -->
-<li><a href="https://littlesistermogu.github.io/">蘑菇</a></li>
-
-<!-- link end -->
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://github.com/renhongl/2016/11/24/应用平台WEB/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://github.com/renhongl/2016/11/24/应用平台WEB/&text=应用平台WEB"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://github.com/renhongl/2016/11/24/应用平台WEB/&title=应用平台WEB"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://github.com/renhongl/2016/11/24/应用平台WEB/&is_video=false&description=应用平台WEB"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=应用平台WEB&body=Check out this article: https://github.com/renhongl/2016/11/24/应用平台WEB/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://github.com/renhongl/2016/11/24/应用平台WEB/&title=应用平台WEB"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://github.com/renhongl/2016/11/24/应用平台WEB/&title=应用平台WEB"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://github.com/renhongl/2016/11/24/应用平台WEB/&title=应用平台WEB"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://github.com/renhongl/2016/11/24/应用平台WEB/&title=应用平台WEB"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://github.com/renhongl/2016/11/24/应用平台WEB/&name=应用平台WEB&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
 </ul>
+
     </div>
-</aside>
-  
-</div>
-      </div>
-      <footer id="colophon" role="contentinfo">
-    <p>&copy; 2018 柚子
-    All rights reserved.</p>
-    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
-</footer>
-    <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
 
-<script src="/js/jquery-2.0.3.min.js"></script>
-
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/script.js"></script>
-
-<script src="/js/navigation.js"></script>
-
-<div id="bg"></div>
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> 话题</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> 回到顶部</a>
+    </div>
 
   </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2019 柚子
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">博客</a></li>
+         
+          <li><a href="/archives/">归档</a></li>
+         
+          <li><a href="/projects/">项目</a></li>
+         
+          <li><a href="/search/">搜索</a></li>
+         
+          <li><a href="/links/">链接</a></li>
+         
+          <li><a href="/about/">关于</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
 </body>
 </html>
+<!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+<!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'renhongl';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+

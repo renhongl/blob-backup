@@ -6,10 +6,10 @@ tags:
 ---
 
 
-### 使用SSH连接GitHub
+## 简介
 
 如果经常提交代码，每次都要输入密码就很麻烦，使用SSH连接后，就不用输入密码了。
-<!--more-->
+
 
 - 配置全局用户名和邮箱：
 	- `git config --global user.name "renhongl"`
