@@ -9,7 +9,11 @@ date: 2018-12-31 21:46:48
 
 ## 关于我
 
-本科毕业，工作三年，喜欢专研前端技术，同时在学习Python。
+本科毕业，工作三年，爱好前端和Python。
+
+## 日常
+
+[Code Pen](https://codepen.io/renhongl/) | [Git Hub](https://github.com/renhongl) | [Docker Hub](https://hub.docker.com/u/renhongl)
 
 
 ## 联系我
@@ -23,7 +27,4 @@ QQ: 1075220132
 
 
 
-## 日常
 
-
-[Code Pen](https://codepen.io/renhongl/) | [Git Hub](https://github.com/renhongl) | [Docker Hub](https://hub.docker.com/u/renhongl)

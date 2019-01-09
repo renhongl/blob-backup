@@ -15,7 +15,7 @@ direction: ltr
 # languages/*.yml
 nav:
   home: /
-  articles: /articles/
+  archives: /archives/
   projects: /projects/
   search: /search/
   links: /links/
@@ -49,7 +49,7 @@ tags_overview: false
 #   - post_count: whether to show only the x most recent posts.
 posts_overview:
   show_all_posts: false
-  post_count: 5
+  post_count: 10
 
 
 ##############################################################################
@@ -67,7 +67,7 @@ logo:
   enabled: true
   width: 50
   height: 50
-  url: /images/logo.png
+  url: /images/logo.jpg
   gravatar: false
 
 # Customize the favicons.
@@ -84,10 +84,10 @@ favicon:
     url: /images/favicon.ico
     gravatar: false
   android:
-    url: /images/logo.png
+    url: /images/logo.jpg
     gravatar: false
   apple:
-    url: /images/logo.png
+    url: /images/logo.jpg
     gravatar: false
 
 # The color scheme that should be used to highlight codeblocks.
