@@ -38,7 +38,7 @@ tag_cloud:
   zero: No tags
 
 pagination:
-  page: Page %d of %d
+  page: 第 %d 页 /共 %d 页
 
 counter:
   tag_cloud:
