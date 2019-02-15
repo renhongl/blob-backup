@@ -9,12 +9,12 @@ tags:
 ![buy_ticket](/images/buyTicket.jpg)
 
 
-## 简介
+# 简介
 
 这是一个脚本程序，运行在NodeJS环境之上，功能类似360抢票王。
 
 
-## 安装
+# 安装
 
 假设已经安装了node环境，从github上clone下源代码（[源码在这](https://github.com/renhongl/Buy_Ticket)）
 
@@ -22,17 +22,15 @@ tags:
 
 双击run.bat即可
 
-## 效果
+# 效果
 
 控制台每隔30秒打印最新票量信息，如果没有票，显示 **No data found**，如果有，则一一列出来。根目录文件夹也会生成一个log.txt文件，方便查看之前刷票的结果。在有票的时候，还会通过短信告知用户，效果图在文章开始已经列出。
 
-## 代码
 
-代码主要是通过request模块从携程网的查询票量的API中获取数据，经过筛选数据后，将符合要求的数据发给用户。
 
-### 发送短信的代码：
+# 发送短信的代码：
 
-  ```
+  ```js
 	var App = require('alidayu-node');
 	var app = new App('App Key', 'App Secret');
 

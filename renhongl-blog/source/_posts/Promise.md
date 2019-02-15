@@ -1,4 +1,3 @@
-
 ---
 title: Promise
 date: 2017-06-20 20:07:38
@@ -7,7 +6,7 @@ tags: ES6
 
 
 
-## Promise
+# Promise
 
 Promise是异步编程的一种解决方案，它是一个容器，里面保存着某个将来才会结束的事件。
 
@@ -15,11 +14,11 @@ Promise是异步编程的一种解决方案，它是一个容器，里面保存�
 
 **pending ---> fulfilled   或者 pending ---> rejected**
 
-<!--more-->
+
 
 * 基本使用
 
-  ```
+  ```js
   const getData = function(url) {
     return new Promise((resolve, reject) => {
       try{
@@ -41,7 +40,7 @@ Promise是异步编程的一种解决方案，它是一个容器，里面保存�
 
 * 异步加载图片
 
-  ```
+  ```js
   const loadImage = function(url) {
     return new Promise((resolve, reject) => {
         const img = new Image();
@@ -69,7 +68,7 @@ Promise是异步编程的一种解决方案，它是一个容器，里面保存�
 
 * Ajax请求
 
-  ```
+  ```js
   const getData = function(url) {
     return new Promise((resolve, reject) => {
     	const handler = function() {
@@ -98,7 +97,7 @@ Promise是异步编程的一种解决方案，它是一个容器，里面保存�
 
 * 应总是使用第一个then获取resolve状态的结果，使用catch获取错误的结果
 
-  ```
+  ```js
   getData('test.json').then(data => {
     console.log(data);
   }).catch(e => {
@@ -108,7 +107,7 @@ Promise是异步编程的一种解决方案，它是一个容器，里面保存�
 
 * Promise.all()用于将多个Promise实例，包装成一个新的Promise实例
 
-  ```
+  ```js
   const p = Promise.all([p1, p2, p3]);
   ```
 

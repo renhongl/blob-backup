@@ -5,14 +5,14 @@ tags:
     - Javascript
 ---
 
-## 简介
+# 简介
 
 记一些容易忘记的语法。
 
 
-## 标签(label)用法
+# 标签(label)用法
 
-  ```
+  ```js
   //判断数组二中是否有数组一中的元素
   var itHas = false;
   var index = -1;
@@ -36,9 +36,9 @@ tags:
 当查找到一个符合的之后，就退出循环，这样可以节省时间。
 如果在break之后不使用标签，只能跳出内层循环。
 
-## for...in遍历对象属性
+# for...in遍历对象属性
 
-  ```
+  ```js
   function Person() {
       this.name = 'lrh';
       this.age = '18'
@@ -59,7 +59,7 @@ tags:
 使用for...in遍历会遍历出实例自身的属性以及继承的属性。
 如果非要用for...in那就在遍历时加上hasOwnProperty方法判断：
 
-  ```
+  ```js
   function Person() {
       this.name = 'lrh';
       this.age = '18'
@@ -78,11 +78,11 @@ tags:
   //age
   ```
 
-## in运算符
+# in运算符
 
 用于检测对象是否包含某个属性
 
-  ```
+  ```js
   var person = {
       name: 'lrh'
   };
@@ -90,14 +90,14 @@ tags:
   'name' in person;//true
   ```
 
-## 闭包
+# 闭包
 
 - 定义在一个函数内部的函数。
 - 将函数内部与函数外部连接起来的一座桥梁。
 - 可以读取函数内部的变量。
 - 让函数内部变量一直保持在内存中。
 
-    ```
+    ```js
     function count(number) {
         return function () {
             console.log(number++);
@@ -112,7 +112,7 @@ tags:
 
 - 封装对象的私有属性和私有方法。
 
-    ```
+    ```js
     function Person(name) {
         var _gender;
 
@@ -136,7 +136,7 @@ tags:
     p1.getGender();//boy
     ```
 
-## 数组
+# 数组
 
 map方法对数组的所有成员一次调用一个函数，根据函数结果返回一个新数组。
 map方法接受一个函数做为参数，调用时会将其传入三个参数，分辨是当前成员，当前位置，数组本身。
@@ -153,7 +153,7 @@ every方法，每个数组成员的返回值是true，every方法才会返回tru
 
 reduce方法，依次处理数组的每个成员，最终累计成一个值。
 
-## 字符串
+# 字符串
 
 substring方法用于从原字符串取出子字符串并返回，不改变原字符串。它与slice作用相同，但有一些奇怪的规则，因此不建议使用这个方法，优先使用slice。
 
@@ -162,12 +162,12 @@ substring方法用于从原字符串取出子字符串并返回，不改变原�
 如果参数是负数，substring方法会自动将负数转为0。
 
 
-## 对象的拷贝-浅拷贝
+# 对象的拷贝-浅拷贝
 
 确保拷贝后的对象，与原对象具有同样的prototype原型对象。
 确保拷贝后的对象，与原对象具有同样的属性。
 
-  ```
+  ```js
   function copyObject(orig) {
       var copy = Object.create(Object.getPrototypeOf(orig));
       copyOwnPropertiesFrom(copy, orig);

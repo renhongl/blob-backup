@@ -1,18 +1,12 @@
-
 ---
 title: Generator函数
 date: 2017-07-10 21:16:52
 tags: ES6
 ---
 
+# 基本用法
 
-
-
-### 基本用法
-
-<!--more-->
-
-```
+```js
 function* helloWorldGenerator() {
   yield 'hello';
   yield 'world';
@@ -25,6 +19,4 @@ hwg.next();//{value: 'world', done: false}
 hwg.next();//{value: 'ending',  done: true}
 hwg.nexe();//{value: undefined, done: true}
 ```
-
-
 

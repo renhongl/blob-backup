@@ -1,4 +1,3 @@
-
 ---
 title: Set 和 Map
 date: 2017-07-13 21:16:52
@@ -7,22 +6,22 @@ tags: ES6
 
 
 
-## Set
+# Set
 
 类似于数组的数据结构，成员的值都是**唯一**的。
 
-<!--more-->
+
 
 1. 基本写法
 
-   ```	
+   ```js
    const set =  new Set([1, 2, 3, 4]);
 
    ```
 
 2. 数组去重
 
-   ```
+   ```js
    let a = [1, 2, 2, 3, 5, 5];
    a = [...new Set(a)];//[1, 2, 3, 5]
 
@@ -30,7 +29,7 @@ tags: ES6
 
 3. 实例的属性和方法
 
-   ```
+   ```js
    let a = new Set();
    a.add(1).add(3).add(10);
    a.size;//3
@@ -51,7 +50,7 @@ tags: ES6
 
 
 
-## Map
+# Map
 
 解决Object只能使用字符串当做键的问题。
 
@@ -59,7 +58,7 @@ tags: ES6
 
 1. 基本写法
 
-   ```
+   ```js
    let items = [
      ['name', 'lrh'],
      ['age', 18]
@@ -70,7 +69,7 @@ tags: ES6
 
 2. 实例的属性和方法
 
-   ```
+   ```js
    map.size;//2
    map.set('gender', 'male').set('experience', 3);
    map.get('gender');//male

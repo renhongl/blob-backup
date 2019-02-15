@@ -5,15 +5,15 @@ tags: ES6
 ---
 
 
-## Class
+# Class
 
 Javascript没有类的概念，要生成一个实例对象，是通过构造函数。
 
-<!--more-->
 
-### 传统写法：
 
-```
+# 传统写法：
+
+```js
 function Person(name, age) {
   this.name = name;
   this.age = age;
@@ -32,9 +32,9 @@ p.toString();//"(lrh, 18)"
 p.getName();//"lrh"
 ```
 
-### 使用ES6的Class语法:
+# 使用ES6的Class语法:
 
-```
+```js
 class Person{
   constructor(name, age) {
     this.name = name;
@@ -55,31 +55,32 @@ p.toString();//"(lrh, 18)"
 p.getName();//"lrh"
 ```
 
-#### 私有方法:
+# 私有方法:
 
-1. 使用**下划线" _ "**区别方法名，但是外部还是可以调用这个方法。
-  ```
-   class Person{
-    constructor(name, age) {
-      this.name = name;
-      this.age = age;
-    }
+1. 使用**下划线**" _ "区别方法名，但是外部还是可以调用这个方法。
 
-    _getAge() {
-      return this.age;
+    ```js
+     class Person{
+      constructor(name, age) {
+        this.name = name;
+        this.age = age;
+      }
+  
+      _getAge() {
+        return this.age;
+      }
+  
+      getInfor() {
+        return this.name + ', ' + this._getAge();
+      }
     }
-
-    getInfor() {
-      return this.name + ', ' + this._getAge();
-    }
-  }
-  let p = new Person('lrh', 18);
-  p.getInfor();//"lrh, 18"
-  ```
+    let p = new Person('lrh', 18);
+    p.getInfor();//"lrh, 18"
+    ```
 
 2. 将私有方法移出类，因为在类中方法都是对外可见的。
 
-   ```
+   ```js
    class Person{
      constructor(name, age) {
        this.name = name;
@@ -102,7 +103,7 @@ p.getName();//"lrh"
 
 3. 利用Symbol的唯一性，设置私有变量。
 
-   ```
+   ```js
    const getAge = Symbol();
 
    class Person{
@@ -126,11 +127,11 @@ p.getName();//"lrh"
 
    ​
 
-#### 私有属性
+# 私有属性
 
 1. 使用#表示，但是还只是提案，babel都不支持。
 
-   ```
+   ```js
    class Person{
      #type = 'Student';
      constructor(name, age) {
@@ -147,11 +148,11 @@ p.getName();//"lrh"
    p.getInfor();
    ```
 
-#### 取值函数（getter）和存值函数（setter）
+# 取值函数（getter）和存值函数（setter）
 
 1. 拦截了该属性的存取行为。
 
-   ```;
+   ```js
    //getter，setter对应的属性应该是一个_开头的私有属性，只有使用getter，setter的方式可以读取和修改
    class Person{
      constructor(name, age, gender) {
@@ -179,11 +180,11 @@ p.getName();//"lrh"
 
    ​
 
-#### 静态方法
+# 静态方法
 
 1. 在方法前加上static关键字，this指向类而不是实例。只能通过类调用。
 
-   ```
+   ```js
    class Person{
      static getRandom() {
      	return Math.random();
@@ -198,11 +199,11 @@ p.getName();//"lrh"
    Person.getRandom();//0.36116181991876695
    ```
 
-#### 静态属性与实例属性
+# 静态属性与实例属性
 
 1. 是ES7的提案，需要安装ES7的转码：`npm install --save-dev babel-preset-stage-2`
 
-   ```
+   ```js
    //实例属性
    class Person{
      type = 'Student';
