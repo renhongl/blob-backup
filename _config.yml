@@ -95,11 +95,9 @@ exclude_generator:
 #   repo: git@github.com:renhongl/renhongl.github.io.git
 #   branch: master
 
-# 修改后
 deploy:
   type: git
-  # 下方的gh_token会被.travis.yml中sed命令替换
-  repo: https://gh_token@github.com/renhongl/renhongl.github.io.git
+  repo: https://__GITHUB_TOKEN__@github.com/renhongl/renhongl.github.io.git
   branch: master
 
 search:
