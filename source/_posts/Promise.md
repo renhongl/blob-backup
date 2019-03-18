@@ -6,7 +6,7 @@ tags: ES6
 
 
 
-# Promise
+# 什么是Promise
 
 Promise是异步编程的一种解决方案，它是一个容器，里面保存着某个将来才会结束的事件。
 

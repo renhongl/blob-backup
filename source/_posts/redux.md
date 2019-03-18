@@ -7,9 +7,9 @@ tags: Redux
 
 
 
-#### Redux是什么？
+# 什么是Redux
 
-<!--more-->
+
 
 * 在Flux基础上的改进框架。
 * 单向数流。

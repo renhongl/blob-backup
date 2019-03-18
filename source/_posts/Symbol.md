@@ -7,18 +7,19 @@ tags: ES6
 
 
 
-
+# 什么是Symbol
 Symbol是ES6引入的一种新的原始数据类型，表示独一无二的值。它是JavaScript语言的第七种数据类型:
 
-<!--more-->
 
+```js
 null, undefined, String, Number, Boolean, Object, Symbol。
+```
 
 使用Symbol()函数生成，因为它是一种类似字符串的数据类型，所以不是通过new创建的对象实例。
 
 * 作为属性名，在混合两个对象时，属性值不会被覆盖，因为一个Symbol是唯一的。
 
-  ```
+  ```js
   //定义属性名和使用属性名时，使用方括号的调用方式。
   let myNameSymbol = Symbol();
   let a = {
@@ -32,7 +33,7 @@ null, undefined, String, Number, Boolean, Object, Symbol。
 
 * 定义常量，消灭模式字符串
 
-  ```
+  ```js
   //bad
   function operator(type) {
     switch(type) {

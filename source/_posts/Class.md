@@ -5,7 +5,7 @@ tags: ES6
 ---
 
 
-# Class
+# 什么是Class
 
 Javascript没有类的概念，要生成一个实例对象，是通过构造函数。
 
@@ -65,11 +65,11 @@ p.getName();//"lrh"
         this.name = name;
         this.age = age;
       }
-  
+      
       _getAge() {
         return this.age;
       }
-  
+      
       getInfor() {
         return this.name + ', ' + this._getAge();
       }
@@ -80,50 +80,50 @@ p.getName();//"lrh"
 
 2. 将私有方法移出类，因为在类中方法都是对外可见的。
 
-   ```js
-   class Person{
-     constructor(name, age) {
-       this.name = name;
-       this.age = age;
+     ```js
+     class Person{
+       constructor(name, age) {
+         this.name = name;
+         this.age = age;
+       }
+       
+       getInfor() {
+         return this.name + ', ' + getAge.call(this);
+       }
      }
      
-     getInfor() {
-       return this.name + ', ' + getAge.call(this);
-     }
-   }
-
-   function getAge() {
-     return this.age;
-   }
-
-   let p = new Person('lrh', 19);
-   p.getInfor();
-   p.getAge();//TypeError: p.getAge is not a function
-   ```
-
-3. 利用Symbol的唯一性，设置私有变量。
-
-   ```js
-   const getAge = Symbol();
-
-   class Person{
-     constructor(name, age) {
-       this.name = name;
-       this.age = age;
-     }
-     
-     [getAge]() {
+     function getAge() {
        return this.age;
      }
      
-     getInfor() {
-       return this.name + ', ' + this[getAge]();
-     }
-   }
+     let p = new Person('lrh', 19);
+     p.getInfor();
+     p.getAge();//TypeError: p.getAge is not a function
+     ```
 
-   let p = new Person('lrh', 18);
-   p.getInfor();
-   ```
+3. 利用Symbol的唯一性，设置私有变量。
+
+     ```js
+     const getAge = Symbol();
+     
+     class Person{
+       constructor(name, age) {
+         this.name = name;
+         this.age = age;
+       }
+       
+       [getAge]() {
+         return this.age;
+       }
+       
+       getInfor() {
+         return this.name + ', ' + this[getAge]();
+       }
+     }
+     
+     let p = new Person('lrh', 18);
+     p.getInfor();
+     ```
 
    ​
 
@@ -131,22 +131,22 @@ p.getName();//"lrh"
 
 1. 使用#表示，但是还只是提案，babel都不支持。
 
-   ```js
-   class Person{
-     #type = 'Student';
-     constructor(name, age) {
-       this.name = name;
-       this.age = age;
+     ```js
+     class Person{
+       #type = 'Student';
+       constructor(name, age) {
+         this.name = name;
+         this.age = age;
+       }
+       
+       getInfor() {
+         return this.name + ', ' + this.age + ', ' + this.#type; 
+       }
      }
      
-     getInfor() {
-       return this.name + ', ' + this.age + ', ' + this.#type; 
-     }
-   }
-
-   let p = new Person('lrh', 18);
-   p.getInfor();
-   ```
+     let p = new Person('lrh', 18);
+     p.getInfor();
+     ```
 
 # 取值函数（getter）和存值函数（setter）
 

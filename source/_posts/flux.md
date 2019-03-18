@@ -7,18 +7,18 @@ tags: Redux
 
 
 
-#### Flux是什么？
+# Flux是什么？
 
-<!--more-->
+
 
 * 一种架构思想。
 * 专门解决软件的结构问题。
 
-#### 传统MVC
+# 传统MVC
 
 ![](https://res.infoq.com/news/2014/05/facebook-mvc-flux/en/resources/flux-react-mvc.png)
 
-#### Flux
+# Flux
 
 ![](https://res.infoq.com/news/2014/05/facebook-mvc-flux/en/resources/flux-react.png)
 
@@ -29,7 +29,7 @@ tags: Redux
 1. Store更新数据, 提醒View需要更新页面
 1. View更新页面
 
-#### 基本概念
+# 基本概念
 Flux将应用分成四个部分。
 * View: 视图层
 * Action: 动作，视图层发出的消息，比如鼠标点击

@@ -5,17 +5,17 @@ tags: ES6
 ---
 
 
-## rest参数
+# 什么是rest参数
 
 用于获取函数的多余参数，这样就不用使用arguments对象了，该变量将多余的参数放入数组中。
 
 语法：`...args`
 
-<!--more-->
+
 
 * 利用rest参数，可以向函数传入任意数量的参数
 
-  ```
+  ```js
   function add(...args) {
     let total = 0;
     for (let key of args) {
@@ -31,7 +31,7 @@ tags: ES6
 
 * 使用rest参数代替arguments
 
-  ```
+  ```js
   function sortNumbers() {
     Array.prototype.slice.call(arguments).sort();
   }
@@ -57,7 +57,7 @@ tags: ES6
 
 * 可以用来替代函数的apply方法:
 
-  ```
+  ```js
   //ES5写法-----apply方法第一个参数是上下文，第二个参数是方法的参数列表，但是是装在同一个数组里面。
   function f(x, y, z) {
     //...
@@ -75,7 +75,7 @@ tags: ES6
 
 * 求数组最大值:
 
-  ```
+  ```js
   //ES5写法
   Math.max.apply(null, [23, 12, 54]);
 
@@ -87,7 +87,7 @@ tags: ES6
 
 * 将一个数组的所有元素一次添加到另一个数组
 
-  ```
+  ```js
   //ES5写法
   var arr1 = [1, 2, 3];
   var arr2 = [4, 5, 6];
@@ -99,7 +99,7 @@ tags: ES6
 
 * 复制数组
 
-  ```
+  ```js
   //ES5写法----concat用于连接两个数组，然后返回一个新数组，那么这两个数组就不是指向同一个地址了。
   const a1 = [1, 3];
   const a2 = a1.concat();
@@ -111,7 +111,7 @@ tags: ES6
 
 * 合并数组
 
-  ```
+  ```js
   //ES5写法
   [1, 2].concat(more);
   var arr1 = [1, 2];
@@ -128,7 +128,7 @@ tags: ES6
 * 将实现了Iterator接口的对象，转化为数组
 
 
-  ```
+  ```js
   //类数组对象
   let nodeList = document.querySelectorAll('div');
   let arr1 = [...nodeList];
@@ -146,7 +146,7 @@ tags: ES6
 
 * Map和Set也实现了Iterator接口
 
-  ```
+  ```js
   let map = new Map([
     [0, 'a'],
     [1, 'b'],
@@ -159,7 +159,7 @@ tags: ES6
 
 * Generator函数运行后，返回一个遍历器对象，因此也可以用扩展运算符
 
-  ```
+  ```js
   const go = function* () {
     yield 1;
     yield 2;

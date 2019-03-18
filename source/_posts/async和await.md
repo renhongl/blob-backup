@@ -11,7 +11,7 @@ tags: ES6
 
 
 
-   ```
+   ```js
    async function getPersonInformation() {
    	let obj;
    	console.log('before get');
