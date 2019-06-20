@@ -155,5 +155,43 @@ tags: 计算机算法
 	1. 构造初始堆。将给定无序序列构造成一个大顶堆（一般升序采用大顶堆，降序采用小顶堆)。
     2. 将堆顶元素与末尾元素进行交换，使末尾元素最大。然后继续调整堆，再将堆顶元素与末尾元素交换，得到第二大元素。如此反复进行交换、重建、交换。
     3. 反复执行调整+交换步骤，直到整个序列有序。
+    ```js
+	//堆排序使用的创建顶堆
+    const createMaxHeap = (arr, len) => {
+      const create = (arr, i, len) => {
+        let maxIndex = i;
+        let left = 2 * i;
+        let right = 2 * i + 1;
+        if (left < len && arr[maxIndex] < arr[left]) {
+          maxIndex = left;
+        }
+        if (right < len && arr[maxIndex] < arr[right]) {
+          maxIndex = right;
+        }
+        let temp = arr[maxIndex];
+        arr[maxIndex] = arr[i];
+        arr[i] = temp;
+      }
+      for (let i = Math.floor(len/2); i >= 0; i--) {
+        create(arr, i, len);
+      }
+    }
+
+    //堆排序
+    const heapSort = (arr) => {
+      for (let i = arr.length - 1; i >= 0; i--) {
+        createMaxHeap(arr, i + 1);
+        let max = arr[0];
+        arr[0] = arr[i];
+        arr[i] = max;
+      }
+      return arr;
+    }
+    ```
 
 ## 基数排序
+* 基数排序（radix sort）属于“分配式排序”（distribution sort），又称“桶子法”（bucket sort）或bin sort，顾名思义，它是透过键值的部份资讯，将要排序的元素分配至某些“桶”中，藉以达到排序的作用，基数排序法是属于稳定性的排序，其时间复杂度为O (nlog(r)m)，其中r为所采取的基数，而m为堆数，在某些时候，基数排序法的效率高于其它的稳定性排序法。
+
+## 希尔排序
+* 希尔排序(Shell's Sort)是插入排序的一种又称“缩小增量排序”（Diminishing Increment Sort），是直接插入排序算法的一种更高效的改进版本。希尔排序是非稳定排序算法。该方法因D.L.Shell于1959年提出而得名。
+* 希尔排序是把记录按下标的一定增量分组，对每组使用直接插入排序算法排序；随着增量逐渐减少，每组包含的关键词越来越多，当增量减至1时，整个文件恰被分成一组，算法便终止。
