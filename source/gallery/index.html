@@ -53,10 +53,37 @@
         .d-none {
             display: none !important;
         }
+
+        .link a {
+            color: #fff;
+            display: inline-block;
+            text-decoration: none;
+            margin: 5px;
+            border: 1px solid #fff;
+            padding: 5px;
+            border-radius: 5px;
+            box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .link a:hover{
+            background: #fff;
+            color: #404040;
+        }
+
+        h1{
+            text-align: center;
+            color: #fff;
+        }
+
+        h2{
+            color: #fff;
+        }
     </style>
 </head>
 
 <body>
+    <h1>My Gallery from Project or Life</h1>
+    <h2>Gallery</h2>
     <div class="gallery">
         <div class="gallery-inner">
             <!-- Pictures will load here -->
@@ -65,14 +92,8 @@
             <img src="" alt="Gallery picture">
         </div>
     </div>
-    <div class="gallery">
-        <div class="gallery-inner">
-            <!-- Pictures will load here -->
-        </div>
-        <div class='fullscreen-picture d-none'>
-            <img src="" alt="Gallery picture">
-        </div>
-    </div>
+    <h2>Links to view detail</h2>
+    <div class="link"></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
         //Lits of all pictures
@@ -82,13 +103,43 @@
             '/images/chatRoom2.png',
             '/images/homeAndRoom.png',
             '/images/faceAndEmoj.png',
+            '/images/pomeloEditor.png',
+            '/images/pomeloEngine.png',
+            '/images/mrui.png',
         ];
+        var title_list = [
+            'Music Player',
+            'Music Player',
+            'Desktop App Chat Room',
+            'Web App Chat Room',
+            'Web App Chat Room',
+            'Markdown Editor',
+            '2D Game Engine',
+            'JS UI Library'
+        ]
+        var link_list = [
+            'https://renhongl.github.io/2017/01/21/%E7%88%B1%E5%90%AC%E6%92%AD%E6%94%BE%E5%99%A8/',
+            'https://renhongl.github.io/2017/01/21/%E7%88%B1%E5%90%AC%E6%92%AD%E6%94%BE%E5%99%A8/',
+            'https://renhongl.github.io/2016/11/15/%E5%BA%94%E7%94%A8%E5%B9%B3%E5%8F%B0%E6%A1%8C%E9%9D%A2%E7%89%88/',
+            'https://renhongl.github.io/2016/11/24/%E5%BA%94%E7%94%A8%E5%B9%B3%E5%8F%B0WEB/',
+            'https://renhongl.github.io/2016/11/24/%E5%BA%94%E7%94%A8%E5%B9%B3%E5%8F%B0WEB/',
+            'https://renhongl.github.io/markdown-editor/',
+            'https://renhongl.github.io/pomelo-engine/',
+            'https://renhongl.github.io/mr/'
+        ]
+
+        var $link = $('.link');
+        for (var i = 0; i < picture_list.length; i++) {
+            var a = `<a target="_blank" href="${link_list[i]}">${title_list[i]}</a>`;
+            $link.append(a);
+        }
+
         //Gallery selector
         $img_gallery = $('.gallery-inner');
         //Put all pictures in the DOM
         for (var i = 0; i < picture_list.length; i++) {
             var img = picture_list[i];
-            var $img_nodes = "<img src='" + img + "' alt='Gallery picture' title='Choose picture'>";
+            var $img_nodes = "<img src='" + img + "' alt='Gallery picture' title='" + title_list[i] + "'>";
             $img_gallery.append($img_nodes);
         }
         //Fullscreen listener when click the img
