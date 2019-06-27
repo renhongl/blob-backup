@@ -5,49 +5,102 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="./css/gallery-nature.css">
-    <link rel="stylesheet" href="./css/nature.css">
-    <script src="./js/gallery-nature.js" defer></script>
+    <title>Gallery</title>
+    <style>
+        body {
+            background-color: #404040;
+        }
+
+        .gallery {
+            padding: 10px;
+        }
+
+        .gallery .gallery-inner img {
+            border: 2px solid #fff;
+            margin: 3px;
+            border-radius: 0px;
+            max-height: 150px;
+            box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.24);
+            cursor: pointer;
+            transition: 0.2s all;
+        }
+
+        .gallery .gallery-inner img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery .fullscreen-picture {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 10;
+            background-color: rgba(64, 64, 64, 0.8);
+            padding: 20px;
+        }
+
+        .gallery .fullscreen-picture img {
+            display: block;
+            margin: auto;
+            height: 100%;
+            border: 1px solid #fff;
+            box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.24);
+            z-index: 11;
+        }
+
+        .d-none {
+            display: none !important;
+        }
+    </style>
 </head>
 
 <body>
-    <div id="gallery"></div>
+    <div class="gallery">
+        <div class="gallery-inner">
+            <!-- Pictures will load here -->
+        </div>
+        <div class='fullscreen-picture d-none'>
+            <img src="" alt="Gallery picture">
+        </div>
+    </div>
+    <div class="gallery">
+        <div class="gallery-inner">
+            <!-- Pictures will load here -->
+        </div>
+        <div class='fullscreen-picture d-none'>
+            <img src="" alt="Gallery picture">
+        </div>
+    </div>
     <script>
-        window.addEventListener('load', function () {
-
-            // Get reference of gallery container
-            var elementRef = document.getElementById('gallery');
-
-            // Init gallery according to wanted format
-            var gallery = new NaturalGallery.Natural(elementRef); // or
-            // var gallery = new NaturalGallery.Masonry(elementRef); // or
-            // var gallery = new NaturalGallery.Square(elementRef); // or
-            // var gallery = new NaturalGallery.ResponsiveSquare(elementRef);
-
-            var items = [
-                {
-                    thumbnailSrc: './img/1.jpg', // link to thumbnail image
-                    enlargedSrc: './img/1.jpg', // link to enlarged image
-                    enlargedWidth: 100,
-                    enlargedHeight: 100,
-                    title: 'test', // Title for the label or button
-                    link: 'link', // Link, transforms label into button
-                    linkTarget: '_blank', // _blank | _top | _self | _parent
-                    color: 'red' // HEX color for background before image display
-                }
-            ];
-
-            // Set the entire collection
-            gallery.setItems(items);
-
-            // Increment an existing collection.
-            // gallery.addItems(itemsSet1); // the first call as the same effect as setItems()
-            // gallery.addItems(itemsSet2);
-            // gallery.addItems(itemsSet3);
+        //Lits of all pictures
+        var picture_list = [
+            './images/aiting1.png',
+            './images/aiting4.png',
+            './images/chatRoom2.png',
+            './images/homeAndRoom.png',
+            './images/faceAndEmoj.png',
+        ];
+        //Gallery selector
+        $img_gallery = $('.gallery-inner');
+        //Put all pictures in the DOM
+        for (var i = 0; i < picture_list.length; i++) {
+            var img = picture_list[i];
+            var $img_nodes = "<img src='" + img + "' alt='Gallery picture' title='Choose picture'>";
+            $img_gallery.append($img_nodes);
+        }
+        //Fullscreen listener when click the img
+        $img_gallery.find('img').click(function () {
+            var $this = $(this),
+                $src = $this.attr('src');
+            $('.fullscreen-picture img').attr('src', $src);
+            $('.fullscreen-picture').removeClass('d-none');
         });
-
-
+        //Click outside picture to close fullscreen view
+        $('.fullscreen-picture').click(function () {
+            $('.fullscreen-picture').addClass('d-none');
+        });
     </script>
 </body>
 
