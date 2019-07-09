@@ -5,26 +5,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Gallery</title>
+    <title>相册</title>
     <style>
         body {
-            background-color: #404040;
+            background-color: #fff;
+            display: flex;
+        }
+
+        .profile {
+            flex: 1;
+            padding-left: 20px;
         }
 
         .gallery {
             padding: 10px;
+            flex: 3;
         }
 
         .gallery .gallery-inner img {
             cursor: pointer;
             transition: 0.2s all;
-            height: calc(100% - 30px);
+            height: 70%;
             width: 100%;
         }
 
         .gallery .gallery-inner .card:hover {
             transform: scale(1.03);
-            box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 0px 16px rgba(0, 0, 0, 0.2);
         }
 
         .gallery .fullscreen-picture {
@@ -53,13 +60,14 @@
         }
 
         .card a {
-            height: 30px;
-            display: inline-block;
-            line-height: 30px;
-            color: #fff;
+            height: 30%;
+            display: flex;
+            color: #000;
             text-decoration: none;
             font-size: 12px;
             font-family: monospace;
+            justify-content: center;
+            align-items: center;
         }
 
         .card a:hover {
@@ -68,32 +76,175 @@
         }
 
         h1 {
-            text-align: center;
-            color: #fff;
+            text-align: left;
+            color: #000;
+            font-size: 30px;
         }
 
         h2 {
-            color: #fff;
+            color: #000;
         }
 
         .card {
             display: inline-block;
-            width: 150px;
-            height: 200px;
-            background: #db4a79;
+            width: 200px;
+            height: 230px;
+            background: rgba(255, 255, 255, 0.4);
             margin: 5px;
             text-align: center;
             padding: 5px;
             transition: all .5s;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            border-radius: 0;
         }
 
-        .card:hover {
-            background: #e66690;
+        .sub-title {
+            font-size: 19px;
+        }
+
+        ul {
+            padding: 0;
+            margin: 0;
+            font-size: .75em
+        }
+
+        ul li {
+            position: relative;
+            display: inline;
+            padding-bottom: .1875em;
+            margin-right: .75em;
+        }
+
+        li a {
+            color: #A3A3A3;
+            -webkit-transition: color .5s;
+            -moz-transition: color .5s;
+            -ms-transition: color .5s;
+            -o-transition: color .5s;
+            transition: color .5s;
+            cursor: pointer;
+            border-radius: 5px;
+            padding: .5em 1em;
+            font-weight: 700;
+            text-transform: uppercase
+        }
+
+        li a:hover {
+            background-color: #00000052 !important;
+        }
+
+        li#dark a {
+            background-color: rgba(0, 0, 0, 0.1);
+            color: #383838;
+            text-decoration: none;
+        }
+
+        li#white a {
+            background-color: rgba(0, 0, 0, 0.1);
+            color: #383838;
+            text-decoration: none;
+        }
+
+        li#light a {
+            background-color: rgba(0, 0, 0, 0.1);
+            color: #383838;
+            text-decoration: none;
+        }
+
+        li#classic a {
+            border-color: #cc2a41;
+            background-color: #fafafa;
+            color: #22272a;
+            border: #FFFFFF solid 5px;
+        }
+
+        a{
+            text-decoration: none;
+        }
+
+        .footer {
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 2em;
+            margin-left: 20px;
+            width: 86%;
+            font-size: .438em;
+            line-height: 1.875em;
+            text-transform: uppercase;
+            letter-spacing: .0625em;
+            z-index: 10;
+        }
+
+        .footer {
+            color: #707070
+        }
+
+        .footer a {
+            color: #707070
+        }
+
+        .footer span {
+            display: inline-block;
+            font-weight: 700;
+            border-bottom: 1px dotted
+        }
+
+        .footer a:hover span {
+            color: #d44375;
+            border-bottom: 1px dotted transparent
+        }
+
+        .layout-center .v-center,
+        .layout-center .footer {
+            text-align: center
+        }
+
+        .layout-center .main-content {
+            margin: 0 auto
+        }
+
+        @media only screen and (min-width : 768px) {
+            body {
+                font-size: 22px;
+                line-height: 48px
+            }
+
+            .main-content {
+                width: 80%
+            }
+        }
+
+        @media only screen and (min-width : 1200px) {
+            body {
+                font-size: 26px;
+                line-height: 48px
+            }
+        }
+
+        @media only screen and (min-width : 1824px) {
+            body {
+                font-size: 32px;
+                line-height: 60px
+            }
         }
     </style>
 </head>
 
 <body>
+    <div class="profile">
+        <h1>柚子的相册</h1>
+        <p class="sub-title">一些关于我的项目的截图，查看详细介绍请点击卡片名字。</p>
+        <ul>
+            <li id="white"><a href="http://renhongl.github.io/home">主页</a></li>
+            <li id="dark"><a href="http://renhongl.github.io">博客</a></li>
+            <li id="light"><a href="http://github.com/renhongl">项目</a></li>
+        </ul>
+        <div class="footer">
+            <a href="">© Design by <span>柚子</span></a>,
+            <a href="">Opensourced on <span>GitHub</span></a>
+        </div>
+    </div>
     <div class="gallery">
         <div class="gallery-inner">
             <!-- Pictures will load here -->
