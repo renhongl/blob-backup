@@ -10,9 +10,9 @@ footer:
   copyright: Copyright
 
 index:
-  find_me_on: Find me on
+  find_me_on: 找到我在
   enum_comma: ','
-  enum_and: and
+  enum_and: 和
   articles: 文章
   projects: 项目
   topics: 话题
