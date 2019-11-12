@@ -82,7 +82,7 @@ disqus_shortname: renhongl
 #  - hexo-generator-feed
 #  - hexo-generator-baidu-sitemap
 #  - hexo-generator-sitemap
-theme: cactus-theme
+theme: xoxo-plus
 exclude_generator:
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
@@ -130,7 +130,7 @@ jsonContent:
     link: false
     permalink: false
     excerpt: false
-    categories: false
+    categories: true
     tags: true
 
 skip_render: 

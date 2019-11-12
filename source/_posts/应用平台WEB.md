@@ -14,6 +14,8 @@ tags:
 
 项目涉及技术：RequireJS, Vue.js, NodeJS, Express, MongoDB, Bootstrap, WebSocket, JQuery, ES2015。
 
+<!-- more -->
+
 应用平台WEB版，是为了做一个网页版的APP store，也就是可以扩展出其他应用的一个平台。目前平台除了搭建了基本的结构之外，还做了一个简单的一对一聊天应用和简单的博客系统。下面将进行简单的介绍，源代码可在demo大师上下载：[源码](http://www.demodashi.com/demo/12539.html)，[github点赞](https://github.com/renhongl/ailiao)。
 # 图文介绍
 

@@ -21,6 +21,8 @@ tags: ES6
       console.log(JSON.stringify(data));
     });
     ```
+
+<!-- more -->
 ## Promise
 * 回调方法太多会造成很多问题，所以我们会使用`.then()`的方式
 * 那么就需要Promise容器的支持

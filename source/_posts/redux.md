@@ -17,6 +17,7 @@ tags: Redux
 * 保持状态只读。
 * 数据改变只能通过纯函数完成。
 
+<!-- more -->
 
 ![](http://www.ruanyifeng.com/blogimg/asset/2016/bg2016091802.jpg)
 

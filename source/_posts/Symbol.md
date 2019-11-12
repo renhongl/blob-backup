@@ -10,6 +10,7 @@ tags: ES6
 # 什么是Symbol
 Symbol是ES6引入的一种新的原始数据类型，表示独一无二的值。它是JavaScript语言的第七种数据类型:
 
+<!-- more -->
 
 ```js
 null, undefined, String, Number, Boolean, Object, Symbol。

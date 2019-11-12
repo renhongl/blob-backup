@@ -6,16 +6,10 @@ date: 2018-12-31 21:46:48
 
 欢迎访问柚子的博客。
 
-
-## 关于我
-
-本科毕业，四年前端工作者。
+我是一个工作四年前端开发，热爱编程，包括Java和Python。
 
 
-* [Git Hub](https://github.com/renhongl)
-
-
-* [Code Pen](https://codepen.io/renhongl/)
+[Git Hub](https://github.com/renhongl) / [Code Pen](https://codepen.io/renhongl/)
 
 
 ## 联系我

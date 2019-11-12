@@ -20,3 +20,4 @@ hwg.next();//{value: 'ending',  done: true}
 hwg.nexe();//{value: undefined, done: true}
 ```
 
+<!-- more -->

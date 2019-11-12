@@ -25,5 +25,8 @@
     "hexo-renderer-sass": "^0.3.2",
     "hexo-renderer-stylus": "^0.3.1",
     "hexo-server": "^0.2.0"
+  },
+  "devDependencies": {
+    "hexo-reading-time": "^1.0.3"
   }
 }

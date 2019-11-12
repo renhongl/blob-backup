@@ -17,8 +17,8 @@ html {
 
 body {
   height:100%;
-  background: #1d1f21;
-  color: #c9cacc;
+  background: #ffffff;
+  color: #000000;
   font-size:16px;
   font-weight: 400;
   line-height:30px;
@@ -99,27 +99,21 @@ li a{
   border-radius: 5px;
   padding:.5em 1em;font-weight:700;text-transform:uppercase
 }
-li a:hover{border:#2bbc8a solid 5px !important;}
+li a:hover{background-color: #00000052 !important;}
 
 li#dark a{
-  border-color: #2bbc8a;
-  background-color: #FFFFFF;
+  background-color: rgba(0, 0, 0, 0.1);
   color: #383838;
-  border:#FFFFFF solid 5px;
 }
 
 li#white a{
-  border-color: #2bbc8a;
-  background-color: #FFFFFF;
+  background-color: rgba(0, 0, 0, 0.1);
   color: #383838;
-  border:#FFFFFF solid 5px;
 }
 
 li#light a{
-  border-color: #d44375;
-  background-color: #FFFFFF;
-  color: #363533;
-  border:#FFFFFF solid 5px;
+  background-color: rgba(0, 0, 0, 0.1);
+  color: #383838;
 }
 
 li#classic a{

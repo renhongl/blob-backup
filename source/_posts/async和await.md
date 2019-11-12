@@ -37,4 +37,6 @@ tags: ES6
    getPersonInformation();
    ```
 
+
+<!-- more -->
    ​

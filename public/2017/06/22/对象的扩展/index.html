@@ -1,353 +1,442 @@
+
 <!DOCTYPE html>
-<html lang=zh>
+<html lang="zh">
+
+
 <head><meta name="generator" content="Hexo 3.8.0">
-    <!-- so meta -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="HandheldFriendly" content="True">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="对象的扩展属性，方法的简洁写法 属性名为变量名，属性值为变量值。">
-<meta name="keywords" content="ES6">
-<meta property="og:type" content="article">
-<meta property="og:title" content="对象的扩展">
-<meta property="og:url" content="https://github.com/renhongl/2017/06/22/对象的扩展/index.html">
-<meta property="og:site_name" content="柚子">
-<meta property="og:description" content="对象的扩展属性，方法的简洁写法 属性名为变量名，属性值为变量值。">
-<meta property="og:locale" content="zh">
-<meta property="og:updated_time" content="2019-01-09T08:52:53.510Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="对象的扩展">
-<meta name="twitter:description" content="对象的扩展属性，方法的简洁写法 属性名为变量名，属性值为变量值。">
-    
-    
-        
-          
-              <link rel="shortcut icon" href="/images/favicon.ico">
-          
-        
-        
-          
-            <link rel="icon" type="image/png" href="/images/logo.png" sizes="192x192">
-          
-        
-        
-          
-            <link rel="apple-touch-icon" sizes="180x180" href="/images/logo.png">
-          
-        
-    
-    <!-- title -->
-    <title>对象的扩展</title>
-    <!-- styles -->
-    <link rel="stylesheet" href="/css/style.css">
-    <!-- persian styles -->
-    
-      <link rel="stylesheet" href="/css/rtl.css">
-    
-    <!-- rss -->
-    
-    
-</head>
-
-<body class="max-width mx-auto px3 ltr">
-    
-      <div id="header-post">
-  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
-  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
-  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
-  <span id="menu">
-    <span id="nav">
-      <ul>
-         
-          <li><a href="/">博客</a></li>
-         
-          <li><a href="/archives/">归档</a></li>
-         
-          <li><a href="/projects/">项目</a></li>
-         
-          <li><a href="/search/">搜索</a></li>
-         
-          <li><a href="/links/">链接</a></li>
-         
-          <li><a href="/about/">关于</a></li>
-        
-      </ul>
-    </span>
-    <br>
-    <span id="actions">
-      <ul>
-        
-        <li><a class="icon" href="/2017/07/10/Generator/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
-        
-        
-        <li><a class="icon" href="/2017/06/20/Promise/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
-        
-        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
-        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
-      </ul>
-      <span id="i-prev" class="info" style="display:none;">上一页</span>
-      <span id="i-next" class="info" style="display:none;">下一页</span>
-      <span id="i-top" class="info" style="display:none;">回到顶部</span>
-      <span id="i-share" class="info" style="display:none;">分享</span>
-    </span>
-    <br>
-    <div id="share" style="display: none">
-      <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://github.com/renhongl/2017/06/22/对象的扩展/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=https://github.com/renhongl/2017/06/22/对象的扩展/&text=对象的扩展"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://github.com/renhongl/2017/06/22/对象的扩展/&title=对象的扩展"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://github.com/renhongl/2017/06/22/对象的扩展/&is_video=false&description=对象的扩展"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=对象的扩展&body=Check out this article: https://github.com/renhongl/2017/06/22/对象的扩展/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=https://github.com/renhongl/2017/06/22/对象的扩展/&title=对象的扩展"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=https://github.com/renhongl/2017/06/22/对象的扩展/&title=对象的扩展"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://github.com/renhongl/2017/06/22/对象的扩展/&title=对象的扩展"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=https://github.com/renhongl/2017/06/22/对象的扩展/&title=对象的扩展"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://github.com/renhongl/2017/06/22/对象的扩展/&name=对象的扩展&description=&lt;h2 id=&#34;对象的扩展&#34;&gt;&lt;a href=&#34;#对象的扩展&#34; class=&#34;headerlink&#34; title=&#34;对象的扩展&#34;&gt;&lt;/a&gt;对象的扩展&lt;/h2&gt;&lt;h3 id=&#34;属性，方法的简洁写法&#34;&gt;&lt;a href=&#34;#属性，方法的简洁写法&#34; class=&#34;headerlink&#34; title=&#34;属性，方法的简洁写法&#34;&gt;&lt;/a&gt;属性，方法的简洁写法&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;属性名为变量名，属性值为变量值。&lt;/li&gt;
-&lt;/ul&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
-</ul>
-
-    </div>
-    <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#对象的扩展"><span class="toc-number">1.</span> <span class="toc-text">对象的扩展</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#属性，方法的简洁写法"><span class="toc-number">1.1.</span> <span class="toc-text">属性，方法的简洁写法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#属性名可以使用表达式"><span class="toc-number">1.2.</span> <span class="toc-text">属性名可以使用表达式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用Object-is-方法比较两个值相等"><span class="toc-number">1.3.</span> <span class="toc-text">使用Object.is()方法比较两个值相等</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用Object-assign-方法浅拷贝对象"><span class="toc-number">1.4.</span> <span class="toc-text">使用Object.assign()方法浅拷贝对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#遍历属性"><span class="toc-number">1.5.</span> <span class="toc-text">遍历属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用扩展运算符"><span class="toc-number">1.6.</span> <span class="toc-text">使用扩展运算符</span></a></li></ol></li></ol>
-    </div>
-  </span>
-</div>
-
-    
-    <div class="content index py4">
-        
-        <article class="post" itemscope="" itemtype="http://schema.org/BlogPosting">
-  <header>
-    
-    <h1 class="posttitle" itemprop="name headline">
-        对象的扩展
-    </h1>
-
-
-
-    <div class="meta">
-      <span class="author" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-        <span itemprop="name">柚子</span>
-      </span>
-      
-    <div class="postdate">
-        <time datetime="2017-06-22T11:57:38.000Z" itemprop="datePublished">2017-06-22</time>
-    </div>
-
-
-      
-
-      
-    <div class="article-tag">
-        <i class="fas fa-tag"></i>
-        <a class="tag-link" href="/tags/ES6/">ES6</a>
-    </div>
-
-
-    </div>
-  </header>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#202020">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+  
+  
+    <meta name="keywords" content="ES6,">
   
 
-  <div class="content" itemprop="articleBody">
-    <h2 id="对象的扩展"><a href="#对象的扩展" class="headerlink" title="对象的扩展"></a>对象的扩展</h2><h3 id="属性，方法的简洁写法"><a href="#属性，方法的简洁写法" class="headerlink" title="属性，方法的简洁写法"></a>属性，方法的简洁写法</h3><ul>
+  
+    <meta name="description" content="对象的扩展">
+  
+  
+  
+  <link rel="icon" type="image/x-icon" href="/images/footer-logo.png">
+  
+  <title>对象的扩展 [ 柚子 ]</title>
+  
+    <!-- stylesheets list from config.yml -->
+    
+      <link rel="stylesheet" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css">
+    
+      <link rel="stylesheet" href="/css/xoxo.css">
+    
+  
+</head>
+
+
+<body>
+  <div class="nav-container">
+    <nav class="home-menu pure-menu pure-menu-horizontal">
+  <a class="pure-menu-heading" href="/">
+    
+    <span class="title" style="text-transform:none">柚子</span>
+  </a>
+
+  <ul class="pure-menu-list clearfix">
+      
+          
+            
+              <li class="pure-menu-item"><a href="/" class="pure-menu-link">首页</a></li>
+            
+          
+      
+          
+            
+              <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
+            
+              <a href="#" id="post" class="pure-menu-link">文章</a>
+              <ul class="pure-menu-children">
+              
+                  
+                    <li class="pure-menu-item"><a href="/categories" style="color:#202020;" class="pure-menu-link">分类</a></li>
+                  
+              
+                  
+                    <li class="pure-menu-item"><a href="/archives" style="color:#202020;" class="pure-menu-link">归档</a></li>
+                  
+              
+                  
+                    <li class="pure-menu-item"><a href="/tags" style="color:#202020;" class="pure-menu-link">标签</a></li>
+                  
+              
+              </ul>
+            </li>
+          
+      
+          
+            
+              <li class="pure-menu-item"><a href="/paper" class="pure-menu-link">Papers</a></li>
+            
+          
+      
+          
+            
+              <li class="pure-menu-item"><a href="/project" class="pure-menu-link">项目</a></li>
+            
+          
+      
+          
+            
+              <li class="pure-menu-item"><a href="/activity" class="pure-menu-link">动态</a></li>
+            
+          
+      
+          
+            
+              <li class="pure-menu-item"><a href="/search" class="pure-menu-link">搜索</a></li>
+            
+          
+      
+  </ul>
+   
+</nav>
+
+  </div>
+
+  <div class="container" id="content-outer">
+    <div class="inner" id="content-inner">
+      <div class="post-container">
+  <article class="post" id="post">
+    <header class="post-header text-center">
+      <h1 class="title">
+        对象的扩展
+      </h1>
+      <span>
+        
+        <time class="time" datetime="2017-06-22T11:57:38.000Z">
+        2017-06-22
+      </time>
+        
+      </span>
+      <span class="slash">/</span>
+      <span class="post-meta">
+      <span class="post-tags">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ES6/">ES6</a></li></ul>
+      </span>
+    </span>
+      <span class="slash">/</span>
+      <span class="read">
+      <span id="busuanzi_value_page_pv"></span> 点击
+    </span>
+      <span class="slash">/</span>
+    </header>
+
+    <div class="post-content">
+      <h1 id="属性，方法的简洁写法"><a href="#属性，方法的简洁写法" class="headerlink" title="属性，方法的简洁写法"></a>属性，方法的简洁写法</h1><ul>
 <li>属性名为变量名，属性值为变量值。</li>
 </ul>
-<a id="more"></a>
-  <figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> name = <span class="string">'lrh'</span>;</span><br><span class="line"><span class="keyword">const</span> age = <span class="number">19</span>;</span><br><span class="line"><span class="keyword">const</span> person = &#123;</span><br><span class="line">  name,</span><br><span class="line">  age,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//用于方法返回值</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getInfor</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> name = <span class="string">'lrh'</span>;</span><br><span class="line">  <span class="keyword">const</span> age = <span class="number">18</span>;</span><br><span class="line">  <span class="keyword">return</span> &#123;name, age&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> name = <span class="string">'lrh'</span>;</span><br><span class="line"><span class="keyword">const</span> age = <span class="number">19</span>;</span><br><span class="line"><span class="keyword">const</span> person = &#123;</span><br><span class="line">  name,</span><br><span class="line">  age,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//用于方法返回值</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getInfor</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> name = <span class="string">'lrh'</span>;</span><br><span class="line">  <span class="keyword">const</span> age = <span class="number">18</span>;</span><br><span class="line">  <span class="keyword">return</span> &#123;name, age&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
 <li><p>方法的简写</p>
-<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> age = <span class="number">18</span>;</span><br><span class="line"><span class="keyword">const</span> person = &#123;</span><br><span class="line">    name: <span class="string">'lrh'</span>,</span><br><span class="line">    age,</span><br><span class="line">    getName() &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.name</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> age = <span class="number">18</span>;</span><br><span class="line"><span class="keyword">const</span> person = &#123;</span><br><span class="line">    name: <span class="string">'lrh'</span>,</span><br><span class="line">    age,</span><br><span class="line">    getName() &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.name</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h3 id="属性名可以使用表达式"><a href="#属性名可以使用表达式" class="headerlink" title="属性名可以使用表达式"></a>属性名可以使用表达式</h3><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//ES5定义对象的属性</span></span><br><span class="line"><span class="keyword">const</span> person = &#123;&#125;;</span><br><span class="line">person.name = <span class="string">'lrh'</span>;</span><br><span class="line">person.[<span class="string">'a'</span> + <span class="string">'ge'</span>] = <span class="number">18</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//ES5使用字面量定义属性时，只有下面一种方式</span></span><br><span class="line"><span class="keyword">const</span> person = &#123;</span><br><span class="line">  name: <span class="string">'lrh'</span>,</span><br><span class="line">  age: <span class="number">18</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//ES6可以使用表达式为对象字面量定义属性</span></span><br><span class="line"><span class="keyword">const</span> person = &#123;</span><br><span class="line">  name: <span class="string">'lrh'</span>,</span><br><span class="line">  [<span class="string">'a'</span> + <span class="string">'ge'</span>]: <span class="number">18</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="使用Object-is-方法比较两个值相等"><a href="#使用Object-is-方法比较两个值相等" class="headerlink" title="使用Object.is()方法比较两个值相等"></a>使用Object.is()方法比较两个值相等</h3><ul>
+<h1 id="属性名可以使用表达式"><a href="#属性名可以使用表达式" class="headerlink" title="属性名可以使用表达式"></a>属性名可以使用表达式</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//ES5定义对象的属性</span></span><br><span class="line"><span class="keyword">const</span> person = &#123;&#125;;</span><br><span class="line">person.name = <span class="string">'lrh'</span>;</span><br><span class="line">person.[<span class="string">'a'</span> + <span class="string">'ge'</span>] = <span class="number">18</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//ES5使用字面量定义属性时，只有下面一种方式</span></span><br><span class="line"><span class="keyword">const</span> person = &#123;</span><br><span class="line">  name: <span class="string">'lrh'</span>,</span><br><span class="line">  age: <span class="number">18</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//ES6可以使用表达式为对象字面量定义属性</span></span><br><span class="line"><span class="keyword">const</span> person = &#123;</span><br><span class="line">  name: <span class="string">'lrh'</span>,</span><br><span class="line">  [<span class="string">'a'</span> + <span class="string">'ge'</span>]: <span class="number">18</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h1 id="使用Object-is-方法比较两个值相等"><a href="#使用Object-is-方法比较两个值相等" class="headerlink" title="使用Object.is()方法比较两个值相等"></a>使用Object.is()方法比较两个值相等</h1><ul>
 <li>相等运算符（==）会自动转换数据类型。</li>
 <li>严格相等运算符（===）会导致NaN不等于NaN，+0等于-0。</li>
 <li><p>Object.is()方法与严格相等基本一致，并弥补了以上两个不足。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">NaN</span> === <span class="literal">NaN</span>;</span><br><span class="line">+<span class="number">0</span> === <span class="number">-0</span>;</span><br><span class="line"><span class="built_in">Object</span>.is(<span class="literal">NaN</span>, <span class="literal">NaN</span>);</span><br><span class="line"><span class="built_in">Object</span>.is(+<span class="number">0</span>, <span class="number">-0</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">NaN</span> === <span class="literal">NaN</span>;</span><br><span class="line">+<span class="number">0</span> === <span class="number">-0</span>;</span><br><span class="line"><span class="built_in">Object</span>.is(<span class="literal">NaN</span>, <span class="literal">NaN</span>);</span><br><span class="line"><span class="built_in">Object</span>.is(+<span class="number">0</span>, <span class="number">-0</span>);</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h3 id="使用Object-assign-方法浅拷贝对象"><a href="#使用Object-assign-方法浅拷贝对象" class="headerlink" title="使用Object.assign()方法浅拷贝对象"></a>使用Object.assign()方法浅拷贝对象</h3><ul>
+<h1 id="使用Object-assign-方法浅拷贝对象"><a href="#使用Object-assign-方法浅拷贝对象" class="headerlink" title="使用Object.assign()方法浅拷贝对象"></a>使用Object.assign()方法浅拷贝对象</h1><ul>
 <li><p>将源对象合并到目标对象</p>
 </li>
 <li><p>如果有同名属性，源对象的属性会覆盖掉目标对象的属性。</p>
 </li>
 <li><p>该方法是浅拷贝，即如果源对象的某个属性值是对象，那么目标对象拷贝的是这个对象的引用，源对象的任何变化，都会反映到目标对象上。</p>
-<figure class="highlight aspectj"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">target</span> = &#123;a: 1&#125;;</span><br><span class="line"><span class="keyword">const</span> source1 = &#123;b: 2&#125;;</span><br><span class="line"><span class="keyword">const</span> source2 = &#123;c: 3&#125;;</span><br><span class="line">Object.assign(<span class="keyword">target</span>, source1, source2);</span><br><span class="line"><span class="keyword">target</span>;<span class="comment">//&#123; a: 1, b: 2, c: 3 &#125;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> target = &#123;<span class="attr">a</span>: <span class="number">1</span>&#125;;</span><br><span class="line"><span class="keyword">const</span> source1 = &#123;<span class="attr">b</span>: <span class="number">2</span>&#125;;</span><br><span class="line"><span class="keyword">const</span> source2 = &#123;<span class="attr">c</span>: <span class="number">3</span>&#125;;</span><br><span class="line"><span class="built_in">Object</span>.assign(target, source1, source2);</span><br><span class="line">target;<span class="comment">//&#123; a: 1, b: 2, c: 3 &#125;</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>常见用途</p>
 <ol>
 <li><p>为对象添加属性</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">	<span class="keyword">constructor</span>(name, age) &#123;</span><br><span class="line">      <span class="built_in">Object</span>.assign(<span class="keyword">this</span>, &#123;name, age&#125;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> Person(<span class="string">'lrh'</span>, <span class="number">18</span>);</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>为对象添加方法</p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">	<span class="keyword">constructor</span>(name, age) &#123;</span><br><span class="line">      <span class="built_in">Object</span>.assign(<span class="keyword">this</span>, &#123;name, age&#125;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">new</span> Person(<span class="string">'lrh'</span>, <span class="number">18</span>);</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 </li>
 </ul>
-<pre><code><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(name, age) &#123;</span><br><span class="line">    <span class="built_in">Object</span>.assign(<span class="keyword">this</span>, &#123;name, age&#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">    </span><br><span class="line"><span class="built_in">Object</span>.assign(Person.prototype, &#123;</span><br><span class="line">  getName() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.name;</span><br><span class="line">  &#125;,</span><br><span class="line">  getAge() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.age;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line">    </span><br><span class="line"><span class="keyword">new</span> Person(<span class="string">'lrh'</span>, <span class="number">18</span>).getName();<span class="comment">//lrh</span></span><br><span class="line">    </span><br><span class="line"><span class="comment">//等同于</span></span><br><span class="line">Person.prototype.getName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">this</span>.name;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>为对象添加方法</li>
+</ol>
+<pre><code><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(name, age) &#123;</span><br><span class="line">    <span class="built_in">Object</span>.assign(<span class="keyword">this</span>, &#123;name, age&#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">      </span><br><span class="line"><span class="built_in">Object</span>.assign(Person.prototype, &#123;</span><br><span class="line">  getName() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.name;</span><br><span class="line">  &#125;,</span><br><span class="line">  getAge() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.age;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line">      </span><br><span class="line"><span class="keyword">new</span> Person(<span class="string">'lrh'</span>, <span class="number">18</span>).getName();<span class="comment">//lrh</span></span><br><span class="line">      </span><br><span class="line"><span class="comment">//等同于</span></span><br><span class="line">Person.prototype.getName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">this</span>.name;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 </code></pre><ol start="3">
 <li><p>克隆对象</p>
-<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> person = &#123;</span><br><span class="line">  name: <span class="string">'lrh'</span>,</span><br><span class="line">  age: <span class="number">18</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> p = <span class="built_in">Object</span>.assign(&#123;&#125;, person);<span class="comment">//&#123; name: 'lrh', age: 18 &#125;</span></span><br><span class="line"><span class="built_in">Object</span>.<span class="keyword">is</span>(person, p);<span class="comment">//false</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> person = &#123;</span><br><span class="line">  name: <span class="string">'lrh'</span>,</span><br><span class="line">  age: <span class="number">18</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> p = <span class="built_in">Object</span>.assign(&#123;&#125;, person);<span class="comment">//&#123; name: 'lrh', age: 18 &#125;</span></span><br><span class="line"><span class="built_in">Object</span>.is(person, p);<span class="comment">//false</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>合并对象</p>
-<figure class="highlight plain"><figcaption><span>wiki</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const source1 = &#123;name: &apos;lrh&apos;&#125;;</span><br><span class="line">const source2 = &#123;age: 18&#125;;</span><br><span class="line">const p = Object.assign(&#123;&#125;, source1, source2);//&#123; name: &apos;lrh&apos;, age: 18 &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> source1 = &#123;<span class="attr">name</span>: <span class="string">'lrh'</span>&#125;;</span><br><span class="line"><span class="keyword">const</span> source2 = &#123;<span class="attr">age</span>: <span class="number">18</span>&#125;;</span><br><span class="line"><span class="keyword">const</span> p = <span class="built_in">Object</span>.assign(&#123;&#125;, source1, source2);<span class="comment">//&#123; name: 'lrh', age: 18 &#125;</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>为属性指定默认值</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">const</span> <span class="string">options</span> <span class="string">=</span> <span class="string">&#123;</span></span><br><span class="line"><span class="attr">  container:</span> <span class="string">'#wrap'</span><span class="string">,</span></span><br><span class="line"><span class="attr">  draggable:</span> <span class="literal">true</span><span class="string">,</span></span><br><span class="line"><span class="attr">  resizable:</span> <span class="literal">true</span><span class="string">,</span></span><br><span class="line"><span class="attr">  blinkTime:</span> <span class="number">4000</span></span><br><span class="line"><span class="string">&#125;;</span></span><br><span class="line"></span><br><span class="line"><span class="string">class</span> <span class="string">Draggable&#123;</span></span><br><span class="line">  <span class="string">constructor(options)</span> <span class="string">&#123;</span></span><br><span class="line">    <span class="string">const</span> <span class="string">DEFAULT</span> <span class="string">=</span> <span class="string">&#123;</span></span><br><span class="line"><span class="attr">      container:</span> <span class="string">''</span><span class="string">,</span></span><br><span class="line"><span class="attr">      draggable:</span> <span class="literal">true</span><span class="string">,</span></span><br><span class="line"><span class="attr">      resizable:</span> <span class="literal">false</span><span class="string">,</span></span><br><span class="line">    <span class="string">&#125;</span></span><br><span class="line">    <span class="string">this.options</span> <span class="string">=</span> <span class="string">Object.assign(&#123;&#125;,</span> <span class="string">DEFAULT,</span> <span class="string">options);</span></span><br><span class="line">  <span class="string">&#125;</span></span><br><span class="line"><span class="string">&#125;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> options = &#123;</span><br><span class="line">  container: <span class="string">'#wrap'</span>,</span><br><span class="line">  draggable: <span class="literal">true</span>,</span><br><span class="line">  resizable: <span class="literal">true</span>,</span><br><span class="line">  blinkTime: <span class="number">4000</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Draggable</span></span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(options) &#123;</span><br><span class="line">    <span class="keyword">const</span> DEFAULT = &#123;</span><br><span class="line">      container: <span class="string">''</span>,</span><br><span class="line">      draggable: <span class="literal">true</span>,</span><br><span class="line">      resizable: <span class="literal">false</span>,</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">this</span>.options = <span class="built_in">Object</span>.assign(&#123;&#125;, DEFAULT, options);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>​</p>
 </li>
 </ol>
-<h3 id="遍历属性"><a href="#遍历属性" class="headerlink" title="遍历属性"></a>遍历属性</h3><ul>
+<h1 id="遍历属性"><a href="#遍历属性" class="headerlink" title="遍历属性"></a>遍历属性</h1><ul>
 <li><p>for…in遍历对象自身的和继承的可枚举属性，不包含Symbol属性。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(name, age) &#123;</span><br><span class="line">    <span class="built_in">Object</span>.assign(<span class="keyword">this</span>, &#123;name, age&#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Person.prototype.type = <span class="string">'Person'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> person = <span class="keyword">new</span> Person(<span class="string">'lrh'</span>, <span class="number">18</span>, <span class="string">'male'</span>);</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> p <span class="keyword">in</span> person) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(p);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//name</span></span><br><span class="line"><span class="comment">//age</span></span><br><span class="line"><span class="comment">//gender</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> p <span class="keyword">in</span> person) &#123;</span><br><span class="line">  <span class="keyword">if</span> (person.hasOwnProperty(p)) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(p);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//name</span></span><br><span class="line"><span class="comment">//age</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(name, age) &#123;</span><br><span class="line">    <span class="built_in">Object</span>.assign(<span class="keyword">this</span>, &#123;name, age&#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Person.prototype.type = <span class="string">'Person'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> person = <span class="keyword">new</span> Person(<span class="string">'lrh'</span>, <span class="number">18</span>, <span class="string">'male'</span>);</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> p <span class="keyword">in</span> person) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(p);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//name</span></span><br><span class="line"><span class="comment">//age</span></span><br><span class="line"><span class="comment">//gender</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> p <span class="keyword">in</span> person) &#123;</span><br><span class="line">  <span class="keyword">if</span> (person.hasOwnProperty(p)) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(p);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//name</span></span><br><span class="line"><span class="comment">//age</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Object.keys(obj)返回一个数组，包含对象自身所有的可枚举属性，不包含继承的属性，不包含Symbol属性。</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">type</span> = Symbol(<span class="string">'type'</span>);</span><br><span class="line"><span class="keyword">const</span> person = &#123;</span><br><span class="line">  name: <span class="string">'lrh'</span>,</span><br><span class="line">  age: <span class="number">18</span>,</span><br><span class="line">  [<span class="keyword">type</span>]: <span class="string">'Student'</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">Object</span>.keys(person);<span class="comment">//['name', 'age']</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> type = <span class="built_in">Symbol</span>(<span class="string">'type'</span>);</span><br><span class="line"><span class="keyword">const</span> person = &#123;</span><br><span class="line">  name: <span class="string">'lrh'</span>,</span><br><span class="line">  age: <span class="number">18</span>,</span><br><span class="line">  [type]: <span class="string">'Student'</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">Object</span>.keys(person);<span class="comment">//['name', 'age']</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Object.getOwnPropertyNames(obj)返回一个数组，包含对象自身所有的可枚举属性和不可枚举属性，不包含Symbol属性。</p>
-<figure class="highlight prolog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"><span class="symbol">Object</span>.getOwnPropertyNames(arr);//[<span class="string">'0'</span>, <span class="string">'1'</span>, <span class="string">'2'</span>, <span class="string">'length'</span>]</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"><span class="built_in">Object</span>.getOwnPropertyNames(arr);<span class="comment">//['0', '1', '2', 'length']</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Object.getOwnPropertySymbols(obj)返回一个数组，包含所有Symbol属性。</p>
 </li>
 <li><p>Reflect.ownKeys(obj)返回一个数组，包含所有可枚举属性，不可枚举属性，Symbol属性。</p>
 </li>
 <li><p>ES2015新增遍历法：Object.keys()， ES2017新增遍历方法：Object.values(), Object.entries()。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> person = &#123;</span><br><span class="line">  name: <span class="string">'lrh'</span>,</span><br><span class="line">  age: <span class="number">18</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">Object</span>.keys(person);<span class="comment">//[ 'name', 'age' ]</span></span><br><span class="line"><span class="built_in">Object</span>.values(person);<span class="comment">//[ 'lrh', 18 ]</span></span><br><span class="line"><span class="built_in">Object</span>.entries(person);<span class="comment">//[ [ 'name', 'lrh' ], [ 'age', 18 ] ]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//自己实现entries()方法</span></span><br><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">entries</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> key <span class="keyword">of</span> <span class="built_in">Object</span>.keys(obj)) &#123;</span><br><span class="line">    <span class="keyword">yield</span> [key, obj[key]];</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> personEntries = entries(person);</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> p <span class="keyword">of</span> personEntries) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(p)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//[ 'name', 'lrh' ]</span></span><br><span class="line"><span class="comment">//[ 'age', 18 ]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//如果没有使用entries()方法，可以给Symbol.iterator配置默认的迭代器</span></span><br><span class="line"><span class="built_in">Object</span>.assign(person, &#123;</span><br><span class="line">  * [<span class="built_in">Symbol</span>.iterator]() &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> key <span class="keyword">of</span> <span class="built_in">Object</span>.keys(<span class="keyword">this</span>)) &#123;</span><br><span class="line">      <span class="keyword">yield</span> [key, <span class="keyword">this</span>[key]];</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> entries <span class="keyword">of</span> person) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(entries);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//[ 'name', 'lrh' ]</span></span><br><span class="line"><span class="comment">//[ 'age', 18 ]</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> person = &#123;</span><br><span class="line">  name: <span class="string">'lrh'</span>,</span><br><span class="line">  age: <span class="number">18</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">Object</span>.keys(person);<span class="comment">//[ 'name', 'age' ]</span></span><br><span class="line"><span class="built_in">Object</span>.values(person);<span class="comment">//[ 'lrh', 18 ]</span></span><br><span class="line"><span class="built_in">Object</span>.entries(person);<span class="comment">//[ [ 'name', 'lrh' ], [ 'age', 18 ] ]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//自己实现entries()方法</span></span><br><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">entries</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> key <span class="keyword">of</span> <span class="built_in">Object</span>.keys(obj)) &#123;</span><br><span class="line">    <span class="keyword">yield</span> [key, obj[key]];</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> personEntries = entries(person);</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> p <span class="keyword">of</span> personEntries) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(p)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//[ 'name', 'lrh' ]</span></span><br><span class="line"><span class="comment">//[ 'age', 18 ]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//如果没有使用entries()方法，可以给Symbol.iterator配置默认的迭代器</span></span><br><span class="line"><span class="built_in">Object</span>.assign(person, &#123;</span><br><span class="line">  * [<span class="built_in">Symbol</span>.iterator]() &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> key <span class="keyword">of</span> <span class="built_in">Object</span>.keys(<span class="keyword">this</span>)) &#123;</span><br><span class="line">      <span class="keyword">yield</span> [key, <span class="keyword">this</span>[key]];</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> entries <span class="keyword">of</span> person) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(entries);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//[ 'name', 'lrh' ]</span></span><br><span class="line"><span class="comment">//[ 'age', 18 ]</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h3 id="使用扩展运算符"><a href="#使用扩展运算符" class="headerlink" title="使用扩展运算符"></a>使用扩展运算符</h3><ul>
+<h1 id="使用扩展运算符"><a href="#使用扩展运算符" class="headerlink" title="使用扩展运算符"></a>使用扩展运算符</h1><ul>
 <li><p>扩展运算符是用于操作数组的</p>
 </li>
 <li><p>ES2018将这个运算符引入到了对象中</p>
 </li>
 <li><p>用于取出参数对象的所有可遍历属性，拷贝到当前对象中，等同于使用Object.assign()。</p>
-<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const person = &#123;</span><br><span class="line">  name: <span class="string">'lrh'</span>,</span><br><span class="line">  age: <span class="number">18</span></span><br><span class="line">&#125;;</span><br><span class="line">const p = &#123;...person, type: <span class="string">'student'</span>&#125;;</span><br><span class="line">p;//&#123; name: <span class="string">'lrh'</span>, age: <span class="number">18</span>, type: <span class="string">'student'</span> &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> person = &#123;</span><br><span class="line">  name: <span class="string">'lrh'</span>,</span><br><span class="line">  age: <span class="number">18</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">const</span> p = &#123;...person, <span class="attr">type</span>: <span class="string">'student'</span>&#125;;</span><br><span class="line">p;<span class="comment">//&#123; name: 'lrh', age: 18, type: 'student' &#125;</span></span><br></pre></td></tr></table></figure>
 <p>​</p>
 </li>
 </ul>
 
+    </div>
+
+  </article>
+  <div class="toc-container">
+    
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#属性，方法的简洁写法"><span class="toc-text">属性，方法的简洁写法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#属性名可以使用表达式"><span class="toc-text">属性名可以使用表达式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#使用Object-is-方法比较两个值相等"><span class="toc-text">使用Object.is()方法比较两个值相等</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#使用Object-assign-方法浅拷贝对象"><span class="toc-text">使用Object.assign()方法浅拷贝对象</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#遍历属性"><span class="toc-text">遍历属性</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#使用扩展运算符"><span class="toc-text">使用扩展运算符</span></a></li></ol>
   </div>
-</article>
 
-    <div class="blog-post-comments">
-        <div id="disqus_thread">
-            <noscript>Please enable JavaScript to view the comments.</noscript>
-        </div>
-    </div>
-
-
-
-        
-          <div id="footer-post-container">
-  <div id="footer-post">
-
-    <div id="nav-footer" style="display: none">
-      <ul>
-         
-          <li><a href="/">博客</a></li>
-         
-          <li><a href="/archives/">归档</a></li>
-         
-          <li><a href="/projects/">项目</a></li>
-         
-          <li><a href="/search/">搜索</a></li>
-         
-          <li><a href="/links/">链接</a></li>
-         
-          <li><a href="/about/">关于</a></li>
-        
-      </ul>
-    </div>
-
-    <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#对象的扩展"><span class="toc-number">1.</span> <span class="toc-text">对象的扩展</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#属性，方法的简洁写法"><span class="toc-number">1.1.</span> <span class="toc-text">属性，方法的简洁写法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#属性名可以使用表达式"><span class="toc-number">1.2.</span> <span class="toc-text">属性名可以使用表达式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用Object-is-方法比较两个值相等"><span class="toc-number">1.3.</span> <span class="toc-text">使用Object.is()方法比较两个值相等</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用Object-assign-方法浅拷贝对象"><span class="toc-number">1.4.</span> <span class="toc-text">使用Object.assign()方法浅拷贝对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#遍历属性"><span class="toc-number">1.5.</span> <span class="toc-text">遍历属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用扩展运算符"><span class="toc-number">1.6.</span> <span class="toc-text">使用扩展运算符</span></a></li></ol></li></ol>
-    </div>
-
-    <div id="share-footer" style="display: none">
-      <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://github.com/renhongl/2017/06/22/对象的扩展/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=https://github.com/renhongl/2017/06/22/对象的扩展/&text=对象的扩展"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://github.com/renhongl/2017/06/22/对象的扩展/&title=对象的扩展"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://github.com/renhongl/2017/06/22/对象的扩展/&is_video=false&description=对象的扩展"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=对象的扩展&body=Check out this article: https://github.com/renhongl/2017/06/22/对象的扩展/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=https://github.com/renhongl/2017/06/22/对象的扩展/&title=对象的扩展"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=https://github.com/renhongl/2017/06/22/对象的扩展/&title=对象的扩展"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://github.com/renhongl/2017/06/22/对象的扩展/&title=对象的扩展"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=https://github.com/renhongl/2017/06/22/对象的扩展/&title=对象的扩展"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://github.com/renhongl/2017/06/22/对象的扩展/&name=对象的扩展&description=&lt;h2 id=&#34;对象的扩展&#34;&gt;&lt;a href=&#34;#对象的扩展&#34; class=&#34;headerlink&#34; title=&#34;对象的扩展&#34;&gt;&lt;/a&gt;对象的扩展&lt;/h2&gt;&lt;h3 id=&#34;属性，方法的简洁写法&#34;&gt;&lt;a href=&#34;#属性，方法的简洁写法&#34; class=&#34;headerlink&#34; title=&#34;属性，方法的简洁写法&#34;&gt;&lt;/a&gt;属性，方法的简洁写法&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;属性名为变量名，属性值为变量值。&lt;/li&gt;
-&lt;/ul&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
-</ul>
-
-    </div>
-
-    <div id="actions-footer">
-        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
-        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> 话题</a>
-        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
-        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> 回到顶部</a>
-    </div>
 
   </div>
 </div>
+<div class="copyright">
+    <span>本作品采用</span>
+    <a href="https://creativecommons.org/licenses/by/4.0/">知识共享署名 4.0 国际许可协议</a>
+    <span>进行许可。 转载时请注明原文链接。</span>
+</div>
 
+
+  
+    <div class="post-nav">
+      <div class="post-nav-item post-nav-next">
         
-        <footer id="footer">
-  <div class="footer-left">
-    Copyright &copy; 2019 柚子
-  </div>
-  <div class="footer-right">
-    <nav>
-      <ul>
-         
-          <li><a href="/">博客</a></li>
-         
-          <li><a href="/archives/">归档</a></li>
-         
-          <li><a href="/projects/">项目</a></li>
-         
-          <li><a href="/search/">搜索</a></li>
-         
-          <li><a href="/links/">链接</a></li>
-         
-          <li><a href="/about/">关于</a></li>
+          <span>〈 </span>
+          <a href="/2017/06/20/Promise/" rel="next" title="Promise">
+          Promise
+          </a>
         
-      </ul>
-    </nav>
-  </div>
-</footer>
+      </div>
+  
+      <div class="post-nav-item post-nav-prev">
+          
+          <a href="/2017/07/10/Generator/" rel="prev" title="Generator函数">
+            Generator函数
+          </a>
+          <span>〉</span>
+        
+      </div>
+    </div>
+  
+
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+  <script>
+    var disqus_shortname = 'renhongl';
+    
+    var disqus_url = 'https://github.com/renhongl/2017/06/22/对象的扩展/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//renhongl.disqus.com/count.js" async></script>
+
+
 
     </div>
+
+    
+
+  </div>
+  <footer class="footer text-center">
+    <div id="bottom-inner">
+        <a class="bottom-item" href="https://github.com/fooying" target="_blank">GitHub</a> |
+        <a class="bottom-item" href="/links">友情链接</a> |
+        <a class="bottom-item" href="https://hexo.io" target="_blank">Powered by hexo</a> |
+        <a class="bottom-item" href="https://github.com/fooying/hexo-theme-xoxo-plus" target="_blank">Theme xoxo-plus</a> |
+        <a class="bottom-item" href="/atom.xml">订阅</a>
+    </div>
+</footer>
+
+  
+
+<script>
+  (function(window, document, undefined) {
+
+    var timer = null;
+
+    function returnTop() {
+      cancelAnimationFrame(timer);
+      timer = requestAnimationFrame(function fn() {
+        var oTop = document.body.scrollTop || document.documentElement.scrollTop;
+        if (oTop > 0) {
+          document.body.scrollTop = document.documentElement.scrollTop = oTop - 50;
+          timer = requestAnimationFrame(fn);
+        } else {
+          cancelAnimationFrame(timer);
+        }
+      });
+    }
+
+    var hearts = [];
+    window.requestAnimationFrame = (function() {
+      return window.requestAnimationFrame ||
+        window.webkitRequestAnimationFrame ||
+        window.mozRequestAnimationFrame ||
+        window.oRequestAnimationFrame ||
+        window.msRequestAnimationFrame ||
+        function(callback) {
+          setTimeout(callback, 1000 / 60);
+        }
+    })();
+    init();
+
+    function init() {
+      css(".heart{z-index:9999;width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: absolute;}.heart:after{top: -5px;}.heart:before{left: -5px;}");
+      attachEvent();
+      gameloop();
+      addMenuEvent();
+    }
+
+    function gameloop() {
+      for (var i = 0; i < hearts.length; i++) {
+        if (hearts[i].alpha <= 0) {
+          document.body.removeChild(hearts[i].el);
+          hearts.splice(i, 1);
+          continue;
+        }
+        hearts[i].y--;
+        hearts[i].scale += 0.004;
+        hearts[i].alpha -= 0.013;
+        hearts[i].el.style.cssText = "left:" + hearts[i].x + "px;top:" + hearts[i].y + "px;opacity:" + hearts[i].alpha + ";transform:scale(" + hearts[i].scale + "," + hearts[i].scale + ") rotate(45deg);background:" + hearts[i].color;
+      }
+      requestAnimationFrame(gameloop);
+    }
+
+    /**
+     * 给logo设置点击事件
+     * 
+     * - 回到顶部
+     * - 出现爱心
+     */
+    function attachEvent() {
+      var old = typeof window.onclick === "function" && window.onclick;
+      var logo = document.getElementById("logo");
+      if (logo) {
+        logo.onclick = function(event) {
+          returnTop();
+          old && old();
+          createHeart(event);
+        }
+      }
+      
+    }
+
+    function createHeart(event) {
+      var d = document.createElement("div");
+      d.className = "heart";
+      hearts.push({
+        el: d,
+        x: event.clientX - 5,
+        y: event.clientY - 5,
+        scale: 1,
+        alpha: 1,
+        color: randomColor()
+      });
+      document.body.appendChild(d);
+    }
+
+    function css(css) {
+      var style = document.createElement("style");
+      style.type = "text/css";
+      try {
+        style.appendChild(document.createTextNode(css));
+      } catch (ex) {
+        style.styleSheet.cssText = css;
+      }
+      document.getElementsByTagName('head')[0].appendChild(style);
+    }
+
+    function randomColor() {
+      // return "rgb(" + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + ")";
+      return "#F44336";
+    }
+
+    function addMenuEvent() {
+      var menu = document.getElementById('menu-main-post');
+      if (menu) {
+        var toc = document.getElementById('toc');
+        if (toc) {
+          menu.onclick = function() {
+            if (toc) {
+              if (toc.style.display == 'block') {
+                toc.style.display = 'none';
+              } else {
+                toc.style.display = 'block';
+              }
+            }
+          };
+        } else {
+          menu.style.display = 'none';
+        }
+      }
+    }
+
+  })(window, document);
+</script>
+
+  
+
+
+
+  
+<script>
+  (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+          bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      }
+      else {
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+
+
 </body>
 </html>
-<!-- styles -->
-<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
-<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
-
-<!-- jquery -->
-<script src="/lib/jquery/jquery.min.js"></script>
-<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
-<script src="/js/main.js"></script>
-<!-- search -->
-
-<!-- Google Analytics -->
-
-<!-- Baidu Analytics -->
-
-<!-- Disqus Comments -->
-
-    <script type="text/javascript">
-        var disqus_shortname = 'renhongl';
-
-        (function(){
-            var dsq = document.createElement('script');
-            dsq.type = 'text/javascript';
-            dsq.async = true;
-            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        }());
-    </script>
-
-

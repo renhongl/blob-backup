@@ -1,0 +1,91 @@
+
+# html lang
+language: zh-Hans
+
+# main menu navigation
+menu:
+  home: /
+  post:
+      # categories: /categories
+      archives: /archives
+      tags: /tags
+  # Papers: /paper
+  project: /projects
+  about: /about
+  search: /search
+  # about: http://www.fooying.com
+  # rss: /atom.xml
+
+# Miscelaneous
+favicon: footer-logo.png
+logo:
+
+share:
+    show: false
+    img:
+    img_alt:
+    tip_text: test
+
+# stylesheets loaded in the <head>
+stylesheets:
+# - /css/normalize.css
+- //cdn.bootcss.com/pure/1.0.0/pure-min.css
+- /css/xoxo.css
+
+# baidu url js push
+baidu_url_js_push: true
+
+# scripts loaded in the end of the body
+scripts:
+#- //cdn.bootcss.com/zepto/1.2.0/zepto.min.js
+#- /js/xoxo.js
+
+# switch
+show_excerpt: true
+show_date: true
+
+#footer
+index_page: http://www.fooying.com
+main_site: http://www.fooying.com
+github: https://renhongl.github.io
+links_url: /links
+
+# 友情链接
+links:
+  蘑菇的博客: https://littlesistermogu.github.io/
+  我的GitHub: https://renhongl.github.io
+
+# project
+projects:
+  AiLiao:
+    url: https://renhongl.github.io/2016/11/24/%E5%BA%94%E7%94%A8%E5%B9%B3%E5%8F%B0WEB/
+    descript: 网页版聊天软件
+  Online Markdown Editor:
+    url: https://renhongl.github.io/markdown-editor/
+    descript: 功能强大的在线Markdown编辑器
+  Wang Yi Yun Online:
+    url: https://renhongl.github.io/wangyiyun-online/
+    descript: 基于网易云API实现的网页播放器
+  Pomelo Engine:
+    url: https://renhongl.github.io/pomelo-engine/
+    descript: 使用Javascript开发的2d游戏引擎
+  AiTing:
+    url: https://renhongl.github.io/2017/01/21/%E7%88%B1%E5%90%AC%E6%92%AD%E6%94%BE%E5%99%A8/
+    descript: 使用web技术开发的桌面音乐播放器
+  Chat Room:
+    url: https://renhongl.github.io/2016/11/15/%E5%BA%94%E7%94%A8%E5%B9%B3%E5%8F%B0%E6%A1%8C%E9%9D%A2%E7%89%88/
+    descript: 使用web技术开发的桌面聊天室
+  MR UI:
+    url: https://renhongl.github.io/mr/
+    descript: ES6写的UI库
+
+# activitys
+activitys:
+  腾讯课堂课程《漏洞攻防与企业安全实例讲解》:
+    date: 2018-07-10
+    url: https://ke.qq.com/course/342390?tuin=49018ed
+    type: 课程
+
+# papers
+papers:
+    原创翻译：给开发者的终极XSS防护备忘录: https://github.com/fooying/Papers/blob/master/给开发者的终极XSS防护备忘录.pdf

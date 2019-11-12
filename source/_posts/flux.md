@@ -14,6 +14,8 @@ tags: Redux
 * 一种架构思想。
 * 专门解决软件的结构问题。
 
+<!-- more -->
+
 # 传统MVC
 
 ![](https://res.infoq.com/news/2014/05/facebook-mvc-flux/en/resources/flux-react-mvc.png)

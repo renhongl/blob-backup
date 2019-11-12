@@ -1,201 +1,316 @@
-<!--::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-  jquery.mb.components
-
-  file: demo-2.html
-  last modified: 10/25/18 8:00 PM
-  Version:  {{ version }}
-  Build:  {{ buildnum }}
-
-  Open Lab s.r.l., Florence - Italy
-  email:  matteo@open-lab.com
-  blog: 	http://pupunzi.open-lab.com
-  site: 	http://pupunzi.com
-  	http://open-lab.com
-
-  Licences: MIT, GPL
-  http://www.opensource.org/licenses/mit-license.php
-  http://www.gnu.org/licenses/gpl.html
-
-  Copyright (c) 2001-2018. Matteo Bicocchi (Pupunzi)
-  :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::-->
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>相册</title>
+    <style>
+        body {
+            background-color: #fff;
+            display: flex;
+        }
 
-  <meta name="description" content="">
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="cleartype" content="on">
+        .profile {
+            flex: 1;
+            padding-left: 20px;
+        }
 
+        .gallery {
+            padding: 10px;
+            flex: 3;
+        }
 
-  <title>jquery.mb.gallery</title>
-  <link href='http://fonts.googleapis.com/css?family=Lekton|Lobster' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" type="text/css" href="./dist/css/jquery.mb.gallery.min.css?_v=1.3.1" />
+        .gallery .gallery-inner img {
+            cursor: pointer;
+            transition: 0.2s all;
+            height: 70%;
+            width: 100%;
+        }
 
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
-  <script src="./dist/jquery.mb.gallery.js?_v=1.3.1"></script>
+        .gallery .gallery-inner .card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0px 16px rgba(0, 0, 0, 0.2);
+        }
 
-  <style>
-    body,
-    html {
-      position: relative;
-      min-width: 100%;
-      min-height: 100%;
-      margin: 0;
-      padding: 0;
-      /*background: linear-gradient(135deg, #ffaa02 0%,#febf01 100%); */
-      /* W3C */
-      background: linear-gradient(135deg, #343b40 0%, #494e51 100%);
-      font-family: Verdana, Arial, Helvetica, sans-serif;
-    }
+        .gallery .fullscreen-picture {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 10;
+            background-color: rgba(64, 64, 64, 0.8);
+            padding: 20px;
+            transition: all .5s;
+        }
 
-    #wrapper {
-      padding: 20px;
-      max-width: 1024px;
-      width: 100%;
-      margin: auto;
-    }
+        .gallery .fullscreen-picture img {
+            display: block;
+            margin: auto;
+            height: 100%;
+            box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.24);
+            z-index: 11;
+            transition: all .5s;
+        }
 
-    h1 {
-      text-align: center;
-      font-size: 60px;
-      font-family: 'Lobster', cursive;
-    }
+        .d-none {
+            display: none !important;
+        }
 
-    @media (max-width: 500px) {
-      h1 {
-        font-size: 30px;
-      }
-    }
+        .card a {
+            height: 30%;
+            display: flex;
+            color: #000;
+            text-decoration: none;
+            font-size: 12px;
+            font-family: monospace;
+            justify-content: center;
+            align-items: center;
+        }
 
-    label {
-      color: white;
-    }
+        .card a:hover {
+            color: #404040;
+            text-decoration: underline !important;
+        }
 
-    /*custom overlay gradient */
+        h1 {
+            text-align: left;
+            color: #000;
+            font-size: 30px;
+        }
 
-    .tg-placeHolder {
-      /*background: linear-gradient(135deg, #ffffff 0%, #cccccc 100%);*/
-      background: #000;
-    }
+        h2 {
+            color: #000;
+        }
 
-    .tg-overlay {
-      background: linear-gradient(135deg, rgba(0, 0, 0, 0.78) 0%, rgba(23, 23, 23, 0.60) 100%);
-    }
+        .card {
+            display: inline-block;
+            width: 200px;
+            height: 230px;
+            background: rgba(255, 255, 255, 0.4);
+            margin: 5px;
+            text-align: center;
+            padding: 5px;
+            transition: all .5s;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            border-radius: 0;
+        }
 
-    .thumb-grid .thumbWrapper {
-      width: 100%;
-      height: 400px;
-    }
+        .sub-title {
+            font-size: 19px;
+        }
 
-    /******** DEMO SWITCHER *******/
-    #customize {
-      color: white;
-      text-align: right;
-      position: relative;
-      margin: auto;
-      width: 100%;
-      margin-bottom: 120px;
-    }
+        ul {
+            padding: 0;
+            margin: 0;
+            font-size: .75em
+        }
 
-    #customize input,
-    #customize select {
-      font-size: 15px;
-      margin: 3px;
-      padding: 4px 4px 4px 8px;
-      border: 1px solid rgba(38, 41, 43, 0.44);
-      color: #fff;
-      background-color: rgba(0, 0, 0, 0.2);
-      border-radius: 4px;
-    }
+        ul li {
+            position: relative;
+            display: inline;
+            padding-bottom: .1875em;
+            margin-right: .75em;
+        }
 
-    #customize select {
-      margin: 0;
-      outline: none;
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      -ms-appearance: none;
-      -o-appearance: none;
-      appearance: none;
-      vertical-align: middle;
-    }
+        li a {
+            color: #A3A3A3;
+            -webkit-transition: color .5s;
+            -moz-transition: color .5s;
+            -ms-transition: color .5s;
+            -o-transition: color .5s;
+            transition: color .5s;
+            cursor: pointer;
+            border-radius: 5px;
+            padding: .5em 1em;
+            font-weight: 700;
+            text-transform: uppercase
+        }
 
-    #customize label {
-      font-size: 13px;
-      margin: 3px 0;
-      padding: 3px 10px 3px 0;
-      /*width: 160px;*/
-      display: inline-block;
-      text-align: left;
-      text-transform: uppercase;
-      font-weight: 500;
-    }
+        li a:hover {
+            background-color: #00000052 !important;
+        }
 
-    .thumbGallery {
-      display: none;
-    }
-  </style>
+        li#dark a {
+            background-color: rgba(0, 0, 0, 0.1);
+            color: #383838;
+            text-decoration: none;
+        }
+
+        li#white a {
+            background-color: rgba(0, 0, 0, 0.1);
+            color: #383838;
+            text-decoration: none;
+        }
+
+        li#light a {
+            background-color: rgba(0, 0, 0, 0.1);
+            color: #383838;
+            text-decoration: none;
+        }
+
+        li#classic a {
+            border-color: #cc2a41;
+            background-color: #fafafa;
+            color: #22272a;
+            border: #FFFFFF solid 5px;
+        }
+
+        a{
+            text-decoration: none;
+        }
+
+        .footer {
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 2em;
+            margin-left: 20px;
+            width: 86%;
+            font-size: .438em;
+            line-height: 1.875em;
+            text-transform: uppercase;
+            letter-spacing: .0625em;
+            z-index: 10;
+        }
+
+        .footer {
+            color: #707070
+        }
+
+        .footer a {
+            color: #707070
+        }
+
+        .footer span {
+            display: inline-block;
+            font-weight: 700;
+            border-bottom: 1px dotted
+        }
+
+        .footer a:hover span {
+            color: #d44375;
+            border-bottom: 1px dotted transparent
+        }
+
+        .layout-center .v-center,
+        .layout-center .footer {
+            text-align: center
+        }
+
+        .layout-center .main-content {
+            margin: 0 auto
+        }
+
+        @media only screen and (min-width : 768px) {
+            body {
+                font-size: 22px;
+                line-height: 48px
+            }
+
+            .main-content {
+                width: 80%
+            }
+        }
+
+        @media only screen and (min-width : 1200px) {
+            body {
+                font-size: 26px;
+                line-height: 48px
+            }
+        }
+
+        @media only screen and (min-width : 1824px) {
+            body {
+                font-size: 32px;
+                line-height: 60px
+            }
+        }
+    </style>
 </head>
 
 <body>
+    <div class="profile">
+        <h1>柚子的相册</h1>
+        <p class="sub-title">一些关于我的项目的截图，查看详细介绍请点击卡片名字。</p>
+        <ul>
+            <li id="white"><a href="http://renhongl.github.io/home">主页</a></li>
+            <li id="dark"><a href="http://renhongl.github.io">博客</a></li>
+            <li id="light"><a href="http://github.com/renhongl">项目</a></li>
+        </ul>
+        <div class="footer">
+            <a href="">© Design by <span>柚子</span></a>,
+            <a href="">Opensourced on <span>GitHub</span></a>
+        </div>
+    </div>
+    <div class="gallery">
+        <div class="gallery-inner">
+            <!-- Pictures will load here -->
+        </div>
+        <div class='fullscreen-picture d-none'>
+            <img src="" alt="Gallery picture">
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        //Lits of all pictures
+        var picture_list = [
+            'https://renhongl.github.io/images/aiting1.png',
+            'https://renhongl.github.io/images/aiting4.png',
+            'https://renhongl.github.io/images/chatRoom2.png',
+            'https://renhongl.github.io/images/homeAndRoom.png',
+            'https://renhongl.github.io/images/faceAndEmoj.png',
+            'https://renhongl.github.io/images/pomeloEditor.png',
+            'https://renhongl.github.io/images/pomeloEngine.png',
+            'https://renhongl.github.io/images/mrui.png',
+        ];
+        var title_list = [
+            'Music Player',
+            'Music Player',
+            'Desktop App Chat Room',
+            'Web App Chat Room',
+            'Web App Chat Room',
+            'Markdown Editor',
+            '2D Game Engine',
+            'JS UI Library'
+        ]
+        var link_list = [
+            'https://renhongl.github.io/2017/01/21/%E7%88%B1%E5%90%AC%E6%92%AD%E6%94%BE%E5%99%A8/',
+            'https://renhongl.github.io/2017/01/21/%E7%88%B1%E5%90%AC%E6%92%AD%E6%94%BE%E5%99%A8/',
+            'https://renhongl.github.io/2016/11/15/%E5%BA%94%E7%94%A8%E5%B9%B3%E5%8F%B0%E6%A1%8C%E9%9D%A2%E7%89%88/',
+            'https://renhongl.github.io/2016/11/24/%E5%BA%94%E7%94%A8%E5%B9%B3%E5%8F%B0WEB/',
+            'https://renhongl.github.io/2016/11/24/%E5%BA%94%E7%94%A8%E5%B9%B3%E5%8F%B0WEB/',
+            'https://renhongl.github.io/markdown-editor/',
+            'https://renhongl.github.io/pomelo-engine/',
+            'https://renhongl.github.io/mr/'
+        ]
 
-  <article id="wrapper">
-    <h1>柚子的照片墙</h1>
-
-    <section class="content">
-
-      <div id="thumbGallery" class="thumbGallery" data-nav_effect="slide_horizontal" data-nav_delay="100"
-        data-nav_timing="1000" data-nav_show="true" data-nav_delay_inverse="1" data-nav_pagination="12"
-        data-full_inline="false" data-full_inline_height="600" data-layout="grid" data-layout_cols="3"
-        data-layout_margin="10" data-layout_has_caption="true" data-gallery_cover="true" data-gallery_effect="slide_horizontal"
-        data-gallery_fullscreenw="90%" data-gallery_fullscreenh="100%">
-        
-      </div>
-
-    </section>
-
-  </article>
-
-  <script>
-
-
-    jQuery.getJSON('./data.json', function (result) {
-      result.forEach(function (item, i) {
-        var row = `<img src=${item.url} data-highres=${item.url} data-caption=${item.desc}/>`;
-        $('#thumbGallery').append(row);
-      });
-      /* Initialize the mbGallery */
-      var myGallery = jQuery("#thumbGallery").mbGallery();
-
-      /* customizer */
-      jQuery("#effect").on("change", function () {
-        var x = $(this).val();
-        myGallery.data("nav_effect", x);
-
-      });
-
-      jQuery("#delay").on("change", function () {
-        var x = parseFloat($(this).val());
-        myGallery.data("nav_delay", x);
-      });
-
-      jQuery("#timing").on("change", function () {
-        var x = parseFloat($(this).val());
-        myGallery.data("nav_timing", x);
-      });
-
-      if (jQuery.isMobile) {
-        jQuery("body").css({ marginBottom: 140 })
-      }
-    });
-
-
-  </script>
+        //Gallery selector
+        $img_gallery = $('.gallery-inner');
+        //Put all pictures in the DOM
+        for (var i = 0; i < picture_list.length; i++) {
+            var $card = $('<div>').addClass('card');
+            var img = picture_list[i];
+            var $img_nodes = "<img src='" + img + "' alt='Gallery picture' title='Full Screen'>";
+            var a = `<a target="_blank" href="${link_list[i]}" title="Go to home page">${title_list[i]}</a>`;
+            $card.append($img_nodes);
+            $card.append(a);
+            $img_gallery.append($card);
+        }
+        //Fullscreen listener when click the img
+        $img_gallery.find('img').click(function () {
+            var $this = $(this),
+                $src = $this.attr('src');
+            $('.fullscreen-picture img').attr('src', $src);
+            $('.fullscreen-picture').removeClass('d-none');
+        });
+        //Click outside picture to close fullscreen view
+        $('.fullscreen-picture').click(function () {
+            $('.fullscreen-picture').addClass('d-none');
+        });
+    </script>
 </body>
 
 </html>

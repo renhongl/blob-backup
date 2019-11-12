@@ -13,6 +13,8 @@ tags: 计算机算法
 
 * 快速排序使用**分治法**（Divide and conquer）策略来把一个序列（list）分为两个子序列（sub-lists）。
 
+<!-- more -->
+
 * 步骤为：
 	1. 从数列中挑出一个元素，称为“基准”（pivot），
 
