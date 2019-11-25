@@ -45,27 +45,30 @@ show_excerpt: true
 show_date: true
 
 #footer
-index_page: http://www.fooying.com
-main_site: http://www.fooying.com
-github: https://renhongl.github.io
+index_page: https://renhongl.github.io
+main_site: https://renhongl.github.io
+github: https://github.com/renhongl
 links_url: /links
 
 # 友情链接
 links:
   蘑菇的博客: https://littlesistermogu.github.io/
-  我的GitHub: https://renhongl.github.io
+  我的GitHub: https://github.com/renhongl
 
 # project
 projects:
-  AiLiao:
-    url: https://renhongl.github.io/2016/11/24/%E5%BA%94%E7%94%A8%E5%B9%B3%E5%8F%B0WEB/
-    descript: 网页版聊天软件
+  Online Javascript Editor:
+    url: https://renhongl.github.io/code-online/
+    descript: 优美简洁的JS在线编辑器
   Online Markdown Editor:
     url: https://renhongl.github.io/markdown-editor/
     descript: 功能强大的在线Markdown编辑器
   Wang Yi Yun Online:
     url: https://renhongl.github.io/wangyiyun-online/
     descript: 基于网易云API实现的网页播放器
+  AiLiao:
+    url: https://renhongl.github.io/2016/11/24/%E5%BA%94%E7%94%A8%E5%B9%B3%E5%8F%B0WEB/
+    descript: 网页版聊天软件
   Pomelo Engine:
     url: https://renhongl.github.io/pomelo-engine/
     descript: 使用Javascript开发的2d游戏引擎
