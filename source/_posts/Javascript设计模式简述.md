@@ -2,7 +2,6 @@
 title: Javascript设计模式
 date: 2017-04-25 21:25:12
 tags:
-    - Javascript
     - 设计模式
 ---
 

@@ -2,7 +2,7 @@
 title: 应用平台WEB
 date: 2016-11-24 19:51:29
 tags:
-	- 分享
+	- 作品
 	- Javascript
 
 ---
