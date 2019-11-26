@@ -6,11 +6,11 @@ tags:
     - React
 ---
 
-<img src="https://renhongl.github.io/images/31.PNG" alt="example1"/>
+<img width="100%" src="https://renhongl.github.io/images/31.PNG" alt="example1"/>
 
 <!-- more -->
 
-<img src="https://renhongl.github.io/images/32.PNG" alt="example1"/>
+<img width="100%" src="https://renhongl.github.io/images/32.PNG" alt="example1"/>
 
 # 柚子 Markdown 编辑器
 

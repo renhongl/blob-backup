@@ -6,14 +6,14 @@ tags:
     - Nodejs
 ---
 
-<img src="https://renhongl.github.io/images/1.png" alt="example1"/>
+<img width="100%" src="https://renhongl.github.io/images/1.png" alt="example1"/>
 
 <!-- more -->
 
-<img src="https://renhongl.github.io/images/2.png" alt="example1"/>
-<img src="https://renhongl.github.io/images/3.png" alt="example1"/>
-<img src="https://renhongl.github.io/images/4.png" alt="example1"/>
-<img src="https://renhongl.github.io/images/5.png" alt="example1"/>
+<img width="100%" src="https://renhongl.github.io/images/2.png" alt="example1"/>
+<img width="100%" src="https://renhongl.github.io/images/3.png" alt="example1"/>
+<img width="100%" src="https://renhongl.github.io/images/4.png" alt="example1"/>
+<img width="100%" src="https://renhongl.github.io/images/5.png" alt="example1"/>
 
 # 新闻应用API
 
