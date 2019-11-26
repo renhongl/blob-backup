@@ -22,6 +22,8 @@ tags:
 
 在线演示: [Demo](https://renhongl.github.io/markdown-editor/)
 
+源码地址: [GitHub](https://github.com/renhongl/markdown-editor)
+
 # 文档
 
 - [简体中文](https://github.com/renhongl/markdown-editor/blob/master/doc-zh.md)

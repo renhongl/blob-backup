@@ -23,6 +23,7 @@ tags:
 使用Ionic开发的新闻APP
 后端使用KOA开发
 
+源码地址: [GitHub](https://github.com/renhongl/news-app)
 
 
 # 功能

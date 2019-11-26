@@ -12,7 +12,9 @@ tags:
 
 <img width="100%" src="https://renhongl.github.io/code-online/assets/images/v2.png" alt="example2"/>
 
-# JS在线编辑器:
+
+
+# JS在线编辑器
 
 
 是一个Javascript在线编辑器。
@@ -21,6 +23,7 @@ tags:
 
 在线演示: [Demo](https://renhongl.github.io/code-online#/)
 
+源码地址: [GitHub](https://github.com/renhongl/code-online)
 
 
 # 文档
@@ -57,8 +60,10 @@ tags:
 
 # 正在实现的列表
 
-- <input type="checkbox" disabled/>多文件的项目开发支持
-- <input type="checkbox" disabled/>主页例子展示，他人可通过提交代码添加例子
+
+
+- [ ] 多文件的项目开发支持
+- [ ] 主页例子展示，他人可通过提交代码添加例子
 
 # 许可证
 
