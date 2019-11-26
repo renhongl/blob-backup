@@ -6,6 +6,12 @@ tags:
     - Angular
 ---
 
+<img src="https://renhongl.github.io/code-online/assets/images/v1.png" alt="example1"/>
+
+<!-- more -->
+
+<img src="https://renhongl.github.io/code-online/assets/images/v2.png" alt="example2"/>
+
 # JS在线编辑器:
 
 
@@ -15,11 +21,7 @@ tags:
 
 在线演示: [Demo](https://renhongl.github.io/code-online#/)
 
-<!-- more -->
 
-<img src="https://renhongl.github.io/code-online/assets/images/v1.png" alt="example1"/>
-
-<img src="https://renhongl.github.io/code-online/assets/images/v2.png" alt="example2"/>
 
 # 文档
 

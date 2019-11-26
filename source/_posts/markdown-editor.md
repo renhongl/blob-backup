@@ -6,16 +6,21 @@ tags:
     - React
 ---
 
+<img src="https://renhongl.github.io/images/31.PNG" alt="example1"/>
+
+<!-- more -->
+
+<img src="https://renhongl.github.io/images/32.PNG" alt="example1"/>
+
 # 柚子 Markdown 编辑器
 
-<img src="https://renhongl.github.io/markdown-editor/avator.png" width="40px"/>
 
 柚子 Markdown 编辑器是一个纯前端语言，基于 react 的 html5 markdown 编辑器。
 
 - 在左边写入 markdown 内容
 - 在右边预览
 
-<!-- more -->
+在线演示: [Demo](https://renhongl.github.io/markdown-editor/)
 
 # 文档
 
