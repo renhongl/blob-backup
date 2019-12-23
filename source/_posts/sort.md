@@ -198,6 +198,27 @@ tags: 数据结构与算法
 * 希尔排序(Shell's Sort)是插入排序的一种又称“缩小增量排序”（Diminishing Increment Sort），是直接插入排序算法的一种更高效的改进版本。希尔排序是非稳定排序算法。该方法因D.L.Shell于1959年提出而得名。
 * 希尔排序是把记录按下标的一定增量分组，对每组使用直接插入排序算法排序；随着增量逐渐减少，每组包含的关键词越来越多，当增量减至1时，整个文件恰被分成一组，算法便终止。
 
+	```js
+    //希尔排序
+    const shellSort = (arr) => {
+        //不断减小间隔，直到间隔为1
+        for (let gap = Math.floor(arr.length / 2); gap > 0; gap = Math.floor(gap / 2)) {
+      	//这里有待解释
+            for (let i = gap; i < arr.length; i++) {
+                let j = i;
+                //将以间隔分组的数据，使用直接插入排序的方式排序
+                while (j - gap >= 0 && arr[j] < arr[j - gap]) {
+                    let temp = arr[j];
+                    arr[j] = arr[j - gap];
+                    arr[j - gap] = temp;
+                    j -= gap;
+                }
+            }
+        }
+        return arr;
+	}
+	```
+
 ## 计数排序
 
 * 一种不基于比较的排序方法。这种方法被称为计数排序。
