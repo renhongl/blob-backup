@@ -208,14 +208,14 @@ call 传入的参数是不固定的，第一个参数同样是代表函数体内
 
 currying又称部分求值。一个currying的函数首先会接受一些参数，接受了这些参数之后，该函数并不会立即求值，而是继续返回另外一个函数，刚传入的参数在函数形成的闭包中被保存起来。待到函数真正需要求值的时候，之前传入的所有参数都会被一次性用于求值。
 
-## uncurrying
+## Uncurrying
 
 当我们调用对象的某个方法时，其实不用去关心该对象原本是否被设计为拥有这个方法，这是动态类型语言的特点，也是常说的鸭子类型思想。
 
 同理，一个对象也未必只有使用它自身的方法。通过call和apply方法可以让对象去借用一个原本不属于它的方法。
 
 
-## 降频
+## 节流、防抖
 
 在一些情况下，函数的触发不是由用户直接控制的，在这些情景下，函数可能被非常频繁的调用，而造成大的性能问题。
 
@@ -223,125 +223,42 @@ currying又称部分求值。一个currying的函数首先会接受一些参数�
 
 以上现象我们可以使用setTimeout来实现每隔固定时间来触发事件，如果过于频繁，将忽略那次的事件。
 
-### 函数式例子
-
-  ```js
-  var resize = function(callback, interval) {
-      var timer,
-          firstTime = true;
-      return function() {
-          var args = arguments,
-              self = this;
-          if(firstTime) {
-              callback.apply(self, args);
-              return false;
-          }
-          if(timer) {
-              return false;
-          }
-          timer = setTimeout(function() {
-              clearTimeout(timer);
-              timer = null;
-              callback.apply(self, args);
-          }, interval || 500)
-      }
-  };
-
-  window.onresize = resize(function() {
-      console.log('resized', Date.now());
-  }, 1000);
-  ```
-
-
-
-
-### 面向对象例子
-
-  ```js
-export default class ReduceFrequency{
-    /**
-     * input 输入时，不要每次去检查更改，在结束输入后200毫秒去检查
-     * 这样可以减少监听频繁执行的事件带来的卡顿
-     * @param {DOM Object} target 
-     */
-    inputControl(target) {
-        target.addEventListener('input', (e) => {
-            clearTimeout(this.timer);
-            this.timer = setTimeout(() => {
-                console.log(e.target.value);
-            }, 500); 
-        });
-    }
-
-    /**
-     * 鼠标每次移动时，并不是每次都去打印它的位置，而是将最近这个事件存起来，使用定时器每隔500毫秒
-     * 打印一次最新的位置。
-     */
-    mouseMoveControl() {
-        this.inTimer = false;
-        document.addEventListener('mousemove', (e) => {
-            this.latestE = e;
-            if (!this.inTimer) {
-                this.inTimer = true;
-                this.timer2 = setTimeout(() => {
-                    let x = this.latestE.pageX;
-                    let y = this.latestE.pageY;
-                    console.log(Date.now(), x, y);
-                    this.inTimer = false;
-                }, 500);
-            }
-        });
-    }
-
-    /**
-     * 一次生成1000个节点，改成每1秒生成100个节点
-     */
-    renderDomControl() {
-        let total = 1000;
-        render();
-        function render() {
-            for (let i = 0; i < 100; i++) {
-                let dom = document.createElement('span');
-                dom.innerText = total;
-                document.body.appendChild(dom);
-                total -= 1;
-            }
-            if(total > 0) {
-                setTimeout(() => {
-                    render();
-                }, 1000);
-            }
+### 节流
+```js
+export function throttling(func, delay) {
+    let timer;
+    return function(...args) {
+        if (timer) {
+            return;
         }
+        timer = setTimeout(function() {
+            func.apply(this, args);
+            timer = null;
+        }, delay);
     }
 }
-  ```
 
+window.onresize = throttling(function() {
+  console.log('resized', Date.now());
+}, 1000);
+```
 
+### 防抖
 
+```js
+export function debounce(func, delay) {
+    let timer;
+    return function(...args) {
+        if (timer) {
+            clearTimeout(timer);
+        }
+        timer = setTimeout(function() {
+            func.apply(this, args);
+        }, delay);
+    }
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+window.onresize = debounce(function() {
+  console.log('resized', Date.now());
+}, 1000);
+```
