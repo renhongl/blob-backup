@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Allow: /tags/
+Allow: /archives/
+Allow: /projects/
+Allow: /about/
+
+
+Sitemap: https://renhongl.github.io/sitemap.xml
