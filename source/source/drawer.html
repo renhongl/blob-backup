@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #canvas {
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div id="tools">
+        <button id="pencil">pencil</button>
+        <button id="pen">pen</button>
+        <button id="clear">clear</button>
+        color: <input type="color" id="color">
+        size: <input type="text" id="size" value="1" />
+        loop:
+        <select name="" id="loop">
+            <option value="true" selected>true</option>
+            <option value="false">false</option>
+        </select>
+        speed: <input type="text" id="speed" value="20" />
+        <button id="preview">preview</button>
+    </div> -->
+    <!-- <canvas id="canvas" width="400px" height="200px"></canvas>
+    <canvas id="previewCanvas" width="400px" height="200px"></canvas> -->
+    <script>
+
+        Drawer.prototype.createToolBar = function() {
+            let con = this.container;
+            let tools = document.createElement('div');
+            con.appendChild(tools);
+            let pencil = document.createElement('button');
+            tools.appendChild(pencil);
+            pencil.innerText = 'Pen';
+
+            // sizeDom.addEventListener('change', function (e) {
+            //     self.sizeHandler.call(self, e);
+            // });
+            // speedDom.addEventListener('change', function (e) {
+            //     self.speedHandler.call(self, e);
+            // });
+            // loopDom.addEventListener('change', function (e) {
+            //     self.loopHandler.call(self, e);
+            // });
+            // colorDom.addEventListener('change', function (e) {
+            //     self.colorHandler.call(self, e);
+            // });
+            // clear.addEventListener('click', function (e) {
+            //     self.clearAllHandler.call(self, e);
+            // });
+            // pen.addEventListener('click', function (e) {
+            //     self.penClickHandler.call(self, e);
+            // });
+            // pencil.addEventListener('click', function (e) {
+            //     self.pencilClickHandler.call(self, e);
+            // });
+            // preview.addEventListener('click', function (e) {
+            //     self.previewHandler.call(self, e);
+            // });
+        }
+
+        Drawer.prototype.previewHandler = function () {
+            this.drawPreview(this.preCtx);
+        }
+        Drawer.prototype.colorHandler = function (e) {
+            this.color = e.target.value;
+        }
+        Drawer.prototype.sizeHandler = function (e) {
+            this.size = e.target.value;
+        }
+        Drawer.prototype.speedHandler = function (e) {
+            this.speed = e.target.value;
+        }
+
+        Drawer.prototype.loopHandler = function (e) {
+            this.loop = e.target.value;
+        }
+
+        Drawer.prototype.clearAllHandler = function () {
+            this.penStore = [];
+            this.pencilStore = [];
+            this.pencilFontStore = [];
+            this.penFontStore = [];
+            this.drawing = false;
+            this.lastPoint = true;
+            this.ctx.clearRect(0, 0, this.width, this.height);
+        }
+
+        Drawer.prototype.clearCanvas = function (ctx) {
+            ctx.clearRect(0, 0, this.width, this.height);
+        }
+
+        Drawer.prototype.setStrokeStyles = function (ctx, i, colorStore, fontStore) {
+            ctx.strokeStyle = colorStore[i];
+            ctx.lineWidth = fontStore[i];
+        }
+
+        Drawer.prototype.getNumber = function (str) {
+            return Number.parseInt(str);
+        }
+
+        Drawer.prototype.clickHandler = function (e) {
+            if (this.state === 'pen') {
+                if (!this.firstRender) {
+                    this.firstRender = 'pen';
+                }
+                if (this.lastPoint) {
+                    this.penStore.push([]);
+                    this.lastPoint = false;
+                    this.penColorStore.push(this.color);
+                    this.penFontStore.push(this.size);
+                }
+                this.penStore[this.penStore.length - 1].push([e.offsetX, e.offsetY]);
+                this.draw(this.ctx);
+            } else if (this.state = 'pencil') {
+
+            }
+        }
+
+        Drawer.prototype.dblClickHandler = function (e) {
+            if (this.state === 'pen') {
+                if (this.lastPoint) {
+                    this.penStore.push([]);
+                }
+                this.penStore[this.penStore.length - 1].push([e.offsetX, e.offsetY]);
+                this.lastPoint = true;
+                this.tempPoint = [];
+                this.draw(this.ctx);
+            } else if (this.state = 'pencil') {
+
+            }
+        }
+
+        Drawer.prototype.draw = function (ctx) {
+            let self = this;
+            this.clearCanvas(ctx);
+            let lastDrawPoint = [];
+            this.penStore.forEach((path, i) => {
+                ctx.beginPath();
+                self.setStrokeStyles(ctx, i, self.penColorStore, self.penFontStore);
+                path.forEach((point, index) => {
+                    if (path.length - 1 === index) {
+                        lastDrawPoint = point;
+                    }
+                    if (0 === index) {
+                        ctx.moveTo(point[0], point[1]);
+                    } else {
+                        ctx.lineTo(point[0], point[1]);
+                    }
+                });
+                ctx.stroke();
+                ctx.closePath();
+            });
+            this.pencilStore.forEach((path, i) => {
+                ctx.beginPath();
+                self.setStrokeStyles(ctx, i, self.pencilColorStore, self.pencilFontStore);
+                path.forEach((point, index) => {
+                    if (0 === index) {
+                        ctx.moveTo(point[0], point[1]);
+                    } else {
+                        ctx.lineTo(point[0], point[1]);
+                    }
+                });
+                ctx.stroke();
+                ctx.closePath();
+            });
+            ctx.beginPath();
+            ctx.moveTo(lastDrawPoint[0], lastDrawPoint[1]);
+            ctx.lineTo(this.tempPoint[0], this.tempPoint[1]);
+            ctx.stroke();
+            ctx.closePath();
+        }
+
+        Drawer.prototype.mouseDownHandler = function (e) {
+            if (this.state === 'pen') {
+
+            } else if (this.state = 'pencil') {
+                if (!this.firstRender) {
+                    this.firstRender = 'pencil';
+                }
+                this.pencilStore.push([]);
+                this.pencilColorStore.push(this.color);
+                this.pencilFontStore.push(this.size);
+                console.log(this.pencilColorStore);
+                this.pencilStore[this.pencilStore.length - 1].push([e.offsetX, e.offsetY]);
+                this.drawing = true;
+            }
+        }
+
+        Drawer.prototype.mouseUpHandler = function (e) {
+            this.drawing = false;
+        }
+
+        Drawer.prototype.throttling = function (func, delay) {
+            let timer;
+            return function (...args) {
+                if (timer) {
+                    return;
+                }
+                timer = setTimeout(function () {
+                    func.apply(this, args);
+                    timer = null;
+                }, delay);
+            }
+        }
+
+        Drawer.prototype.mouseMoveHandler = function (e) {
+            if (this.state === 'pen') {
+                if (!this.lastPoint) {
+                    this.tempPoint = [e.offsetX, e.offsetY];
+                    this.draw(this.ctx);
+                }
+            } else if (this.state === 'pencil') {
+                if (this.drawing) {
+                    this.pencilStore[this.pencilStore.length - 1].push([e.offsetX, e.offsetY]);
+                    this.draw(this.ctx);
+                }
+            }
+        }
+
+        Drawer.prototype.previewGenerator = function (i, ctx, store, colorStore, fontStore, speed, cb) {
+            let self = this;
+            if (i >= store.length) {
+                if (typeof cb === 'function') {
+                    cb();
+                } else {
+                    if (this.loop) {
+                        this.previewHandler();
+                    }
+                }
+                return;
+            }
+            for (let j = 1; j < store[i].length; j++) {
+                let point = store[i][j];
+                let lineDelay = j * speed;
+                setTimeout(function () {
+                    let beforePoint = store[i][j - 1];
+                    ctx.beginPath();
+                    ctx.moveTo(beforePoint[0], beforePoint[1]);
+                    self.setStrokeStyles(ctx, i, colorStore, fontStore);
+                    ctx.lineTo(point[0], point[1]);
+                    ctx.stroke();
+                    if (j === store[i].length - 1) {
+                        self.previewGenerator(i + 1, ctx, store, colorStore, fontStore, speed, cb);
+                    }
+                }, lineDelay);
+            }
+        }
+
+        Drawer.prototype.drawPreview = function (ctx) {
+            let self = this;
+            this.clearCanvas(ctx);
+            if (this.firstRender === 'pen') {
+                this.previewGenerator(0, ctx, this.penStore, this.penColorStore, this.penFontStore, this.speed * 10,
+                    function () {
+                        self.previewGenerator.call(self, 0, ctx, self.pencilStore, self.pencilColorStore, self
+                            .pencilFontStore, self.speed);
+                    });
+            } else {
+                this.previewGenerator(0, ctx, this.pencilStore, this.pencilColorStore, this.pencilFontStore, this
+                    .speed,
+                    function () {
+                        self.previewGenerator.call(self, 0, ctx, self.penStore, self.penColorStore, self.penFontStore, self
+                            .speed * 10);
+                    });
+            }
+        }
+
+
+        Drawer.prototype.penClickHandler = function () {
+            console.log('pen');
+            this.state = 'pen';
+        }
+
+
+        Drawer.prototype.pencilClickHandler = function () {
+            console.log('pencil');
+            this.state = 'pencil';
+        }
+
+        function Drawer(options) {
+            this.container = options.container || document.body;
+            if (options.toolBar) {
+                this.createToolBar();
+            }
+            this.c = document.createElement('canvas');
+            this.previewCanvas = document.createElement('canvas');
+            // let pen = document.getElementById('pen');
+            // let pencil = document.getElementById('pencil');
+            // let clear = document.getElementById('clear');
+            // let preview = document.getElementById('preview');
+            // let sizeDom = document.getElementById('size');
+            // let speedDom = document.getElementById('speed');
+            // let loopDom = document.getElementById('loop');
+            // let colorDom = document.getElementById('color');
+            this.container.appendChild(this.c);
+            this.container.appendChild(this.previewCanvas);
+            let self = this;
+
+            
+
+            this.ctx = this.c.getContext('2d');
+            this.preCtx = this.previewCanvas.getContext('2d');
+
+            this.width = options.width || 400;
+            this.height = options.height || 400;
+            this.drawing = false;
+            this.lastPoint = true;
+            this.penStore = [];
+            this.pencilStore = [];
+            this.pencilColorStore = [];
+            this.penColorStore = [];
+            this.pencilFontStore = [];
+            this.penFontStore = [];
+            this.state = 'pencil';
+            this.tempPoint = [];
+            this.reverse = false;
+            this.size = options.size || 1;
+            this.speed = options.speed || 20;
+            this.loop = options.loop || true;
+            this.color = options.color || '#000000';
+            this.firstRender = null;
+
+            this.c.setAttribute('width', this.width);
+            this.c.setAttribute('height', this.height);
+            this.previewCanvas.setAttribute('width', this.width);
+            this.previewCanvas.setAttribute('height', this.height);
+
+            
+            this.c.addEventListener('mousedown', function (e) {
+                self.mouseDownHandler.call(self, e);
+            });
+            this.c.addEventListener('mouseup', function (e) {
+                self.mouseUpHandler.call(self, e);
+            });
+            this.c.addEventListener('mousemove', function (e) {
+                self.mouseMoveHandler.call(self, e);
+            });
+            this.c.addEventListener('click', function (e) {
+                self.clickHandler.call(self, e);
+            });
+            this.c.addEventListener('dblclick', function (e) {
+                self.dblClickHandler.call(self, e);
+            });
+        }
+
+        new Drawer({
+            container: document.body,
+            width: document.body.clientWidth,
+            height: 400,
+            loop: true,
+            size: 1,
+            speed: 20,
+            color: '#00000',
+            toolBar: true,
+        });
+    </script>
+</body>
+
+</html>
