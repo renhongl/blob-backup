@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drawer</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html, body{
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="./drawer.js"></script>
+    <script>
+        new Drawer({
+            container: document.body,
+            width: document.body.clientWidth,
+            height: document.body.clientHeight,
+            loop: 3000,
+            size: 1,
+            speed: 20,
+            color: '#000000',
+            toolBar: true,
+        });
+    </script>
+</body>
+
+</html>
