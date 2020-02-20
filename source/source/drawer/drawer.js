@@ -4,7 +4,7 @@
 
 ; (function (window, undefined) {
 
-    Drawer.prototype.setStyles = function(target, styles) {
+    Drawer.prototype.setStyles = function (target, styles) {
         for (let key in styles) {
             if (styles.hasOwnProperty(key)) {
                 target.style[key] = styles[key];
@@ -76,6 +76,13 @@
         pen.innerText = 'Pen';
         this.setStyles(pen, btnStyles);
 
+        // rect
+        let rect = document.createElement('button');
+        rect.setAttribute('id', 'rect');
+        tools.appendChild(rect);
+        rect.innerText = 'Rect';
+        this.setStyles(rect, btnStyles);
+
         // clear
         let clear = document.createElement('button');
         clear.setAttribute('id', 'clear');
@@ -97,7 +104,7 @@
         tools.appendChild(color);
         color.innerText = 'Color';
         this.setStyles(color, btnStyles);
-        
+
         // size
         let sizeText = document.createTextNode('Size ');
         tools.appendChild(sizeText);
@@ -149,16 +156,34 @@
         pen.addEventListener('click', function (e) {
             self.penClickHandler.call(self, e);
             pencil.classList.remove('active');
+            rect.classList.remove('active');
             pen.classList.add('active');
         });
         pencil.addEventListener('click', function (e) {
             self.pencilClickHandler.call(self, e);
             pen.classList.remove('active');
+            rect.classList.remove('active');
             pencil.classList.add('active');
+        });
+        rect.addEventListener('click', function (e) {
+            self.rectClickHandler.call(self, e);
+            pen.classList.remove('active');
+            pencil.classList.remove('active');
+            rect.classList.add('active');
         });
         preview.addEventListener('click', function (e) {
             self.previewHandler.call(self, e);
         });
+        
+    }
+
+    Drawer.prototype.rectClickHandler = function (e) {
+        this.state = 'rect';
+        console.log(this.state);
+    }
+
+    Drawer.prototype.typeHandler = function (e) {
+        this.type = e.target.value;
     }
 
     Drawer.prototype.previewHandler = function () {
@@ -195,7 +220,6 @@
 
     Drawer.prototype.setStrokeStyles = function (ctx, i, colorStore, fontStore) {
         ctx.strokeStyle = colorStore[i];
-        ctx.lineWidth = fontStore[i];
     }
 
     Drawer.prototype.getNumber = function (str) {
@@ -208,6 +232,7 @@
         if (this.state === 'pen') {
             if (this.lastPoint) {
                 this.dataStore.push([]);
+                this.typeStore.push('line');
                 this.lastPoint = false;
                 this.colorStore.push(this.color);
                 this.fontStore.push(this.size);
@@ -218,15 +243,14 @@
                 let points = this.createPoints(10, fromPoint, [e.offsetX, e.offsetY]);
                 this.dataStore[this.dataStore.length - 1] = currentPath.concat(points);
             }
-            console.log(JSON.stringify(currentPath));
             currentPath.push([e.offsetX, e.offsetY]);
             this.draw(this.ctx);
-        } else if (this.state = 'pencil') {
+        } else if (this.state === 'pencil') {
 
         }
     }
 
-    Drawer.prototype.createPoints = function(n, from, to) {
+    Drawer.prototype.createPoints = function (n, from, to) {
         let offX = (to[0] - from[0]) / n;
         let offY = (to[1] - from[1]) / n;
         let points = [];
@@ -245,7 +269,7 @@
             this.lastPoint = true;
             this.tempPoint = [];
             this.draw(this.ctx);
-        } else if (this.state = 'pencil') {
+        } else if (this.state === 'pencil') {
 
         }
     }
@@ -254,27 +278,34 @@
         let self = this;
         this.clearCanvas(ctx);
         let lastDrawPoint = [];
+        let lastIndex = 0;
         this.dataStore.forEach((path, i) => {
-            ctx.beginPath();
+            lastIndex = i;
             self.setStrokeStyles(ctx, i, self.colorStore, self.fontStore);
             path.forEach((point, index) => {
+                ctx.beginPath();
                 if (path.length - 1 === index) {
                     lastDrawPoint = point;
                 }
                 if (0 === index) {
-                    ctx.moveTo(point[0], point[1]);
+                    if (self.state === 'rect') {
+                        self.drawByType(point, ctx, i);
+                        ctx.stroke();
+                    } else {
+                        ctx.moveTo(point[0], point[1]);
+                    }
                 } else {
-                    ctx.lineTo(point[0], point[1]);
+                    let beforePoint = path[index - 1];
+                    self.drawByType(point, ctx, i, beforePoint);
+                    ctx.stroke();
                 }
             });
             ctx.stroke();
             ctx.closePath();
         });
         ctx.beginPath();
-        ctx.moveTo(lastDrawPoint[0], lastDrawPoint[1]);
-        ctx.lineTo(this.tempPoint[0], this.tempPoint[1]);
+        self.drawByType(this.tempPoint, ctx, lastIndex, lastDrawPoint);
         ctx.stroke();
-        ctx.closePath();
     }
 
     Drawer.prototype.mouseDownHandler = function (e) {
@@ -282,10 +313,18 @@
         this.clearTimer();
         if (this.state === 'pen') {
 
-        } else if (this.state = 'pencil') {
+        } else if (this.state === 'pencil') {
             this.dataStore.push([]);
             this.colorStore.push(this.color);
             this.fontStore.push(this.size);
+            this.typeStore.push('line');
+            this.dataStore[this.dataStore.length - 1].push([e.offsetX, e.offsetY]);
+            this.drawing = true;
+        } else if (this.state === 'rect') {
+            this.dataStore.push([]);
+            this.colorStore.push(this.color);
+            this.fontStore.push(0);
+            this.typeStore.push('rect');
             this.dataStore[this.dataStore.length - 1].push([e.offsetX, e.offsetY]);
             this.drawing = true;
         }
@@ -319,6 +358,11 @@
                 this.dataStore[this.dataStore.length - 1].push([e.offsetX, e.offsetY]);
                 this.draw(this.ctx);
             }
+        } else if (this.state === 'rect') {
+            if (this.drawing) {
+                this.fontStore[this.fontStore.length - 1] = [e.offsetX - this.dataStore[this.dataStore.length - 1][0][0], e.offsetY - this.dataStore[this.dataStore.length - 1][0][1]];
+                this.draw(this.ctx);
+            }
         }
     }
 
@@ -338,9 +382,8 @@
             let timer = setTimeout(function () {
                 let beforePoint = self.dataStore[i][j - 1];
                 ctx.beginPath();
-                ctx.moveTo(beforePoint[0], beforePoint[1]);
                 self.setStrokeStyles(ctx, i, self.colorStore, self.fontStore);
-                ctx.lineTo(point[0], point[1]);
+                self.drawByType(point, ctx, i, beforePoint);
                 ctx.stroke();
                 if (j === self.dataStore[i].length - 1) {
                     self.run(i + 1, ctx);
@@ -350,8 +393,23 @@
         }
     }
 
-    Drawer.prototype.clearTimer = function() {
-        this.timerStore.forEach(function(timer) {
+    Drawer.prototype.drawByType = function (point, ctx, i, beforePoint) {
+        let type = this.typeStore[i];
+        if (type === 'rect') {
+            ctx.rect(point[0], point[1], this.fontStore[i][0], this.fontStore[i][1]);
+        } else if (type === 'line') {
+            ctx.lineWidth = this.fontStore[i];
+            if (beforePoint) {
+                ctx.moveTo(beforePoint[0], beforePoint[1]);
+            }
+            ctx.lineTo(point[0], point[1]);
+        } else if (type === 'circle') {
+            ctx.arc(point[0], point[1], this.fontStore[i], 0, 2 * Math.PI);
+        }
+    }
+
+    Drawer.prototype.clearTimer = function () {
+        this.timerStore.forEach(function (timer) {
             clearTimeout(timer);
         });
     }
@@ -379,7 +437,7 @@
     function Drawer(options) {
         let self = this;
         this.container = options.container || document.body;
-        
+
         this.c = document.createElement('canvas');
 
         this.ctx = this.c.getContext('2d');
@@ -393,6 +451,7 @@
         this.colorStore = [];
         this.fontStore = [];
         this.timerStore = [];
+        this.typeStore = [];
         this.stop = true;
         this.state = 'pencil';
         this.tempPoint = [];
