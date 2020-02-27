@@ -57,6 +57,9 @@ links:
 
 # project
 projects:
+  JS Drawer:
+    url: https://renhongl.github.io/source/drawer/
+    descript: JS绘图工具
   Online JSON Editor:
     url: https://renhongl.github.io/json-editor/
     descript: JSON在线编辑器
