@@ -8,9 +8,17 @@ tags:
 
 Javascript drawer tool, use to draw something and animate it.
 
+If you like it, **[STAR](https://github.com/renhongl/js-drawer)** it please :)
+
 Online demo: [Demo](https://renhongl.github.io/source/drawer/)
 
+Source code: [Code](https://github.com/renhongl/js-drawer)
+
 <!--more-->
+
+## Installation
+
+* `npm install --save js-drawer`
 
 ## Example Code
 
