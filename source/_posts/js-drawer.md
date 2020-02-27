@@ -3,9 +3,10 @@ title: JS-Drawer
 date: 2020-02-27 13:54:06
 tags:
     - Javascript
+    - 作品
 ---
 
-Javascript drawer tool
+Javascript drawer tool, use to draw something and animate it.
 
 Online demo: [Demo](https://renhongl.github.io/source/drawer/)
 
